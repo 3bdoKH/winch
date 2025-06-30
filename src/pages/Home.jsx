@@ -53,17 +53,17 @@ const Home = () => {
         <div className="hero-desc">
           خدمة إنقاذ سيارات على مدار الساعة في جميع أنحاء الجمهورية. اتصل الآن ليصلك أقرب ونش إنقاذ بأقل سعر وأعلى جودة.
         </div>
-        <div className="hero-phone">٠١٢٨١١٨٨٠٥١+</div>
+        <div className="hero-phone">+0123456789</div>
       </section>
 
       {/* Features Section (from screenshot) */}
       <section style={{display: 'flex', flexWrap: 'wrap', background: '#003366', color: '#fff', padding: '0', margin: '0 0 2rem 0', minHeight: '350px'}}>
         {/* Yellow CTA box */}
         <div style={{background: '#FFD600', color: '#003366', flex: '1 1 320px', minWidth: '320px', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', textAlign: 'right'}}>
-          <div style={{fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '1rem'}}>ونش انقاذ اوتوبيات</div>
+          <div style={{fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '1rem'}}>ونش انقاذ المدينه</div>
           <div style={{fontWeight: 'bold', fontSize: '2rem', lineHeight: '1.3', marginBottom: '1.5rem'}}>اطلب ونش انقاذ سيارات دلوقتي بكل سهولة.</div>
           <div style={{fontSize: '1.1rem', marginBottom: '1.5rem'}}>
-            ونش انقاذ أوتوبيات أسرع وأرخص ونش انقاذ في مصر كل ما عليك فقط هو الاتصال بنا وتحديد موقعك وسيتم ربطك بأقرب ونش إنقاذ ليقوم بمساعدتك في انقاذ و نقل السيارة إلى أي جهة.
+            ونش انقاذ المدينه أسرع وأرخص ونش انقاذ في مصر كل ما عليك فقط هو الاتصال بنا وتحديد موقعك وسيتم ربطك بأقرب ونش إنقاذ ليقوم بمساعدتك في انقاذ و نقل السيارة إلى أي جهة.
           </div>
         </div>
         {/* Blue features grid */}
@@ -115,7 +115,7 @@ const Home = () => {
         <div style={{fontWeight: 'bold', fontSize: '2rem', marginBottom: '1.2rem', lineHeight: '1.2', color: '#222'}}>
           <span>مميزات ونش انقاذ سيارات </span>
           <span style={{color: '#003366', position: 'relative', zIndex: 1}}>
-            اوتوبيات
+          المدينه
             <span style={{
               display: 'block',
               height: '7px',

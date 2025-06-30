@@ -1,31 +1,27 @@
 import React from 'react';
 import YellowCtaBox from '../components/YellowCtaBox';
+import './HomeGallery.css'; // Reuse or add grid styles here
+
+const areas = [
+  'المقطم', 'مصر الجديده', 'العاشر من رمضان', 'بدر', 'عين شمس', 'جسر السويس', 'حلمية الزتون', 'شيراتون', 'المطار',
+  'طريق الاسماعيليه', 'طريق السويس', 'الشروق', 'مدينتي', 'الرحاب', 'مدينه المستقبل', 'القطاميه', 'التجمع الخامس',
+  'التجمع التالت', 'التجمع الاول', 'شارع التسعين', 'طريق السخنه', 'الدائري', 'صلاح سالم', 'طريق الاوتوستراد', 'صقر قريش',
+  'المعادي', 'زهراء المعادي', 'غمره', 'احمد سعيد', 'الضاهر', 'باب الشاعريه', 'الزاويه', 'السيده زينب', 'السيده عائشه',
+  'القلعه', 'مدينة نصر', 'مكرم عبيد', 'عباس العقاد', 'الحي السادس', 'الحي السابع', 'الحي العاشر', 'طريق المشير',
+  'محور جيهان السادات', 'محور محمد نجيب', 'جمال عبدالناصر', 'محور ٣٠ يونيو', 'العضبه الوسطى', 'كورنيش المقطم',
+  'زايد', 'اكتوبر', 'المحور', 'المهندسين', 'حدايق الاهرام', 'فيصل', 'المريوطيه', 'الجيزه', 'مشعل', 'حدايق اكتوبر',
+  'الهرم', 'طريق الفيوم', 'طريق الواحات', '٦ اكتوبر', 'العجوزه', 'الزمالك', 'وسط البلد', 'الوراق', 'عابدين',
+  'شبرا الخيمه', 'شبرا', 'كورنيش النيل', 'رود الفرج', 'نيو جيزه', 'امبابه', 'كرداسه'
+];
 
 const Areas = () => {
   return (
     <section className="section" id="areas">
       <div className="section-title">الوصول السريع لمناطق الخدمة</div>
-      <div className="quick-access">
-        <div className="quick-access-item">القاهرة</div>
-        <div className="quick-access-item">الجيزة</div>
-        <div className="quick-access-item">الإسكندرية</div>
-        <div className="quick-access-item">أسوان</div>
-        <div className="quick-access-item">الأقصر</div>
-        <div className="quick-access-item">الغردقة</div>
-        <div className="quick-access-item">السويس</div>
-        <div className="quick-access-item">المنصورة</div>
-        <div className="quick-access-item">دمياط</div>
-        <div className="quick-access-item">طنطا</div>
-        <div className="quick-access-item">قنا</div>
-        <div className="quick-access-item">كفر الشيخ</div>
-        <div className="quick-access-item">الإسماعيلية</div>
-        <div className="quick-access-item">أسيوط</div>
-        <div className="quick-access-item">بورسعيد</div>
-        <div className="quick-access-item">الفيوم</div>
-        <div className="quick-access-item">المنيا</div>
-        <div className="quick-access-item">سوهاج</div>
-        <div className="quick-access-item">الشرقية</div>
-        <div className="quick-access-item">القليوبية</div>
+      <div className="quick-access brick-grid">
+        {areas.map((area, idx) => (
+          <div className="quick-access-item brick" key={idx}>{area}</div>
+        ))}
       </div>
       <YellowCtaBox />
     </section>

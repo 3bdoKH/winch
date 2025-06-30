@@ -15,14 +15,14 @@ const YellowCtaBox = () => (
     direction: 'rtl',
   }}>
     <div style={{fontWeight: 'bold', fontSize: '1.05rem', marginBottom: '1.2rem', letterSpacing: '0.5px'}}>
-      ونش انقاذ اوتوبيات
+      ونش انقاذ المدينه
     </div>
     <div style={{fontWeight: 'bold', fontSize: '2rem', lineHeight: '1.2', marginBottom: '1.2rem', color: '#003366'}}>
       اطلب ونش انقاذ سيارات دلوقتي<br />بكل سهولة.
       <div style={{width: '60px', height: '4px', background: '#003366', borderRadius: '2px', marginTop: '0.5rem', marginRight: 0}}></div>
     </div>
     <div style={{fontSize: '1.1rem', color: '#003366', fontWeight: 500, lineHeight: '2'}}>
-      ونش انقاذ أوتوبيات أسرع وأرخص ونش انقاذ في مصر كل ما عليك فقط هو الاتصال بنا وتحديد موقعك وسيتم ربطك بأقرب ونش إنقاذ ليقوم بمساعدتك في انقاذ و نقل السيارة إلى أي جهة.
+      ونش انقاذ المدينه أسرع وأرخص ونش انقاذ في مصر كل ما عليك فقط هو الاتصال بنا وتحديد موقعك وسيتم ربطك بأقرب ونش إنقاذ ليقوم بمساعدتك في انقاذ و نقل السيارة إلى أي جهة.
     </div>
   </div>
 );

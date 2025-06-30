@@ -277,6 +277,36 @@ body {
   color: #fff;
 }
 
+/* Brick grid for quick-access */
+.brick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin: 2rem 0;
+}
+
+.brick {
+  width: 100%;
+  min-width: 120px;
+  max-width: 220px;
+  text-align: center;
+  background: #003366;
+  color: #FFD600;
+  padding: 1rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.brick:hover {
+  background: #FFD600;
+  color: #003366;
+}
+
 @media (max-width: 700px) {
   .services-list {
     flex-direction: column;
@@ -300,5 +330,13 @@ body {
   }
   .mobile-nav {
     display: flex;
+  }
+  .brick-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+  }
+  .brick {
+    font-size: 1rem;
+    padding: 0.7rem 0.3rem;
   }
 }
