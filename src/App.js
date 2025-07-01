@@ -8,6 +8,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Areas from './pages/Areas';
 import Contact from './pages/Contact';
+import ServiceDetail from './pages/ServiceDetail';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -56,6 +57,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/areas" element={<Areas />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/service/:serviceId" element={<ServiceDetail />} />
       </Routes>
       {/* Footer */}
       <footer className="footer">

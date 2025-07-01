@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import '../pages/HomeGallery.css';
 import testimonialImg from '../images/images (3).jpeg';
-import { Brain, HardHat, MessageSquare, Factory, ChevronRight, ChevronLeft, Quote } from 'lucide-react';
+import { Brain, HardHat, MessageSquare, Factory, ChevronRight, ChevronLeft, Quote, Wrench, Lightbulb, Package, Truck, BatteryCharging, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // Import all gallery images
 import img1 from '../images/images.jpeg';
@@ -12,6 +13,45 @@ import img5 from '../images/download (1).jpeg';
 import img6 from '../images/download (2).jpeg';
 
 const galleryImages = [img1, img2, img3, img4, img5, img6];
+
+const extraServices = [
+  {
+    id: 'rescue',
+    icon: <Wrench size={44} color="#003366" style={{marginBottom: '1rem'}} />, 
+    title: 'إنقاذ السيارات',
+    desc: 'نقدم جميع خدمات إنقاذ السيارات بأسرع وأفضل خدمة إنقاذ للسيارات في مصر بشكل غير مسبوق ..',
+  },
+  {
+    id: 'equipment',
+    icon: <Lightbulb size={44} color="#003366" style={{marginBottom: '1rem'}} />, 
+    title: 'نقل المعدات',
+    desc: 'نقدم جميع خدمات نقل المعدات " سيارات نقل ، كرفانات ، معدات وكراكات ، فشلات " وغيرها الكثير ..',
+  },
+  {
+    id: 'fuel',
+    icon: <Package size={44} color="#003366" style={{marginBottom: '1rem'}} />, 
+    title: 'التزود بالوقود',
+    desc: 'اذا نفذ وقود سيارتك فلا داعي للقلق، فنحن نقدم خدمة التزود بالوقود في الطريق ، فريق أوتوبيات جاهز لتزويدكم بالوقود ..',
+  },
+  {
+    id: 'unlock',
+    icon: <Truck size={44} color="#003366" style={{marginBottom: '1rem'}} />, 
+    title: 'فتح أبواب السيارات',
+    desc: 'نسيت المفتاح داخل السيارة؟ يمكنك الاتصال برقم ونش انقاذ سيارات أوتوبيات وتحديد مكان تعطل السيارة ليصلك بعدها بضع دقائق ..',
+  },
+  {
+    id: 'battery',
+    icon: <BatteryCharging size={44} color="#003366" style={{marginBottom: '1rem'}} />, 
+    title: 'وصلة بطارية',
+    desc: 'نقدم جميع خدمات أعطال البطاريات والتي تحتاج الي وصلة . فريق ونش انقاذ أوتوبيات جاهز وعلي أتم الاستعداد لمساعدتكم ..',
+  },
+  {
+    id: 'tires',
+    icon: <Users size={44} color="#003366" style={{marginBottom: '1rem'}} />, 
+    title: 'تغيير الاطارات',
+    desc: 'اذا حصل ظرف طارئ في الطريق وقد احتجت الي تغيير او استبدال احدي اطارات سيارتك فنحن نقدم خدمة تغيير / استبدال الاطارات في الطريق ..',
+  },
+];
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
@@ -53,7 +93,7 @@ const Home = () => {
         <div className="hero-desc">
           خدمة إنقاذ سيارات على مدار الساعة في جميع أنحاء الجمهورية. اتصل الآن ليصلك أقرب ونش إنقاذ بأقل سعر وأعلى جودة.
         </div>
-        <div className="hero-phone">+0123456789</div>
+        <a className="hero-phone" href='tel:01044844492'>+01044844492</a>
       </section>
 
       {/* Features Section (from screenshot) */}
@@ -147,6 +187,22 @@ const Home = () => {
           marginRight: '0.5rem',
         }}>
           إذا كنت تبحث عن خدمة إنقاذ سيارات بأرخص سعر فعليك إختيار خدمة ونش إنقاذ سيارات من خلال الاتصال بنا وسوف نرسل إليك أقرب ونش إنقاذ سيارات علي الفور في أي وقت علي مدار اليوم فنحن نوفر خدماتنا 24 ساعة علي مدار اليوم.
+        </div>
+      </section>
+
+      {/* Extra Services Section */}
+      <section className="extra-services" style={{maxWidth: '1100px', margin: '2rem auto', padding: '1.5rem 0'}}>
+        <div className="section-title">خدمات إضافية</div>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', marginTop: '2rem'}}>
+          {extraServices.map(service => (
+            <Link to={`/service/${service.id}`} key={service.id} style={{textDecoration: 'none'}}>
+              <div style={{background:'#ebebeb', color:'#003366', borderRadius:'1rem', padding:'2rem 1rem', boxShadow:'0 2px 8px rgba(0,0,0,0.07)', textAlign:'center', transition:'transform 0.2s', fontWeight:500, minHeight:'200px'}} className="service-card-hover">
+                {service.icon}
+                <div style={{fontWeight:'bold', fontSize:'1.2rem', marginBottom:'0.7rem'}}>{service.title}</div>
+                <div style={{fontSize:'1rem'}}>{service.desc}</div>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

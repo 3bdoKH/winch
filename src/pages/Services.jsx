@@ -4,34 +4,41 @@ import serviceImg2 from '../images/images (1).jpeg';
 import serviceImg3 from '../images/images (2).jpeg';
 import { Wrench, Lightbulb, Package, Truck, BatteryCharging, Users } from 'lucide-react';
 import YellowCtaBox from '../components/YellowCtaBox';
+import { Link } from 'react-router-dom';
 
 const extraServices = [
   {
+    id: 'rescue',
     icon: <Wrench size={44} color="#003366" style={{marginBottom: '1rem'}} />,
     title: 'إنقاذ السيارات',
     desc: 'نقدم جميع خدمات إنقاذ السيارات بأسرع وأفضل خدمة إنقاذ للسيارات في مصر بشكل غير مسبوق ..',
   },
   {
+    id: 'equipment',
     icon: <Lightbulb size={44} color="#003366" style={{marginBottom: '1rem'}} />,
     title: 'نقل المعدات',
     desc: 'نقدم جميع خدمات نقل المعدات " سيارات نقل ، كرفانات ، معدات وكراكات ، فشلات " وغيرها الكثير ..',
   },
   {
+    id: 'fuel',
     icon: <Package size={44} color="#003366" style={{marginBottom: '1rem'}} />,
     title: 'التزود بالوقود',
-    desc: 'اذا نفذ وقود سيارتك فلا داعي للقلق، فنحن نقدم خدمة التزود بالوقود في الطريق ، فريق أوتوبيات جاهز لتزويدكم بالوقود ..',
+    desc: 'اذا نفذ وقود سيارتك فلا داعي للقلق، فنحن نقدم خدمة التزود بالوقود في الطريق ، فريق أوتوبات جاهز لتزويدكم بالوقود ..',
   },
   {
+    id: 'unlock',
     icon: <Truck size={44} color="#003366" style={{marginBottom: '1rem'}} />,
     title: 'فتح أبواب السيارات',
-    desc: 'نسيت المفتاح داخل السيارة؟ يمكنك الاتصال برقم ونش انقاذ سيارات أوتوبيات وتحديد مكان تعطل السيارة ليصلك بعدها بضع دقائق ..',
+    desc: 'نسيت المفتاح داخل السيارة؟ يمكنك الاتصال برقم ونش انقاذ سيارات أوتوبات وتحديد مكان تعطل السيارة ليصلك بعدها بضع دقائق ..',
   },
   {
+    id: 'battery',
     icon: <BatteryCharging size={44} color="#003366" style={{marginBottom: '1rem'}} />,
     title: 'وصلة بطارية',
-    desc: 'نقدم جميع خدمات أعطال البطاريات والتي تحتاج الي وصلة . فريق ونش انقاذ أوتوبيات جاهز وعلي أتم الاستعداد لمساعدتكم ..',
+    desc: 'نقدم جميع خدمات أعطال البطاريات والتي تحتاج الي وصلة . فريق ونش انقاذ أوتوبات جاهز وعلي أتم الاستعداد لمساعدتكم ..',
   },
   {
+    id: 'tires',
     icon: <Users size={44} color="#003366" style={{marginBottom: '1rem'}} />,
     title: 'تغيير الاطارات',
     desc: 'اذا حصل ظرف طارئ في الطريق وقد احتجت الي تغيير او استبدال احدي اطارات سيارتك فنحن نقدم خدمة تغيير / استبدال الاطارات في الطريق ..',
@@ -66,24 +73,14 @@ const Services = () => {
         margin: '3rem 0 0 0',
         direction: 'rtl',
       }}>
-        {extraServices.map((service, idx) => (
-          <div key={idx} style={{
-            background: '#fff',
-            border: '1.5px solid #e5e7eb',
-            borderRadius: '1.2rem',
-            boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
-            padding: '2rem 1.2rem',
-            textAlign: 'center',
-            minHeight: '240px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-          }}>
-            {service.icon}
-            <div style={{fontWeight: 'bold', color: '#003366', fontSize: '1.25rem', marginBottom: '0.7rem'}}>{service.title}</div>
-            <div style={{color: '#222', fontSize: '1.08rem', lineHeight: '2'}}>{service.desc}</div>
-          </div>
+        {extraServices.map((service) => (
+          <Link to={`/service/${service.id}`} key={service.id} style={{textDecoration: 'none'}}>
+            <div style={{background:'#ebebeb', color:'#003366', borderRadius:'1rem', padding:'2rem 1rem', boxShadow:'0 2px 8px rgba(0,0,0,0.07)', textAlign:'center', transition:'transform 0.2s', fontWeight:500, minHeight:'200px'}} className="service-card-hover">
+              {service.icon}
+              <div style={{fontWeight: 'bold', color: '#003366', fontSize: '1.25rem', marginBottom: '0.7rem'}}>{service.title}</div>
+              <div style={{color: '#222', fontSize: '1.08rem', lineHeight: '2'}}>{service.desc}</div>
+            </div>
+          </Link>
         ))}
       </div>
       <YellowCtaBox />
