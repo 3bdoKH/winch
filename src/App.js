@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import './App.css';
+import { Home as HomeIcon, Package, MapPin, Phone, Mail } from 'lucide-react';
 
 // Import pages
 import Home from './pages/Home';
@@ -63,6 +64,30 @@ function App() {
       <footer className="footer">
         تصميم وتنفيذ ايميرالد - جميع الحقوق محفوظة © 2025
       </footer>
+
+      {/* Mobile Bottom Navigation */}
+      <nav className="mobile-bottom-nav">
+        <Link to="/contact" className="mobile-bottom-nav__item">
+          <Mail size={28} />
+          <span>اتصل بنا</span>
+        </Link>
+        <a href="tel:01044844492" className="mobile-bottom-nav__item">
+          <Phone size={28} />
+          <span>اتصال</span>
+        </a>
+        <Link to="/areas" className="mobile-bottom-nav__item">
+          <MapPin size={28} />
+          <span>حول الانقاذ</span>
+        </Link>
+        <Link to="/services" className="mobile-bottom-nav__item">
+          <Package size={28} />
+          <span>خدماتنا</span>
+        </Link>
+        <Link to="/" className="mobile-bottom-nav__item">
+          <HomeIcon size={28} />
+          <span>الرئيسية</span>
+        </Link>
+      </nav>
     </>
   );
 }

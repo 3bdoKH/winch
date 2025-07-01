@@ -221,6 +221,8 @@ body {
   padding: 1rem 0;
   font-size: 1rem;
   margin-top: 2rem;
+  position: relative;
+  bottom: 58px;
 }
 
 /* Hamburger menu styles */
@@ -338,5 +340,53 @@ body {
   .brick {
     font-size: 1rem;
     padding: 0.7rem 0.3rem;
+  }
+}
+
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background: #003366;
+    border-top: 1.5px solid #002244;
+    z-index: 1000;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.2rem 0 0.1rem 0;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+  }
+  .mobile-bottom-nav__item {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.3rem 0 0.1rem 0;
+    transition: background 0.15s, color 0.15s;
+    border-left: 1px solid #19406a;
+  }
+  .mobile-bottom-nav__item:first-child {
+    border-right: 1px solid #19406a;
+  }
+  .mobile-bottom-nav__item:active,
+  .mobile-bottom-nav__item:hover {
+    background: #002244;
+    color: #FFD600;
+  }
+  .mobile-bottom-nav__item span {
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
   }
 }

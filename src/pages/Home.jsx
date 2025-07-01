@@ -204,13 +204,56 @@ const Home = () => {
       <section className="testimonials">
         <div className="section-title">آراء العملاء</div>
         <div className="testimonial">
-          <img src={testimonialImg} alt="عميل" style={{width:'60px', borderRadius:'50%', float:'left', marginLeft:'1rem'}} />
+          
           <div>وصلني ونش الإنقاذ بعد 10 دقائق فقط من الاتصال. السائق كان متعاون جداً والخدمة ممتازة.</div>
           <div className="testimonial-author">إبراهيم سعيد - رجل أعمال</div>
         </div>
         <div className="testimonial">
           <div>شركة محترمة وفريق عمل محترف. أنصح الجميع بالتعامل معهم.</div>
-          <div className="testimonial-author">ريمون فوزي - صاحب شركة</div>
+          <div className="testimonial-author">خالد اكرم - صاحب شركة</div>
+        </div>
+      </section>
+
+      {/* Call to Action Section - Bottom of Home Page */}
+      <section style={{
+        background: '#232323',
+        color: '#fff',
+        textAlign: 'center',
+        padding: '2.5rem 1rem 2rem 1rem',
+        marginTop: '2.5rem',
+        borderTop: '1px solid #333',
+      }}>
+        <div style={{
+          fontWeight: 'bold',
+          fontSize: '1.5rem',
+          color: '#FFD600',
+          marginBottom: '0.7rem',
+          letterSpacing: '1px',
+          position: 'relative',
+          display: 'inline-block',
+        }}>
+          اتصل بنا الان
+          <span style={{
+            display: 'block',
+            height: '5px',
+            background: '#FFD600',
+            borderRadius: '2px',
+            marginTop: '0.3rem',
+            width: '70%',
+            marginRight: 'auto',
+            marginLeft: 'auto',
+          }}></span>
+        </div>
+        <div style={{
+          color: '#fff',
+          fontSize: '1.08rem',
+          marginTop: '1.2rem',
+          lineHeight: '2',
+          maxWidth: '500px',
+          marginRight: 'auto',
+          marginLeft: 'auto',
+        }}>
+          ونش انقاذ المدينه هو اسرع و ارخص ونش انقاذ سيارات اتصل على رقم ونش الانقاذ خدمة 24 ساعة اتصل بنا الان ليصلك اقرب ونش انقاذ سيارات بخصم 50%.
         </div>
       </section>
     </>
