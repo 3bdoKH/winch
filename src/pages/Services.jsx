@@ -2,7 +2,7 @@ import React from 'react';
 import serviceImg1 from '../images/download.jpeg';
 import serviceImg2 from '../images/images (1).jpeg';
 import serviceImg3 from '../images/images (2).jpeg';
-import { Wrench, Lightbulb, Package, Truck, BatteryCharging, Users } from 'lucide-react';
+import { Wrench, Lightbulb, Package, BatteryCharging, Users } from 'lucide-react';
 import YellowCtaBox from '../components/YellowCtaBox';
 import { Link } from 'react-router-dom';
 
@@ -24,12 +24,6 @@ const extraServices = [
     icon: <Package size={44} color="#003366" style={{marginBottom: '1rem'}} />,
     title: 'التزود بالوقود',
     desc: 'اذا نفذ وقود سيارتك فلا داعي للقلق، فنحن نقدم خدمة التزود بالوقود في الطريق ، فريق أوتوبات جاهز لتزويدكم بالوقود ..',
-  },
-  {
-    id: 'unlock',
-    icon: <Truck size={44} color="#003366" style={{marginBottom: '1rem'}} />,
-    title: 'فتح أبواب السيارات',
-    desc: 'نسيت المفتاح داخل السيارة؟ يمكنك الاتصال برقم ونش انقاذ سيارات أوتوبات وتحديد مكان تعطل السيارة ليصلك بعدها بضع دقائق ..',
   },
   {
     id: 'battery',

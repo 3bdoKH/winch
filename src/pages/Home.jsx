@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import '../pages/HomeGallery.css';
 import testimonialImg from '../images/images (3).jpeg';
-import { Brain, HardHat, MessageSquare, Factory, ChevronRight, ChevronLeft, Quote, Wrench, Lightbulb, Package, Truck, BatteryCharging, Users } from 'lucide-react';
+import { Brain, HardHat, MessageSquare, Factory, ChevronRight, ChevronLeft, Quote, Wrench, Lightbulb, Package, BatteryCharging, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // Import all gallery images
 import img1 from '../images/images.jpeg';
 import img2 from '../images/images (1).jpeg';
-import img3 from '../images/images (2).jpeg';
+import img3 from '../images/images (3).jpeg';
 import img4 from '../images/download.jpeg';
 import img5 from '../images/download (1).jpeg';
 import img6 from '../images/download (2).jpeg';
@@ -32,12 +32,6 @@ const extraServices = [
     icon: <Package size={44} color="#003366" style={{marginBottom: '1rem'}} />, 
     title: 'التزود بالوقود',
     desc: 'اذا نفذ وقود سيارتك فلا داعي للقلق، فنحن نقدم خدمة التزود بالوقود في الطريق ، فريق أوتوبيات جاهز لتزويدكم بالوقود ..',
-  },
-  {
-    id: 'unlock',
-    icon: <Truck size={44} color="#003366" style={{marginBottom: '1rem'}} />, 
-    title: 'فتح أبواب السيارات',
-    desc: 'نسيت المفتاح داخل السيارة؟ يمكنك الاتصال برقم ونش انقاذ سيارات أوتوبيات وتحديد مكان تعطل السيارة ليصلك بعدها بضع دقائق ..',
   },
   {
     id: 'battery',
