@@ -390,3 +390,34 @@ body {
     letter-spacing: 0.5px;
   }
 }
+
+.floating-phone-btn {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .floating-phone-btn {
+    display: flex;
+    position: fixed;
+    bottom: 70px;
+    right: 18px;
+    z-index: 1200;
+    background: #003366;
+    color: #FFD600;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    font-size: 1.7rem;
+    border: 2px solid #FFD600;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  .floating-phone-btn:active,
+  .floating-phone-btn:hover {
+    background: #FFD600;
+    color: #003366;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+}

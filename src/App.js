@@ -88,6 +88,11 @@ function App() {
           <span>الرئيسية</span>
         </Link>
       </nav>
+
+      {/* Floating Phone Button (Mobile Only) */}
+      <a href="tel:01044844492" className="floating-phone-btn" aria-label="اتصال سريع">
+        <Phone size={32} />
+      </a>
     </>
   );
 }

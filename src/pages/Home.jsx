@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../pages/HomeGallery.css';
-import testimonialImg from '../images/images (3).jpeg';
 import { Brain, HardHat, MessageSquare, Factory, ChevronRight, ChevronLeft, Quote, Wrench, Lightbulb, Package, BatteryCharging, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -50,16 +49,43 @@ const extraServices = [
 const Home = () => {
   const [current, setCurrent] = useState(0);
   const total = galleryImages.length;
+  const [isPaused, setIsPaused] = useState(false);
+  const pauseTimeout = useRef(null);
 
-  const goNext = () => setCurrent((prev) => (prev + 1) % total);
-  const goPrev = () => setCurrent((prev) => (prev - 1 + total) % total);
-  const goTo = (idx) => setCurrent(idx);
+  // Auto-slide effect
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setTimeout(() => {
+      setCurrent((prev) => (prev + 1) % total);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [current, isPaused, total]);
+
+  // Pause auto-slide on manual navigation
+  const pauseAutoSlide = () => {
+    setIsPaused(true);
+    if (pauseTimeout.current) clearTimeout(pauseTimeout.current);
+    pauseTimeout.current = setTimeout(() => setIsPaused(false), 5000);
+  };
+
+  const goNext = () => {
+    setCurrent((prev) => (prev + 1) % total);
+    pauseAutoSlide();
+  };
+  const goPrev = () => {
+    setCurrent((prev) => (prev - 1 + total) % total);
+    pauseAutoSlide();
+  };
+  const goTo = (idx) => {
+    setCurrent(idx);
+    pauseAutoSlide();
+  };
 
   return (
     <>
       {/* Gallery Section */}
       <div className="gallery-container">
-        <img src={galleryImages[current]} alt={`معرض ${current + 1}`} className="gallery-image" />
+        <img src={galleryImages[current]} alt={`معرض ${current + 1}`} className="gallery-image fade-anim" />
         <div className="gallery-arrows">
           <button className="gallery-arrow" onClick={goPrev} aria-label="السابق"><ChevronRight size={24} /></button>
           <button className="gallery-arrow" onClick={goNext} aria-label="التالي"><ChevronLeft size={24} /></button>

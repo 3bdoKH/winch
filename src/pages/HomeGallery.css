@@ -4,6 +4,10 @@
   margin: 2rem auto 2rem auto;
   position: relative;
   direction: rtl;
+  background: #f4f7fb; /* subtle light blue/gray */
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: 1.5px solid #e5e7eb;
 }
 
 .gallery-image {
@@ -80,4 +84,13 @@
 .hero-section {
   background: linear-gradient(90deg, #003366 60%, #FFD600 100%);
   color: #fff;
+} 
+
+.gallery-image.fade-anim {
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 } 
