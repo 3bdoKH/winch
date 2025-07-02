@@ -5,35 +5,40 @@ import serviceImg3 from '../images/images (2).jpeg';
 import { Wrench, Lightbulb, Package, BatteryCharging, Users } from 'lucide-react';
 import YellowCtaBox from '../components/YellowCtaBox';
 import { Link } from 'react-router-dom';
+import extraImg1 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
+import extraImg2 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
+import extraImg3 from '../images/fuel.jpeg';
+import extraImg4 from '../images/battary.jpeg';
+import extraImg5 from '../images/images (3).jpeg';
 
 const extraServices = [
   {
     id: 'rescue',
-    icon: <Wrench size={44} color="#003366" style={{marginBottom: '1rem'}} />,
+    icon: <Wrench size={44} color="#212D40" style={{marginBottom: '1rem'}} />,
     title: 'إنقاذ السيارات',
     desc: 'نقدم جميع خدمات إنقاذ السيارات بأسرع وأفضل خدمة إنقاذ للسيارات في مصر بشكل غير مسبوق ..',
   },
   {
     id: 'equipment',
-    icon: <Lightbulb size={44} color="#003366" style={{marginBottom: '1rem'}} />,
+    icon: <Lightbulb size={44} color="#212D40" style={{marginBottom: '1rem'}} />,
     title: 'نقل المعدات',
     desc: 'نقدم جميع خدمات نقل المعدات " سيارات نقل ، كرفانات ، معدات وكراكات ، فشلات " وغيرها الكثير ..',
   },
   {
     id: 'fuel',
-    icon: <Package size={44} color="#003366" style={{marginBottom: '1rem'}} />,
+    icon: <Package size={44} color="#212D40" style={{marginBottom: '1rem'}} />,
     title: 'التزود بالوقود',
     desc: 'اذا نفذ وقود سيارتك فلا داعي للقلق، فنحن نقدم خدمة التزود بالوقود في الطريق ، فريق أوتوبات جاهز لتزويدكم بالوقود ..',
   },
   {
     id: 'battery',
-    icon: <BatteryCharging size={44} color="#003366" style={{marginBottom: '1rem'}} />,
+    icon: <BatteryCharging size={44} color="#212D40" style={{marginBottom: '1rem'}} />,
     title: 'وصلة بطارية',
     desc: 'نقدم جميع خدمات أعطال البطاريات والتي تحتاج الي وصلة . فريق ونش انقاذ أوتوبات جاهز وعلي أتم الاستعداد لمساعدتكم ..',
   },
   {
     id: 'tires',
-    icon: <Users size={44} color="#003366" style={{marginBottom: '1rem'}} />,
+    icon: <Users size={44} color="#212D40" style={{marginBottom: '1rem'}} />,
     title: 'تغيير الاطارات',
     desc: 'اذا حصل ظرف طارئ في الطريق وقد احتجت الي تغيير او استبدال احدي اطارات سيارتك فنحن نقدم خدمة تغيير / استبدال الاطارات في الطريق ..',
   },
@@ -67,12 +72,13 @@ const Services = () => {
         margin: '3rem 0 0 0',
         direction: 'rtl',
       }}>
-        {extraServices.map((service) => (
-          <Link to={`/service/${service.id}`} key={service.id} style={{textDecoration: 'none'}}>
-            <div style={{background:'#ebebeb', color:'#003366', borderRadius:'1rem', padding:'2rem 1rem', boxShadow:'0 2px 8px rgba(0,0,0,0.07)', textAlign:'center', transition:'transform 0.2s', fontWeight:500, minHeight:'200px'}} className="service-card-hover">
-              {service.icon}
-              <div style={{fontWeight: 'bold', color: '#003366', fontSize: '1.25rem', marginBottom: '0.7rem'}}>{service.title}</div>
-              <div style={{color: '#222', fontSize: '1.08rem', lineHeight: '2'}}>{service.desc}</div>
+        {[extraImg1, extraImg2, extraImg3, extraImg4, extraImg5].map((img, idx) => (
+          <Link to={`/service/${extraServices[idx].id}`} key={extraServices[idx].id} style={{textDecoration: 'none'}}> 
+            <div style={{background:'#535e73', color:'#fff', borderRadius:'1rem', padding:'2rem 1rem', boxShadow:'0 0 40px #4f4f4fd6 inset', textAlign:'center', transition:'transform 0.2s', fontWeight:500, minHeight:'200px'}} className="service-card-hover">
+              {extraServices[idx].icon}
+              <div style={{fontWeight:'bold', fontSize:'1.2rem', marginBottom:'0.7rem'}}>{extraServices[idx].title}</div>
+              <div style={{fontSize:'1rem'}}>{extraServices[idx].desc}</div>
+              <img src={img} alt={extraServices[idx].title} style={{width: '100%', borderRadius: '0.7rem', margin: '1rem auto 1rem auto', display: 'block', boxShadow: '0 2px 8px rgba(0,0,0,0.10)'}} />
             </div>
           </Link>
         ))}

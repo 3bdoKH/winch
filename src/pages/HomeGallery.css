@@ -4,10 +4,10 @@
   margin: 2rem auto 2rem auto;
   position: relative;
   direction: rtl;
-  background: #f4f7fb; /* subtle light blue/gray */
-  border-radius: 1.2rem;
+  background: var(--color-mid); /* subtle light blue/gray */
+  /* border-radius: 1.2rem; */
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: 1.5px solid #e5e7eb;
+  border: 1.5px solid var(--color-darkest);
 }
 
 .gallery-image {
@@ -30,8 +30,8 @@
 }
 
 .gallery-arrow {
-  background: rgba(0,0,0,0.4);
-  color: #FFD600;
+  background: rgba(17,21,28,0.4); /* --color-darkest */
+  color: var(--color-accent2);
   border: none;
   border-radius: 50%;
   width: 40px;
@@ -45,8 +45,8 @@
   transition: background 0.2s;
 }
 .gallery-arrow:hover {
-  background: #003366;
-  color: #FFD600;
+  background: var(--color-dark);
+  color: var(--color-accent2);
 }
 
 .gallery-dots {
@@ -60,30 +60,76 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #FFD600;
+  background: var(--color-accent2);
   opacity: 0.5;
   cursor: pointer;
-  border: 2px solid #003366;
+  border: 2px solid var(--color-dark);
   transition: opacity 0.2s;
 }
 .gallery-dot.active {
   opacity: 1;
-  background: #003366;
-  border-color: #FFD600;
+  background: var(--color-dark);
+  border-color: var(--color-accent2);
 }
 
 @media (max-width: 600px) {
   .gallery-image {
     height: 180px;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 1.2rem;
+    border: 1.5px solid var(--color-darkest);
   }
   .gallery-container {
+    margin-top: 0;
+    margin-bottom: 0;
     max-width: 98vw;
+    padding: 0.5rem 0.2rem 1.5rem 0.2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+    border: 2px solid var(--color-accent2);
+  }
+  .gallery-arrows {
+    position: static;
+    top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: none;
+    margin-top: 0.5rem;
+    gap: 2.5rem;
+    pointer-events: auto;
+  }
+  .gallery-arrow {
+    width: 48px;
+    height: 48px;
+    font-size: 2rem;
+    margin: 0 0.5rem;
+    background: var(--color-darkest);
+    color: var(--color-accent2);
+    border: 2px solid var(--color-accent2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  }
+  .gallery-arrow:hover {
+    background: var(--color-accent2);
+    color: var(--color-darkest);
+    border-color: var(--color-darkest);
+  }
+  .gallery-dots {
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+  }
+  .gallery-dot {
+    width: 18px;
+    height: 18px;
+    border-width: 3px;
+    margin: 0 0.1rem;
   }
 } 
 
 .hero-section {
-  background: linear-gradient(90deg, #003366 60%, #FFD600 100%);
-  color: #fff;
+  background: linear-gradient(90deg, var(--color-dark) 60%, var(--color-accent2) 100%);
+  color: var(--color-light);
 } 
 
 .gallery-image.fade-anim {

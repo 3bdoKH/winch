@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import './App.css';
 import { Home as HomeIcon, Package, MapPin, Phone, Mail } from 'lucide-react';
+import logo from './images/logo.png';
 
 // Import pages
 import Home from './pages/Home';
@@ -24,8 +25,9 @@ function App() {
     <>
       {/* Header & Navigation */}
       <header className="header">
-        <Link to="/" style={{ color: '#FFD600', textDecoration: 'none' }}>
-          ونش إنقاذ السيارات
+          <img src={logo} alt="ونش إنقاذ عمرو بحر" style={{ maxHeight: 48, marginLeft: 12, borderRadius: '0.5rem'}} />
+        <Link to="/" style={{ color: '#d66853', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.7rem', justifyContent: 'center' }}>
+          ونش إنقاذ عمرو بحر
         </Link>
       </header>
       {/* Hamburger for mobile */}
