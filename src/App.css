@@ -1,11 +1,11 @@
 /* Color palette variables */
 :root {
-  --color-darkest: #11151C;
-  --color-dark: #212D40;
-  --color-mid: #364156;
-  --color-accent1: #7D4E57;
-  --color-accent2: #D66853;
-  --color-light: #fff;
+  --color-darkest: #003844;
+  --color-dark: #006c67;
+  --color-mid: #ffebc6;
+  --color-accent1: #f194b4;
+  --color-accent2: #ffb100;
+  --color-light: #ffebc6;
 }
 
 .App {

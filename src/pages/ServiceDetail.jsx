@@ -9,7 +9,7 @@ import img5 from '../images/battary.jpeg';
 import img6 from '../images/download (2).jpeg';
 const services = {
   rescue: {
-    icon: <Wrench size={44} color="#FFF" style={{marginBottom: '1rem'}} />, 
+    icon: <Wrench size={44} color="#ffebc6" style={{marginBottom: '1rem'}} />, 
     title: 'إنقاذ السيارات',
     desc: 'خدمة إنقاذ السيارات المتكاملة على مدار الساعة! سواء كنت عالقًا على الطريق السريع أو في منطقة نائية، فريقنا المدرب على أعلى مستوى جاهز لمساعدتك في أسرع وقت ممكن. نقدم حلولًا شاملة لجميع أعطال السيارات بدءًا من الأعطال الميكانيكية المفاجئة وحتى حوادث الطرق. نستخدم أحدث معدات الإنقاذ ذات التقنية العالية لضمان نقل سيارتك بأمان تام إلى أقرب مركز صيانة أو الوجهة التي تختارها دون أي خدوش أو أضرار إضافية. خدمتنا تغطي جميع أنواع المركبات من السيارات الصغيرة وحتى الشاحنات الثقيلة.',
     image: img1,
@@ -22,7 +22,7 @@ const services = {
     ]
   },
   equipment: {
-    icon: <Lightbulb size={44} color="#FFF" style={{marginBottom: '1rem'}} />, 
+    icon: <Lightbulb size={44} color="#ffebc6" style={{marginBottom: '1rem'}} />, 
     title: 'نقل المعدات',
     desc: 'نقل المعدات الثقيلة يتطلب دقة واحترافية عالية، وهذا بالضبط ما نقدمه! سواء كنت بحاجة إلى نقل كرفانات، معدات بناء، آلات صناعية أو أي معدات ثقيلة أخرى، فإن فريقنا المؤهل يضمن نقلها بأعلى معايير السلامة. نستخدم شاحنات مجهزة خصيصًا مزودة بأنظمة تثبيت ذكية لمنع أي اهتزازات أو أضرار أثناء النقل. نغطي جميع أنحاء مصر ونقدم حلولاً مخصصة لكل مشروع، بدءًا من التخطيط اللوجستي الدقيق وحتى التنفيذ الميداني مع ضمان وصول معداتك في الوقت المحدد وبالحالة المثالية.',
     image: img2,
@@ -35,7 +35,7 @@ const services = {
     ]
   },
   fuel: {
-    icon: <Package size={44} color="#FFF" style={{marginBottom: '1rem'}} />, 
+    icon: <Package size={44} color="#ffebc6" style={{marginBottom: '1rem'}} />, 
     title: 'التزود بالوقود',
     desc: 'لم يعد انقطاع الوقود مشكلة بعد الآن! مع خدمتنا المميزة للتزود بالوقود في الموقع، يمكنك طلب الوقود أينما كنت وفي أي وقت. سواء كنت على طريق سريع، في منطقة نائية، أو حتى في موقف سيارات، سنصل إليك بسرعة مع وقود عالي الجودة في عبوات آمنة ومعتمدة. الخدمة متاحة لجميع أنواع الوقود (بنزين، سولار، غاز) وبكميات تتناسب مع احتياجاتك. نضمن لك استئناف رحلتك في أسرع وقت ممكن دون الحاجة لترك سيارتك أو البحث عن محطة وقود قريبة.',
     image: img3,
@@ -48,7 +48,7 @@ const services = {
     ]
   },
   unlock: {
-    icon: <Truck size={44} color="#FFF" style={{marginBottom: '1rem'}} />, 
+    icon: <Truck size={44} color="#ffebc6" style={{marginBottom: '1rem'}} />, 
     title: 'فتح أبواب السيارات',
     desc: 'نسيان المفاتيح داخل السيارة أصبح مشكلة سهلة الحل! فريقنا المتخصص في فتح الأبواب المغلقة يمتلك أدوات متطورة تمكنه من فتح جميع أنواع السيارات (ياباني، أوروبي، أمريكي) دون أي خدوش أو أضرار للسيارة أو نظام القفل. نستخدم تقنيات غير تدخلية تحافظ على طلاء السيارة وسلامة الزجاج. الخدمة متاحة في جميع الأوقات، حتى في منتصف الليل، ونضمن الوصول خلال 20 دقيقة في المناطق الحضرية. كما نقدم خدمة استبدال البطاريات عن بُعد للسيارات الذكية التي تعمل بنظام keyless.',
     image: img4,
@@ -61,7 +61,7 @@ const services = {
     ]
   },
   battery: {
-    icon: <BatteryCharging size={44} color="#FFF" style={{marginBottom: '1rem'}} />, 
+    icon: <BatteryCharging size={44} color="#ffebc6" style={{marginBottom: '1rem'}} />, 
     title: 'وصلة بطارية',
     desc: 'انتهت مشكلة انتهاء شحن البطارية مع خدمة وصلة البطارية المتنقلة! فريقنا المدرب يصل إليك في أي مكان مزودًا بأحدث أجهزة الشحن المحمولة وكابلات ذات جودة عالية تناسب جميع أنواع السيارات (بنزين، ديزل، هايبرد). لا داعي للقلق إذا كانت سيارتك في جراج مغلق أو موقف تحت الأرض، فلدينا حلول لكل الظروف. نقدم تشخيصًا مجانيًا لحالة البطارية ونظام الشحن، مع نصائح خبراء لتفادي الأعطال المستقبلية. كما نوفر خدمة بيع وتركيب بطاريات جديدة في الموقع بضمان يصل إلى 3 سنوات.',
     image: img5,
@@ -74,7 +74,7 @@ const services = {
     ]
   },
   tires: {
-    icon: <Users size={44} color="#FFF" style={{marginBottom: '1rem'}} />, 
+    icon: <Users size={44} color="#ffebc6" style={{marginBottom: '1rem'}} />, 
     title: 'تغيير الإطارات',
     desc: 'تغيير الإطارات في الطريق أصبح أسهل وأسرع مع خدمتنا المتنقلة! سواء كان لديك إطار مثقوب، انفجار مفاجئ، أو تحتاج لتركيب إطارات الشتاء، فإن فريقنا المدرب يصل إليك في أسرع وقت مجهزًا بجميع الأدوات اللازمة والمعدات الأصلية لضمان تركيب مثالي. نستخدم رافعات هيدروليكية خاصة تحمي هيكل سيارتك من الخدوش، كما نوفر خدمة موازنة العجلات في الموقع باستخدام أجهزة محمولة. نعمل مع جميع أنواع الإطارات (راديال، تيوبلس، run-flat) ونقدم ضمانًا على جودة التركيب. كما يمكنك طلب إطارات جديدة نوردها لك ونركبها فورًا.',
     image: img6,
@@ -93,19 +93,19 @@ const ServiceDetail = () => {
   const service = services[serviceId];
 
   if (!service) {
-    return <div style={{textAlign:'center', margin:'3rem 0', fontSize:'1.3rem', color:'#212D40'}}>الخدمة غير موجودة</div>;
+    return <div style={{textAlign:'center', margin:'3rem 0', fontSize:'1.3rem', color:'#003844'}}>الخدمة غير موجودة</div>;
   }
 
   return (
-    <section style={{maxWidth:'700px', margin:'3rem auto', background:'#364156', borderRadius:'1.5rem', boxShadow:'0 4px 24px rgba(0,0,0,0.10)', padding:'2.5rem 1.5rem', textAlign:'center', border:'1px solid #7D4E57'}}>
+    <section style={{maxWidth:'700px', margin:'3rem auto', background:'#006c67', borderRadius:'1.5rem', boxShadow:'0 4px 24px rgba(0,0,0,0.10)', padding:'2.5rem 1.5rem', textAlign:'center', border:'1px solid #f194b4'}}>
       {service.icon}
-      <div style={{fontWeight:'bold', fontSize:'2rem', marginBottom:'1.2rem', color:'#FFF'}}>{service.title}</div>
+      <div style={{fontWeight:'bold', fontSize:'2rem', marginBottom:'1.2rem', color:'#ffebc6'}}>{service.title}</div>
       <img src={service.image} alt={service.title} style={{width:'100%', maxWidth:'400px', borderRadius:'1rem', margin:'1.5rem auto', boxShadow:'0 2px 8px rgba(0,0,0,0.07)'}} />
-      <div style={{fontSize:'1.15rem', color:'#d66853', lineHeight:'2', marginBottom:'1.5rem'}}>{service.desc}</div>
+      <div style={{fontSize:'1.15rem', color:'#f194b4', lineHeight:'2', marginBottom:'1.5rem'}}>{service.desc}</div>
       {service.more && (
         <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
           {service.more.map((p, idx) => (
-            <li key={idx} style={{fontSize:'1.05rem', color:'#fff', background:'#222', borderRadius:'0.7rem', padding:'1rem', margin:'1rem 0', boxShadow:'0 1px 4px rgba(0,0,0,0.04)'}}>{p}</li>
+            <li key={idx} style={{fontSize:'1.05rem', color:'#003844', background:'#ffebc6', borderRadius:'0.7rem', padding:'1rem', margin:'1rem 0', boxShadow:'0 1px 4px rgba(0,0,0,0.04)'}}>{p}</li>
           ))}
         </ul>
       )}
