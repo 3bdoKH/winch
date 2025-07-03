@@ -255,7 +255,7 @@ body {
   margin: 0 1rem;
   position: absolute;
   z-index: 1002;
-  top: 65px;
+  top: 20px;
   left: 5px;
 }
 .hamburger span {
@@ -410,12 +410,36 @@ body {
 .floating-phone-btn {
   display: none;
 }
+.floating-phone-btn-wa {
+  display: none;
+}
 
 @media (max-width: 700px) {
   .floating-phone-btn {
     display: flex;
     position: fixed;
     bottom: 70px;
+    right: 18px;
+    z-index: 1200;
+    background: var(--color-dark);
+    color: var(--color-accent2);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    font-size: 1.7rem;
+    border: 2px solid var(--color-accent2);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  header > a{
+    display: none !important;
+  }
+  .floating-phone-btn-wa {
+    display: flex;
+    position: fixed;
+    bottom: 140px;
     right: 18px;
     z-index: 1200;
     background: var(--color-dark);

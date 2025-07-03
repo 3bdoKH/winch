@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import './App.css';
-import { Home as HomeIcon, Package, MapPin, Phone, Mail } from 'lucide-react';
+import { Home as HomeIcon, Package, MapPin, Phone, Mail, MessageCircleMore } from 'lucide-react';
 import logo from './images/logo.png';
 
 // Import pages
@@ -25,9 +25,9 @@ function App() {
     <>
       {/* Header & Navigation */}
       <header className="header">
-          <img src={logo} alt="ونش إنقاذ عمرو بحر" style={{ maxHeight: 48, marginLeft: 12, borderRadius: '0.5rem'}} />
-        <Link to="/" style={{ color: '#d66853', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.7rem', justifyContent: 'center' }}>
-          ونش إنقاذ عمرو بحر
+          <img src={logo} alt="ونش إنقاذ محمد بحر" style={{ maxHeight: 48, marginLeft: 12, borderRadius: '0.5rem'}} />
+        <Link to="/" className='header-title' style={{ color: '#d66853', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.7rem', justifyContent: 'center' }}>
+          ونش إنقاذ محمد بحر
         </Link>
       </header>
       {/* Hamburger for mobile */}
@@ -91,6 +91,10 @@ function App() {
         </Link>
       </nav>
 
+      {/* Floating Phone Button (Mobile Only) */}
+      <a href="https://wa.me/+2001044844492" className="floating-phone-btn-wa" aria-label="اتصال سريع">
+      <MessageCircleMore  size={32}/>
+      </a>
       {/* Floating Phone Button (Mobile Only) */}
       <a href="tel:01044844492" className="floating-phone-btn" aria-label="اتصال سريع">
         <Phone size={32} />

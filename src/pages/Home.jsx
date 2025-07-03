@@ -89,6 +89,34 @@ const Home = () => {
 
   return (
     <>
+      <style>{`
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+`}</style>
+      {/* Marquee above the gallery section */}
+      <div style={{
+        width: '100%',
+        background: '#ffb100',
+        color: '#003844',
+        fontWeight: 'bold',
+        fontSize: '1.25rem',
+        padding: '0.5rem 0',
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        position: 'relative',
+        marginBottom: '0.5rem',
+      }}>
+        <div style={{
+          display: 'inline-block',
+          paddingLeft: '100%',
+          animation: 'marquee 12s linear infinite',
+        }}>
+          ونش محمد بحر لإنقاذ السيارات 01044844492
+        </div>
+      </div>
+
       {/* Gallery Section */}
       <div className="gallery-container">
         <img src={galleryImages[current]} alt={`معرض ${current + 1}`} className="gallery-image fade-anim" />
@@ -126,10 +154,10 @@ const Home = () => {
       <section style={{display: 'flex', flexWrap: 'wrap', background: '#003844', color: '#ffebc6', padding: '0', margin: '0 0 2rem 0', minHeight: '350px'}}>
         {/* Yellow CTA box */}
         <div style={{background: '#ffb100', color: '#003844', flex: '1 1 320px', minWidth: '320px', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', textAlign: 'right'}}>
-          <div style={{fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '1rem'}}>ونش انقاذ عمرو بحر</div>
+          <div style={{fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '1rem'}}>ونش انقاذ محمد بحر</div>
           <div style={{fontWeight: 'bold', fontSize: '2rem', lineHeight: '1.3', marginBottom: '1.5rem'}}>اطلب ونش انقاذ سيارات دلوقتي بكل سهولة.</div>
           <div style={{fontSize: '1.1rem', marginBottom: '1.5rem'}}>
-            ونش انقاذ عمرو بحر أسرع وأرخص ونش انقاذ في مصر كل ما عليك فقط هو الاتصال بنا وتحديد موقعك وسيتم ربطك بأقرب ونش إنقاذ ليقوم بمساعدتك في انقاذ و نقل السيارة إلى أي جهة.
+            ونش انقاذ محمد بحر أسرع وأرخص ونش انقاذ في مصر كل ما عليك فقط هو الاتصال بنا وتحديد موقعك وسيتم ربطك بأقرب ونش إنقاذ ليقوم بمساعدتك في انقاذ و نقل السيارة إلى أي جهة.
           </div>
         </div>
         {/* Blue features grid */}
@@ -181,7 +209,7 @@ const Home = () => {
         <div style={{fontWeight: 'bold', fontSize: '2rem', marginBottom: '1.2rem', lineHeight: '1.2', color: '#f194b4'}}>
           <span>مميزات ونش انقاذ سيارات </span>
           <span style={{color: '#003844', position: 'relative', zIndex: 1}}>
-          عمرو بحر
+          محمد بحر
             <span style={{
               display: 'block',
               height: '7px',
@@ -286,7 +314,7 @@ const Home = () => {
           marginRight: 'auto',
           marginLeft: 'auto',
         }}>
-          ونش انقاذ عمرو بحر هو اسرع و ارخص ونش انقاذ سيارات اتصل على رقم ونش الانقاذ خدمة 24 ساعة اتصل بنا الان ليصلك اقرب ونش انقاذ سيارات بخصم 50%.
+          ونش انقاذ محمد بحر هو اسرع و ارخص ونش انقاذ سيارات اتصل على رقم ونش الانقاذ خدمة 24 ساعة اتصل بنا الان ليصلك اقرب ونش انقاذ سيارات بخصم 50%.
         </div>
       </section>
     </>
