@@ -205,7 +205,7 @@ const Home = () => {
   alignItems: 'center',
   justifyContent: 'center',
   gap: '0.4rem',
-  fontSize: '1.35rem',
+  fontSize: '1.35rem', 
   fontWeight: 'bold',
   margin: '1.5rem 0 0.5rem 0',
   direction: 'rtl',
