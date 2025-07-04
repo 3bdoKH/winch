@@ -117,6 +117,56 @@ const Home = () => {
             border-bottom: none !important;
           }
         }
+
+        .gallery-content-box {
+            background: linear-gradient(135deg, #fffbe6 60%, #fff 100%);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px #ffe06655, 0 2px 16px #0001;
+            border: 2.5px solid #ffe066;
+            padding: 2.2rem 2.5rem 1.7rem 2.5rem;
+            margin: -2.5rem auto 2.5rem auto;
+            max-width: 520px;
+            text-align: center;
+            font-family: 'Tajawal', Arial, sans-serif;
+            position: relative;
+            z-index: 3;
+            animation: fadeInBox 1.1s cubic-bezier(.4,0,.2,1);
+        }
+        .gallery-content-box .gallery-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.1rem;
+            font-size: 2.3rem;
+            color: #ffb100;
+            filter: drop-shadow(0 2px 6px #ffe06688);
+        }
+        .gallery-content-box p {
+            color: #003366;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+        @keyframes fadeInBox {
+            0% { opacity: 0; transform: translateY(30px) scale(0.97); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @media (max-width: 600px) {
+            .gallery-content-box {
+                padding: 1.2rem 0.7rem 1rem 0.7rem;
+                max-width: 98vw;
+                font-size: 1rem;
+                margin: 1rem auto 1.5rem auto;
+            }
+            .gallery-content-box .gallery-icon {
+                font-size: 1.5rem;
+                margin-bottom: 0.7rem;
+            }
+            .gallery-content-box p {
+                font-size: 1.05rem;
+            }
+        }
       `}
       </style>
       {/* Marquee above the gallery section */}
@@ -137,18 +187,13 @@ const Home = () => {
       </div>
 
       {/* Gallery Section */}
-      <div className="section_top">
-        <div className="content">
-          <span>
-            انقاذ سيارات
-          </span>
-          <h2>
-            ونش انقاذ
-          </h2>
-          <p>
-             ونش انقاذ سيارات بخصم 50%.
-          </p>
+      <div className="section_top"></div>
+      <div className="gallery-content-box">
+        <div className="gallery-icon" aria-hidden="true">
+          {/* Star icon SVG */}
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffb100" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
         </div>
+        <p>ونش انقاذ سيارات بخصم 50%.</p>
       </div>
 
       
