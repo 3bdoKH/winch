@@ -1,148 +1,141 @@
 import React, { useState, useEffect, useRef } from 'react';
-import '../pages/HomeGallery.css';
 import { Brain, HardHat, MessageSquare, Factory, ChevronRight, ChevronLeft, Quote, Wrench, Lightbulb, Package, BatteryCharging, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-// Import all gallery images
-import img1 from '../images/images.jpeg';
-import img2 from '../images/images (1).jpeg';
-import img3 from '../images/images (3).jpeg';
-import img4 from '../images/download.jpeg';
-import img5 from '../images/download (1).jpeg';
-import img6 from '../images/download (2).jpeg';
-
+import './HomeGallery.css'
 import extraImg1 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
 import extraImg2 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
 import extraImg3 from '../images/fuel.jpeg';
 import extraImg4 from '../images/battary.jpeg';
 import extraImg5 from '../images/images (3).jpeg';
 
-const galleryImages = [img1, img2, img3, img4, img5, img6];
+import img1 from '../images/images.jpeg';
+import img2 from '../images/images (1).jpeg';
+import img3 from '../images/images (2).jpeg';
+import img4 from '../images/images (3).jpeg';
+import img5 from '../images/download.jpeg';
+import img6 from '../images/download (1).jpeg';
+import img7 from '../images/download (2).jpeg';
+import img8 from '../images/battary.jpeg';
+import img9 from '../images/fuel.jpeg';
+import img10 from '../images/logo.png';
 
 const extraServices = [
   {
     id: 'rescue',
-    icon: <Wrench size={44} color="#212D40" style={{marginBottom: '1rem'}} />, 
+    icon: <Wrench size={44} color="#0077ff" style={{marginBottom: '1rem'}} />, 
     title: 'إنقاذ السيارات',
     desc: 'نقدم جميع خدمات إنقاذ السيارات بأسرع وأفضل خدمة إنقاذ للسيارات في مصر بشكل غير مسبوق ..',
   },
   {
     id: 'equipment',
-    icon: <Lightbulb size={44} color="#212D40" style={{marginBottom: '1rem'}} />, 
+    icon: <Lightbulb size={44} color="#0077ff" style={{marginBottom: '1rem'}} />, 
     title: 'نقل المعدات',
     desc: 'نقدم جميع خدمات نقل المعدات " سيارات نقل ، كرفانات ، معدات وكراكات ، فشلات " وغيرها الكثير ..',
   },
   {
     id: 'fuel',
-    icon: <Package size={44} color="#212D40" style={{marginBottom: '1rem'}} />, 
+    icon: <Package size={44} color="#0077ff" style={{marginBottom: '1rem'}} />, 
     title: 'التزود بالوقود',
     desc: 'اذا نفذ وقود سيارتك فلا داعي للقلق، فنحن نقدم خدمة التزود بالوقود في الطريق ، فريق أوتوبيات جاهز لتزويدكم بالوقود ..',
   },
   {
     id: 'battery',
-    icon: <BatteryCharging size={44} color="#212D40" style={{marginBottom: '1rem'}} />, 
+    icon: <BatteryCharging size={44} color="#0077ff" style={{marginBottom: '1rem'}} />, 
     title: 'وصلة بطارية',
     desc: 'نقدم جميع خدمات أعطال البطاريات والتي تحتاج الي وصلة . فريق ونش انقاذ أوتوبيات جاهز وعلي أتم الاستعداد لمساعدتكم ..',
   },
   {
     id: 'tires',
-    icon: <Users size={44} color="#212D40" style={{marginBottom: '1rem'}} />, 
+    icon: <Users size={44} color="#0077ff" style={{marginBottom: '1rem'}} />, 
     title: 'تغيير الاطارات',
     desc: 'اذا حصل ظرف طارئ في الطريق وقد احتجت الي تغيير او استبدال احدي اطارات سيارتك فنحن نقدم خدمة تغيير / استبدال الاطارات في الطريق ..',
   },
 ];
 
 const Home = () => {
-  const [current, setCurrent] = useState(0);
-  const total = galleryImages.length;
-  const [isPaused, setIsPaused] = useState(false);
-  const pauseTimeout = useRef(null);
-
-  // Auto-slide effect
-  useEffect(() => {
-    if (isPaused) return;
-    const timer = setTimeout(() => {
-      setCurrent((prev) => (prev + 1) % total);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, [current, isPaused, total]);
-
-  // Pause auto-slide on manual navigation
-  const pauseAutoSlide = () => {
-    setIsPaused(true);
-    if (pauseTimeout.current) clearTimeout(pauseTimeout.current);
-    pauseTimeout.current = setTimeout(() => setIsPaused(false), 5000);
-  };
-
-  const goNext = () => {
-    setCurrent((prev) => (prev + 1) % total);
-    pauseAutoSlide();
-  };
-  const goPrev = () => {
-    setCurrent((prev) => (prev - 1 + total) % total);
-    pauseAutoSlide();
-  };
-  const goTo = (idx) => {
-    setCurrent(idx);
-    pauseAutoSlide();
-  };
-
   return (
     <>
-      <style>{`
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-`}</style>
+      <style>
+      {`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-100%); }
+        }
+        .marquee-container {
+            background: #f5f5f5;
+            padding: 2rem 0;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .marquee-track {
+            display: flex;
+            animation: marquee1 20s linear infinite;
+            gap: 2rem;
+        }
+
+        .marquee-item {
+            min-width: 200px;
+            height: 150px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
+        .marquee-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes marquee1 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-100% - 2rem)); } /* Adjust for gap */
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .marquee-item { min-width: 150px; height: 100px; }
+        }
+      `}
+      </style>
       {/* Marquee above the gallery section */}
       <div style={{
         width: '100%',
-        background: '#ffb100',
-        color: '#003844',
+        background: 'var(--color-accent)',
+        color: '#fff',
         fontWeight: 'bold',
         fontSize: '1.25rem',
         padding: '0.5rem 0',
         overflow: 'hidden',
         whiteSpace: 'nowrap',
         position: 'relative',
-        marginBottom: '0.5rem',
       }}>
         <div style={{
           display: 'inline-block',
           paddingLeft: '100%',
-          animation: 'marquee 12s linear infinite',
+          animation: 'marquee 24s linear infinite',
         }}>
-          ونش محمد بحر لإنقاذ السيارات 01044844492
+          ونش محمد بحر لإنقاذ السيارات 01044844492 – ونش انقاذ سيارات – اسرع ونش انقاذ – اقرب ونش انقاذ – انقاذ سيارات – ارخص ونش انقاذ – تليفون ونش انقاذ – رقم ونش انقاذ – ونش انقاذ بالقرب مني
         </div>
       </div>
 
       {/* Gallery Section */}
-      <div className="gallery-container">
-        <img src={galleryImages[current]} alt={`معرض ${current + 1}`} className="gallery-image fade-anim" />
-        <div className="gallery-arrows">
-          <button className="gallery-arrow" onClick={goPrev} aria-label="السابق"><ChevronRight size={24} /></button>
-          <button className="gallery-arrow" onClick={goNext} aria-label="التالي"><ChevronLeft size={24} /></button>
-        </div>
-        <div className="gallery-dots">
-          {galleryImages.map((_, idx) => (
-            <div
-              key={idx}
-              className={`gallery-dot${idx === current ? ' active' : ''}`}
-              onClick={() => goTo(idx)}
-            />
-          ))}
+      <div className="section_top">
+        <div className="content">
+          <span>إنقاذ السيارات</span>
+          <h2> ونش إنقاذ </h2>
+          <p>
+            اقرب ونش انقاذ سيارات بخصم 50%
+          </p>
         </div>
       </div>
 
+      
+
       {/* Hero Title/Desc/Phone with gradient background */}
-      <section className="hero" id="home" style={{
-        background: 'linear-gradient(90deg, #003844 60%, #ffb100 100%)',
-        color: '#ffebc6',
-        padding: '3rem 1rem 2rem 1rem',
-        textAlign: 'center',
-        marginBottom: '0'
-      }}>
+      <section className="hero" id="home" style={{background: 'var(--color-muted)', color: 'var(--color-text)'}}>
         <div className="hero-title">أسرع ونش إنقاذ سيارات في مصر</div>
         <div className="hero-desc">
           خدمة إنقاذ سيارات على مدار الساعة في جميع أنحاء الجمهورية. اتصل الآن ليصلك أقرب ونش إنقاذ بأقل سعر وأعلى جودة.
@@ -151,9 +144,9 @@ const Home = () => {
       </section>
 
       {/* Features Section (from screenshot) */}
-      <section style={{display: 'flex', flexWrap: 'wrap', background: '#003844', color: '#ffebc6', padding: '0', margin: '0 0 2rem 0', minHeight: '350px'}}>
+      <section style={{display: 'flex', flexWrap: 'wrap', background: 'var(--color-bg)', color: 'var(--color-text)', padding: '0', margin: '0 0 2rem 0', minHeight: '350px'}}>
         {/* Yellow CTA box */}
-        <div style={{background: '#ffb100', color: '#003844', flex: '1 1 320px', minWidth: '320px', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', textAlign: 'right'}}>
+        <div style={{background: 'var(--color-accent)', color: 'var(--color-bg)', flex: '1 1 320px', minWidth: '320px', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
           <div style={{fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '1rem'}}>ونش انقاذ محمد بحر</div>
           <div style={{fontWeight: 'bold', fontSize: '2rem', lineHeight: '1.3', marginBottom: '1.5rem'}}>اطلب ونش انقاذ سيارات دلوقتي بكل سهولة.</div>
           <div style={{fontSize: '1.1rem', marginBottom: '1.5rem'}}>
@@ -163,38 +156,99 @@ const Home = () => {
         {/* Blue features grid */}
         <div style={{flex: '2 1 500px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'stretch', padding: '2.5rem 1rem', gap: '2rem'}}>
           {/* Feature: السرعة */}
-          <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: '#ffebc6', textAlign: 'center'}}>
-            <Brain size={48} color="#f194b4" style={{marginBottom: '1rem'}} />
-            <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem'}}>السرعة</div>
-            <div style={{fontSize: '1.05rem'}}>نصلك في غضون 10 دقائق بحد أقصى، ونقدم خدمة إنقاذ السيارات بسرعة واحترافية عالية.</div>
+          <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: 'var(--color-accent)', textAlign: 'center'}}>
+            <Brain size={48} color="#0077ff" style={{marginBottom: '1rem'}} />
+            <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem', color:'var(--color-text)'}}>السرعة</div>
+            <div style={{fontSize: '1.05rem', color:'var(--color-text)'}}>نصلك في غضون 10 دقائق بحد أقصى، ونقدم خدمة إنقاذ السيارات بسرعة واحترافية عالية.</div>
           </div>
           {/* Feature: خدمة 24 ساعة */}
-          <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: '#ffebc6', textAlign: 'center'}}>
-            <HardHat size={48} color="#f194b4" style={{marginBottom: '1rem'}} />
-            <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem'}}>خدمة 24 ساعة</div>
-            <div style={{fontSize: '1.05rem'}}>الأوناش متاحة طوال اليوم 24 ساعة طوال أيام الأسبوع في أي وقت من اليوم، نهاراً أو ليلاً.</div>
+          <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: 'var(--color-accent)', textAlign: 'center'}}>
+            <HardHat size={48} color="#0077ff" style={{marginBottom: '1rem'}} />
+            <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem', color:'var(--color-text)'}}>خدمة 24 ساعة</div>
+            <div style={{fontSize: '1.05rem', color:'var(--color-text)'}}>الأوناش متاحة طوال اليوم 24 ساعة طوال أيام الأسبوع في أي وقت من اليوم، نهاراً أو ليلاً.</div>
           </div>
           {/* Feature: الانتشار */}
-          <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: '#ffebc6', textAlign: 'center'}}>
-            <MessageSquare size={48} color="#f194b4" style={{marginBottom: '1rem'}} />
-            <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem'}}>الانتشار</div>
-            <div style={{fontSize: '1.05rem'}}>تنتشر جميع سيارات الانقاذ لدينا في جميع أنحاء الجمهورية والصياحين العامة والطرق الرئيسية لذلك نحن الأقرب إليك.</div>
+          <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: 'var(--color-accent)', textAlign: 'center'}}>
+            <MessageSquare size={48} color="#0077ff" style={{marginBottom: '1rem'}} />
+            <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem', color:'var(--color-text)'}}>الانتشار</div>
+            <div style={{fontSize: '1.05rem', color:'var(--color-text)'}}>تنتشر جميع سيارات الانقاذ لدينا في جميع أنحاء الجمهورية والصياحين العامة والطرق الرئيسية لذلك نحن الأقرب إليك.</div>
           </div>
           {/* Feature: الخبرة */}
-          <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: '#ffebc6', textAlign: 'center'}}>
-            <Factory size={48} color="#f194b4" style={{marginBottom: '1rem'}} />
-            <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem'}}>الخبرة</div>
-            <div style={{fontSize: '1.05rem'}}>يتمتع فريق العمل لدينا بخبرة واسعة إلى جانب معرفة السائقين بالطرق والاختصارات التي تضمن سرعة الوصول.</div>
+          <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: 'var(--color-accent)', textAlign: 'center'}}>
+            <Factory size={48} color="#0077ff" style={{marginBottom: '1rem'}} />
+            <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem', color:'var(--color-text)'}}>الخبرة</div>
+            <div style={{fontSize: '1.05rem', color:'var(--color-text)'}}>يتمتع فريق العمل لدينا بخبرة واسعة إلى جانب معرفة السائقين بالطرق والاختصارات التي تضمن سرعة الوصول.</div>
           </div>
         </div>
       </section>
+
+
+
+    <div class="marquee-container">
+        <div class="marquee-track">
+            <div class="marquee-item">
+                <img src={img1} alt="Image 1" />
+            </div>
+            <div class="marquee-item">
+                <img src={img2} alt="Image 2" />
+            </div>
+            <div class="marquee-item">
+                <img src={img3} alt="Image 3" />
+            </div>
+            <div class="marquee-item">
+                <img src={img4} alt="Image 4" />
+            </div>
+            <div class="marquee-item">
+                <img src={img5} alt="Image 5" />
+            </div>
+            <div class="marquee-item">
+                <img src={img6} alt="Image 6" />
+            </div>
+            <div class="marquee-item">
+                <img src={img7} alt="Image 7" />
+            </div>
+            <div class="marquee-item">
+                <img src={img8} alt="Image 8" />
+            </div>
+            <div class="marquee-item">
+                <img src={img9} alt="Image 9" />
+            </div>
+            <div class="marquee-item">
+                <img src={img1} alt="Image 1" />
+            </div>
+            <div class="marquee-item">
+                <img src={img2} alt="Image 2" />
+            </div>
+            <div class="marquee-item">
+                <img src={img3} alt="Image 3" />
+            </div>
+            <div class="marquee-item">
+                <img src={img4} alt="Image 4" />
+            </div>
+            <div class="marquee-item">
+                <img src={img5} alt="Image 5" />
+            </div>
+            <div class="marquee-item">
+                <img src={img6} alt="Image 6" />
+            </div>
+            <div class="marquee-item">
+                <img src={img7} alt="Image 7" />
+            </div>
+            <div class="marquee-item">
+                <img src={img8} alt="Image 8" />
+            </div>
+            <div class="marquee-item">
+                <img src={img9} alt="Image 9" />
+            </div>
+        </div>
+    </div>
 
       {/* Otobiat Features Quote Section */}
       <section style={{
         position: 'relative',
         maxWidth: '600px',
         margin: '2.5rem auto',
-        background: '#006c67',
+        background: ' var(--color-muted)',
         borderRadius: '1.5rem',
         boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
         padding: '2.5rem 1.5rem 2rem 1.5rem',
@@ -203,12 +257,12 @@ const Home = () => {
         border: '1px solid #f194b4'
       }}>
         {/* Decorative yellow quotes */}
-        <Quote size={90} color="#ffb100" style={{position: 'absolute', top: '10px', left: '10px', opacity: 0.13, zIndex: 0}} />
-        <Quote size={90} color="#ffb100" style={{position: 'absolute', bottom: '10px', right: '10px', opacity: 0.13, zIndex: 0, transform: 'scaleX(-1)'}} />
+        <Quote size={90} color="#0077ff" style={{position: 'absolute', top: '10px', left: '10px', opacity: 0.13, zIndex: 0}} />
+        <Quote size={90} color="#0077ff" style={{position: 'absolute', bottom: '10px', right: '10px', opacity: 0.13, zIndex: 0, transform: 'scaleX(-1)'}} />
         {/* Title with two-tone and underline */}
-        <div style={{fontWeight: 'bold', fontSize: '2rem', marginBottom: '1.2rem', lineHeight: '1.2', color: '#f194b4'}}>
+        <div style={{fontWeight: 'bold', fontSize: '2rem', marginBottom: '1.2rem', lineHeight: '1.2', color: 'var(--color-accent)'}}>
           <span>مميزات ونش انقاذ سيارات </span>
-          <span style={{color: '#003844', position: 'relative', zIndex: 1}}>
+          <span style={{color: 'var(--color-accent)', position: 'relative', zIndex: 1}}>
           محمد بحر
             <span style={{
               display: 'block',
@@ -250,7 +304,7 @@ const Home = () => {
         <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', marginTop: '2rem'}}>
           {[extraImg1, extraImg2, extraImg3, extraImg4, extraImg5].map((img, idx) => (
             <Link to={`/service/${extraServices[idx].id}`} key={extraServices[idx].id} style={{textDecoration: 'none'}}> 
-              <div style={{background:'#006c67', color:'#ffebc6', borderRadius:'1rem', padding:'2rem 1rem', boxShadow:'0 0 40px #00384466 inset', textAlign:'center', transition:'transform 0.2s', fontWeight:500, minHeight:'200px'}} className="service-card-hover">
+              <div style={{background:'var(--color-muted)', color:'var(--color-text)', borderRadius:'1rem', padding:'2rem 1rem', boxShadow:'0 0 40px #00384466 ', textAlign:'center', transition:'transform 0.2s', fontWeight:500, minHeight:'200px'}} className="service-card-hover">
                 {extraServices[idx].icon}
                 <div style={{fontWeight:'bold', fontSize:'1.2rem', marginBottom:'0.7rem'}}>{extraServices[idx].title}</div>
                 <div style={{fontSize:'1rem'}}>{extraServices[idx].desc}</div>
@@ -276,7 +330,140 @@ const Home = () => {
       </section>
 
       {/* Call to Action Section - Bottom of Home Page */}
-      <section style={{
+     
+
+        {/* Contact Section */}
+        <section className="contact-section">
+          <div className="contact-info">
+            <div style={{fontSize: '1.3rem', fontWeight: 'bold', marginBottom: '1rem'}}>تواصل معنا</div>
+            <div style={{fontSize: '1.1rem', marginBottom: '0.5rem'}}>هاتف: 01044844492</div>
+            <div style={{fontSize: '1.1rem', marginBottom: '0.5rem'}}>واتساب: 01044844492</div>
+            <div style={{fontSize: '1.1rem'}}>خدمة 24 ساعة طوال أيام الأسبوع</div>
+          </div>
+        </section>
+
+        {/* Additional Info Section */}
+        <section style={{
+          background: 'var(--color-bg)',
+          padding: '3rem 1rem',
+          textAlign: 'center'
+        }}>
+          <div style={{
+            maxWidth: '800px',
+            margin: '0 auto'
+          }}>
+            <h2 style={{
+              color: 'var(--color-accent)',
+              fontSize: '2rem',
+              fontWeight: 'bold',
+              marginBottom: '2rem'
+            }}>
+              ونش انقاذ سيارات في مصر
+            </h2>
+            
+            <div style={{
+              fontSize: '1.1rem',
+              lineHeight: '1.8',
+              color: 'var(--color-text)',
+              textAlign: 'right'
+            }}>
+              <p style={{marginBottom: '1.5rem'}}>
+                نحن نقدم خدمة ونش انقاذ سيارات في جميع أنحاء مصر بأعلى جودة وأسرع وقت. فريقنا المدرب على أعلى مستوى جاهز لمساعدتك في أي وقت من اليوم.
+              </p>
+              
+              <h3 style={{
+                color: 'var(--color-accent)',
+                fontSize: '1.5rem',
+                fontWeight: 'bold',
+                marginBottom: '1rem'
+              }}>
+                خدماتنا تشمل:
+              </h3>
+              
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                marginBottom: '1.5rem'
+              }}>
+                <li style={{
+                  background: 'var(--color-muted)',
+                  padding: '0.8rem 1rem',
+                  margin: '0.5rem 0',
+                  borderRadius: '0.5rem',
+                  fontSize: '1rem'
+                }}>• إنقاذ السيارات من الحوادث</li>
+                <li style={{
+                  background: 'var(--color-muted)',
+                  padding: '0.8rem 1rem',
+                  margin: '0.5rem 0',
+                  borderRadius: '0.5rem',
+                  fontSize: '1rem'
+                }}>• نقل السيارات المعطلة</li>
+                <li style={{
+                  background: 'var(--color-muted)',
+                  padding: '0.8rem 1rem',
+                  margin: '0.5rem 0',
+                  borderRadius: '0.5rem',
+                  fontSize: '1rem'
+                }}>• خدمة التزود بالوقود</li>
+                <li style={{
+                  background: 'var(--color-muted)',
+                  padding: '0.8rem 1rem',
+                  margin: '0.5rem 0',
+                  borderRadius: '0.5rem',
+                  fontSize: '1rem'
+                }}>• وصلة البطارية</li>
+                <li style={{
+                  background: 'var(--color-muted)',
+                  padding: '0.8rem 1rem',
+                  margin: '0.5rem 0',
+                  borderRadius: '0.5rem',
+                  fontSize: '1rem'
+                }}>• فتح أبواب السيارات</li>
+              </ul>
+              
+              <div style={{
+                background: 'var(--color-accent)',
+                color: 'var(--color-bg)',
+                padding: '1.5rem',
+                borderRadius: '1rem',
+                marginTop: '2rem'
+              }}>
+                <h4 style={{
+                  fontSize: '1.3rem',
+                  fontWeight: 'bold',
+                  marginBottom: '1rem'
+                }}>
+                  لماذا تختارنا؟
+                </h4>
+                <p style={{fontSize: '1rem', lineHeight: '1.6'}}>
+                  • أسعار منافسة وشفافة<br/>
+                  • خدمة 24 ساعة طوال أيام الأسبوع<br/>
+                  • فريق مدرب ومحترف<br/>
+                  • معدات حديثة وآمنة<br/>
+                  • وصول سريع خلال 10 دقائق
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* Keywords Section */}
+        <section style={{
+          background: 'var(--color-bg)',
+          color: 'var(--color-accent)',
+          textAlign: 'center',
+          padding: '2rem 1rem 1.5rem 1rem',
+          fontWeight: 'bold',
+          fontSize: '1.35rem',
+          lineHeight: '2.2',
+          letterSpacing: '0.5px',
+          direction: 'rtl',
+        }}>
+          ونش انقاذ – ونش انقاذ سيارات – ونش سيارة – اسرع ونش انقاذ – اقرب ونش انقاذ – انقاذ سيارات – ارخص ونش انقاذ – انقاذ السيارات – ونش عربيات – تليفون ونش انقاذ – رقم ونش انقاذ – ونش انقاذ بالقرب مني
+        </section>
+        <section style={{
         background: '#003844',
         color: '#ffebc6',
         textAlign: 'center',
@@ -317,8 +504,8 @@ const Home = () => {
           ونش انقاذ محمد بحر هو اسرع و ارخص ونش انقاذ سيارات اتصل على رقم ونش الانقاذ خدمة 24 ساعة اتصل بنا الان ليصلك اقرب ونش انقاذ سيارات بخصم 50%.
         </div>
       </section>
-    </>
-  );
-};
+      </>
+    );
+  };
 
 export default Home; 

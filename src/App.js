@@ -3,6 +3,8 @@ import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import './App.css';
 import { Home as HomeIcon, Package, MapPin, Phone, Mail, MessageCircleMore } from 'lucide-react';
 import logo from './images/logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 // Import pages
 import Home from './pages/Home';
@@ -79,7 +81,7 @@ function App() {
         </a>
         <Link to="/areas" className="mobile-bottom-nav__item">
           <MapPin size={28} />
-          <span>حول الانقاذ</span>
+          <span>دليل الانقاذ</span>
         </Link>
         <Link to="/services" className="mobile-bottom-nav__item">
           <Package size={28} />
@@ -93,7 +95,7 @@ function App() {
 
       {/* Floating Phone Button (Mobile Only) */}
       <a href="https://wa.me/+2001044844492" className="floating-phone-btn-wa" aria-label="اتصال سريع">
-      <MessageCircleMore  size={32}/>
+      <FontAwesomeIcon icon={faWhatsapp} />
       </a>
       {/* Floating Phone Button (Mobile Only) */}
       <a href="tel:01044844492" className="floating-phone-btn" aria-label="اتصال سريع">

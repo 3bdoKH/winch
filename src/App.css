@@ -1,11 +1,9 @@
-/* Color palette variables */
+/* Minimal, modern color palette */
 :root {
-  --color-darkest: #003844;
-  --color-dark: #006c67;
-  --color-mid: #ffebc6;
-  --color-accent1: #f194b4;
-  --color-accent2: #ffb100;
-  --color-light: #ffebc6;
+  --color-bg: #fff;
+  --color-text: #222;
+  --color-accent: #0077ff;
+  --color-muted: #f5f5f5;
 }
 
 .App {
@@ -50,32 +48,35 @@
 body {
   direction: rtl;
   font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
-  background: var(--color-mid);
-  color: var(--color-light);
+  background: var(--color-bg);
+  color: var(--color-text);
   margin: 0;
   padding: 0;
 }
 
 .header {
-  background: var(--color-dark);
-  color: var(--color-accent2);
+  background: var(--color-bg);
+  color: var(--color-accent);
   padding: 1rem 0;
   text-align: center;
   font-size: 2rem;
   letter-spacing: 2px;
   font-weight: bold;
+  display: flex;
+      align-items: center;
+      justify-content: space-evenly;
 }
 
 .nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  background: var(--color-darkest);
+  background: var(--color-bg);
   padding: 0.5rem 0;
 }
 
 .nav a {
-  color: var(--color-accent2);
+  color: var(--color-accent);
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
@@ -83,12 +84,12 @@ body {
 }
 
 .nav a:hover {
-  color: var(--color-light);
+  color: var(--color-text);
 }
 
 .hero {
-  background: linear-gradient(90deg, var(--color-dark) 60%, var(--color-accent2) 100%);
-  color: var(--color-light);
+  background: var(--color-muted);
+  color: var(--color-text);
   padding: 3rem 1rem 2rem 1rem;
   text-align: center;
   position: relative;
@@ -114,15 +115,15 @@ body {
 }
 
 .hero-phone {
-  background: var(--color-accent2);
-  color: var(--color-darkest);
+  background: var(--color-accent);
+  color: var(--color-bg);
   display: inline-block;
   padding: 0.7rem 2rem;
   border-radius: 2rem;
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: none;
 }
 
 .quick-access {
@@ -134,20 +135,20 @@ body {
 }
 
 .quick-access-item {
-  background: var(--color-dark);
-  color: var(--color-accent2);
+  background: var(--color-muted);
+  color: var(--color-text);
   padding: 1rem 2rem;
   border-radius: 1rem;
   font-size: 1.1rem;
   font-weight: 500;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: none;
   transition: background 0.2s;
   cursor: pointer;
 }
 
 .quick-access-item:hover {
-  background: var(--color-accent2);
-  color: var(--color-darkest);
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
 
 .section {
@@ -157,7 +158,7 @@ body {
 }
 
 .section-title {
-  color: var(--color-accent2);
+  color: var(--color-accent);
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -179,43 +180,43 @@ body {
 }
 
 .service-card {
-  background: var(--color-accent2);
-  color: var(--color-darkest);
+  background: var(--color-muted);
+  color: var(--color-text);
   border-radius: 1rem;
   padding: 1.5rem 1rem;
   min-width: 220px;
   max-width: 300px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  box-shadow: none;
   font-weight: 500;
   text-align: center;
 }
 
 .testimonials {
-  background: var(--color-mid);
+  background: var(--color-bg);
   padding: 2rem 1rem;
 }
 
 .testimonial {
-  background: var(--color-light);
-  border: 1px solid var(--color-mid);
-  color: var(--color-darkest);
+  background: var(--color-muted);
+  border: 1px solid var(--color-bg);
+  color: var(--color-text);
   border-radius: 1rem;
   padding: 1.5rem;
   margin: 1rem auto;
   max-width: 600px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: none;
   text-align: right;
 }
 
 .testimonial-author {
-  color: var(--color-dark);
+  color: var(--color-accent);
   font-weight: bold;
   margin-top: 0.5rem;
 }
 
 .contact-section {
-  background: var(--color-dark);
-  color: var(--color-accent2);
+  background: var(--color-muted);
+  color: var(--color-text);
   padding: 2rem 1rem;
   text-align: center;
 }
@@ -226,8 +227,8 @@ body {
 }
 
 .footer {
-  background: var(--color-darkest);
-  color: var(--color-accent2);
+  background: var(--color-bg);
+  color: var(--color-accent);
   text-align: center;
   padding: 1rem 0;
   font-size: 1rem;
@@ -263,7 +264,7 @@ body {
   width: 28px;
   height: 4px;
   margin: 4px 0;
-  background: var(--color-accent2);
+  background: var(--color-accent);
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -276,14 +277,14 @@ body {
   top: 60px;
   right: 0;
   width: 100vw;
-  background: var(--color-dark);
+  background: var(--color-bg);
   z-index: 1001;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   padding: 1.5rem 0 1rem 0;
   text-align: center;
 }
 .mobile-nav a {
-  color: var(--color-accent2);
+  color: var(--color-accent);
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 500;
@@ -292,7 +293,7 @@ body {
   transition: color 0.2s;
 }
 .mobile-nav a:hover {
-  color: var(--color-light);
+  color: var(--color-text);
 }
 
 /* Brick grid for quick-access */
@@ -309,20 +310,20 @@ body {
   min-width: 120px;
   max-width: 220px;
   text-align: center;
-  background: var(--color-dark);
-  color: var(--color-accent2);
+  background: var(--color-muted);
+  color: var(--color-text);
   padding: 1rem 0.5rem;
   border-radius: 1rem;
   font-size: 1.1rem;
   font-weight: 500;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: none;
   transition: background 0.2s, color 0.2s;
   cursor: pointer;
 }
 
 .brick:hover {
-  background: var(--color-accent2);
-  color: var(--color-darkest);
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
 
 @media (max-width: 700px) {
@@ -370,8 +371,8 @@ body {
     bottom: 0;
     left: 0;
     width: 100vw;
-    background: var(--color-dark);
-    border-top: 1.5px solid var(--color-darkest);
+    background: var(--color-bg);
+    border-top: 1.5px solid var(--color-muted);
     z-index: 1000;
     justify-content: space-around;
     align-items: center;
@@ -384,20 +385,20 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--color-light);
+    color: var(--color-text);
     text-decoration: none;
     font-size: 0.95rem;
     padding: 0.3rem 0 0.1rem 0;
     transition: background 0.15s, color 0.15s;
-    border-left: 1px solid var(--color-mid);
+    border-left: 1px solid var(--color-muted);
   }
   .mobile-bottom-nav__item:first-child {
-    border-right: 1px solid var(--color-mid);
+    border-right: 1px solid var(--color-muted);
   }
   .mobile-bottom-nav__item:active,
   .mobile-bottom-nav__item:hover {
-    background: var(--color-darkest);
-    color: var(--color-accent2);
+    background: var(--color-accent);
+    color: var(--color-bg);
   }
   .mobile-bottom-nav__item span {
     font-size: 0.85rem;
@@ -421,8 +422,8 @@ body {
     bottom: 70px;
     right: 18px;
     z-index: 1200;
-    background: var(--color-dark);
-    color: var(--color-accent2);
+    background: var(--color-accent);
+    color: var(--color-bg);
     border-radius: 50%;
     width: 56px;
     height: 56px;
@@ -430,7 +431,7 @@ body {
     justify-content: center;
     box-shadow: 0 4px 16px rgba(0,0,0,0.18);
     font-size: 1.7rem;
-    border: 2px solid var(--color-accent2);
+    border: 2px solid var(--color-accent);
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   }
   header > a{
@@ -442,8 +443,8 @@ body {
     bottom: 140px;
     right: 18px;
     z-index: 1200;
-    background: var(--color-dark);
-    color: var(--color-accent2);
+    background: var(--color-accent);
+    color: var(--color-bg);
     border-radius: 50%;
     width: 56px;
     height: 56px;
@@ -451,13 +452,13 @@ body {
     justify-content: center;
     box-shadow: 0 4px 16px rgba(0,0,0,0.18);
     font-size: 1.7rem;
-    border: 2px solid var(--color-accent2);
+    border: 2px solid var(--color-accent);
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   }
   .floating-phone-btn:active,
   .floating-phone-btn:hover {
-    background: var(--color-accent2);
-    color: var(--color-darkest);
+    background: var(--color-bg);
+    color: var(--color-accent);
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   }
 }
