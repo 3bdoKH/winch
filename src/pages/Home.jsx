@@ -104,6 +104,8 @@ const Home = () => {
           .counter-section {
             flex-direction: column !important;
             align-items: stretch !important;
+            max-width: 90% !important;
+            margin: auto !important;
           }
           .counter-section .counter-item {
             border-left: none !important;
