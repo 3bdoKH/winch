@@ -22,31 +22,31 @@ import img10 from '../images/logo.png';
 const extraServices = [
   {
     id: 'rescue',
-    icon: <Wrench size={44} color="#0077ff" style={{marginBottom: '1rem'}} />, 
+    icon: <Wrench size={44} color="#ffc107" style={{marginBottom: '1rem'}} />, 
     title: 'إنقاذ السيارات',
     desc: 'نقدم جميع خدمات إنقاذ السيارات بأسرع وأفضل خدمة إنقاذ للسيارات في مصر بشكل غير مسبوق ..',
   },
   {
     id: 'equipment',
-    icon: <Lightbulb size={44} color="#0077ff" style={{marginBottom: '1rem'}} />, 
+    icon: <Lightbulb size={44} color="#ffc107" style={{marginBottom: '1rem'}} />, 
     title: 'نقل المعدات',
     desc: 'نقدم جميع خدمات نقل المعدات " سيارات نقل ، كرفانات ، معدات وكراكات ، فشلات " وغيرها الكثير ..',
   },
   {
     id: 'fuel',
-    icon: <Package size={44} color="#0077ff" style={{marginBottom: '1rem'}} />, 
+    icon: <Package size={44} color="#ffc107" style={{marginBottom: '1rem'}} />, 
     title: 'التزود بالوقود',
     desc: 'اذا نفذ وقود سيارتك فلا داعي للقلق، فنحن نقدم خدمة التزود بالوقود في الطريق ، فريق أوتوبيات جاهز لتزويدكم بالوقود ..',
   },
   {
     id: 'battery',
-    icon: <BatteryCharging size={44} color="#0077ff" style={{marginBottom: '1rem'}} />, 
+    icon: <BatteryCharging size={44} color="#ffc107" style={{marginBottom: '1rem'}} />, 
     title: 'وصلة بطارية',
     desc: 'نقدم جميع خدمات أعطال البطاريات والتي تحتاج الي وصلة . فريق ونش انقاذ أوتوبيات جاهز وعلي أتم الاستعداد لمساعدتكم ..',
   },
   {
     id: 'tires',
-    icon: <Users size={44} color="#0077ff" style={{marginBottom: '1rem'}} />, 
+    icon: <Users size={44} color="#ffc107" style={{marginBottom: '1rem'}} />, 
     title: 'تغيير الاطارات',
     desc: 'اذا حصل ظرف طارئ في الطريق وقد احتجت الي تغيير او استبدال احدي اطارات سيارتك فنحن نقدم خدمة تغيير / استبدال الاطارات في الطريق ..',
   },
@@ -70,7 +70,7 @@ const Home = () => {
 
         .marquee-track {
             display: flex;
-            animation: marquee1 20s linear infinite;
+            animation: marquee1 5s linear infinite;
             gap: 2rem;
         }
 
@@ -123,13 +123,7 @@ const Home = () => {
 
       {/* Gallery Section */}
       <div className="section_top">
-        <div className="content">
-          <span>إنقاذ السيارات</span>
-          <h2> ونش إنقاذ </h2>
-          <p>
-            اقرب ونش انقاذ سيارات بخصم 50%
-          </p>
-        </div>
+        
       </div>
 
       
@@ -140,7 +134,7 @@ const Home = () => {
         <div className="hero-desc">
           خدمة إنقاذ سيارات على مدار الساعة في جميع أنحاء الجمهورية. اتصل الآن ليصلك أقرب ونش إنقاذ بأقل سعر وأعلى جودة.
         </div>
-        <a className="hero-phone" href='tel:01044844492'>01044844492</a>
+        <a style={{color:'var(--color-highlight)', textDecoration:'none'}} className="hero-phone" href='tel:01044844492'>01044844492</a>
       </section>
 
       {/* Features Section (from screenshot) */}
@@ -157,25 +151,25 @@ const Home = () => {
         <div style={{flex: '2 1 500px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'stretch', padding: '2.5rem 1rem', gap: '2rem'}}>
           {/* Feature: السرعة */}
           <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: 'var(--color-accent)', textAlign: 'center'}}>
-            <Brain size={48} color="#0077ff" style={{marginBottom: '1rem'}} />
+            <Brain size={48} color="#ffc107" style={{marginBottom: '1rem'}} />
             <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem', color:'var(--color-text)'}}>السرعة</div>
             <div style={{fontSize: '1.05rem', color:'var(--color-text)'}}>نصلك في غضون 10 دقائق بحد أقصى، ونقدم خدمة إنقاذ السيارات بسرعة واحترافية عالية.</div>
           </div>
           {/* Feature: خدمة 24 ساعة */}
           <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: 'var(--color-accent)', textAlign: 'center'}}>
-            <HardHat size={48} color="#0077ff" style={{marginBottom: '1rem'}} />
+            <HardHat size={48} color="#ffc107" style={{marginBottom: '1rem'}} />
             <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem', color:'var(--color-text)'}}>خدمة 24 ساعة</div>
             <div style={{fontSize: '1.05rem', color:'var(--color-text)'}}>الأوناش متاحة طوال اليوم 24 ساعة طوال أيام الأسبوع في أي وقت من اليوم، نهاراً أو ليلاً.</div>
           </div>
           {/* Feature: الانتشار */}
           <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: 'var(--color-accent)', textAlign: 'center'}}>
-            <MessageSquare size={48} color="#0077ff" style={{marginBottom: '1rem'}} />
+            <MessageSquare size={48} color="#ffc107" style={{marginBottom: '1rem'}} />
             <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem', color:'var(--color-text)'}}>الانتشار</div>
             <div style={{fontSize: '1.05rem', color:'var(--color-text)'}}>تنتشر جميع سيارات الانقاذ لدينا في جميع أنحاء الجمهورية والصياحين العامة والطرق الرئيسية لذلك نحن الأقرب إليك.</div>
           </div>
           {/* Feature: الخبرة */}
           <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: 'var(--color-accent)', textAlign: 'center'}}>
-            <Factory size={48} color="#0077ff" style={{marginBottom: '1rem'}} />
+            <Factory size={48} color="#ffc107" style={{marginBottom: '1rem'}} />
             <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem', color:'var(--color-text)'}}>الخبرة</div>
             <div style={{fontSize: '1.05rem', color:'var(--color-text)'}}>يتمتع فريق العمل لدينا بخبرة واسعة إلى جانب معرفة السائقين بالطرق والاختصارات التي تضمن سرعة الوصول.</div>
           </div>
@@ -452,7 +446,7 @@ const Home = () => {
         {/* Keywords Section */}
         <section style={{
           background: 'var(--color-bg)',
-          color: 'var(--color-accent)',
+          color: 'var(--color-highlight)',
           textAlign: 'center',
           padding: '2rem 1rem 1.5rem 1rem',
           fontWeight: 'bold',

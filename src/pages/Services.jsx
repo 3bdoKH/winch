@@ -14,31 +14,31 @@ import extraImg5 from '../images/images (3).jpeg';
 const extraServices = [
   {
     id: 'rescue',
-    icon: <Wrench size={44} color="#0077ff" style={{marginBottom: '1rem'}} />,
+    icon: <Wrench size={44} color="#ffc107" style={{marginBottom: '1rem'}} />,
     title: 'إنقاذ السيارات',
     desc: 'نقدم جميع خدمات إنقاذ السيارات بأسرع وأفضل خدمة إنقاذ للسيارات في مصر بشكل غير مسبوق ..',
   },
   {
     id: 'equipment',
-    icon: <Lightbulb size={44} color="#0077ff" style={{marginBottom: '1rem'}} />,
+    icon: <Lightbulb size={44} color="#ffc107" style={{marginBottom: '1rem'}} />,
     title: 'نقل المعدات',
     desc: 'نقدم جميع خدمات نقل المعدات " سيارات نقل ، كرفانات ، معدات وكراكات ، فشلات " وغيرها الكثير ..',
   },
   {
     id: 'fuel',
-    icon: <Package size={44} color="#0077ff" style={{marginBottom: '1rem'}} />,
+    icon: <Package size={44} color="#ffc107" style={{marginBottom: '1rem'}} />,
     title: 'التزود بالوقود',
     desc: 'اذا نفذ وقود سيارتك فلا داعي للقلق، فنحن نقدم خدمة التزود بالوقود في الطريق ، فريق أوتوبات جاهز لتزويدكم بالوقود ..',
   },
   {
     id: 'battery',
-    icon: <BatteryCharging size={44} color="#0077ff" style={{marginBottom: '1rem'}} />,
+    icon: <BatteryCharging size={44} color="#ffc107" style={{marginBottom: '1rem'}} />,
     title: 'وصلة بطارية',
     desc: 'نقدم جميع خدمات أعطال البطاريات والتي تحتاج الي وصلة . فريق ونش انقاذ أوتوبات جاهز وعلي أتم الاستعداد لمساعدتكم ..',
   },
   {
     id: 'tires',
-    icon: <Users size={44} color="#0077ff" style={{marginBottom: '1rem'}} />,
+    icon: <Users size={44} color="#ffc107" style={{marginBottom: '1rem'}} />,
     title: 'تغيير الاطارات',
     desc: 'اذا حصل ظرف طارئ في الطريق وقد احتجت الي تغيير او استبدال احدي اطارات سيارتك فنحن نقدم خدمة تغيير / استبدال الاطارات في الطريق ..',
   },
@@ -52,19 +52,19 @@ const Services = () => {
       <div className="services-list">
         <div className="service-card">
           <img src={serviceImg1} alt="خدمة 24 ساعة" style={{width:'100%', borderRadius:'0.5rem', marginBottom:'1rem'}} />
-          <div style={{color: 'var(--color-accent)'}}>
+          <div style={{color: 'var(--color-highlight)'}}>
             ونش إنقاذ 24 ساعة
           </div>
         </div>
         <div className="service-card">
           <img src={serviceImg2} alt="أرخص ونش" style={{width:'100%', borderRadius:'0.5rem', marginBottom:'1rem'}} />
-          <div style={{color: 'var(--color-accent)'}}>
+          <div style={{color: 'var(--color-highlight)'}}>
             أرخص ونش إنقاذ سيارات
           </div>
         </div>
         <div className="service-card">
           <img src={serviceImg3} alt="فريق محترف" style={{width:'100%', borderRadius:'0.5rem', marginBottom:'1rem'}} />
-          <div style={{color: 'var(--color-accent)'}}>
+          <div style={{color: 'var(--color-highlight)'}}>
             فريق عمل محترف
           </div>
         </div>

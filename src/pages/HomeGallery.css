@@ -9,7 +9,7 @@
   background-position: center;
   text-align: center;
   justify-content: center;
-  animation: change 20s infinite linear;
+  animation: change 10s infinite linear;
 }
 .section_top::before{
   content: '';
