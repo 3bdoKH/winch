@@ -165,7 +165,7 @@ const Home = () => {
       {/* Features Section (from screenshot) */}
       <section style={{display: 'flex', flexWrap: 'wrap', background: 'var(--color-bg)', color: 'var(--color-text)', padding: '0', margin: '0 0 2rem 0', minHeight: '350px'}}>
         {/* Yellow CTA box */}
-        <div style={{background: 'var(--color-highlight)', color: 'var(--color-bg)', flex: '1 1 320px', minWidth: '320px', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
+        <div style={{background: 'var(--color-highlight)', color: 'var(--color-bg)', flex: '1 1 320px', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
           <div style={{fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '1rem'}}>ونش انقاذ محمد بحر</div>
           <div style={{fontWeight: 'bold', fontSize: '2rem', lineHeight: '1.3', marginBottom: '1.5rem'}}>اطلب ونش انقاذ سيارات دلوقتي بكل سهولة.</div>
           <div style={{fontSize: '1.1rem', marginBottom: '1.5rem'}}>
@@ -585,7 +585,7 @@ const Home = () => {
               }}
             >
               {/* Contact Info - Left */}
-              <div style={{flex: '1 1 340px', minWidth: '300px', textAlign: 'right', background: 'rgba(0,0,0,0.55)', borderRadius: '1rem', padding: '2rem 2rem', boxShadow: '0 2px 16px #00000033', marginRight: 'auto'}}>
+              <div style={{flex: '1 1 340px', textAlign: 'right', background: 'rgba(0,0,0,0.55)', borderRadius: '1rem', padding: '2rem 2rem', boxShadow: '0 2px 16px #00000033', marginRight: 'auto'}}>
                 <div style={{fontWeight: 'bold', fontSize: '1.3rem', color: '#ffe600', marginBottom: '1.2rem', borderBottom: '3px solid #ffe600', display: 'inline-block', paddingBottom: '0.2rem'}}>اتصل بنا الان</div>
                 <div style={{fontSize: '1.05rem', margin: '1.2rem 0 1.5rem 0', color: '#fff'}}>
                   ونش انقاذ محمد بحر هو اسرع و ارخص ونش انقاذ سيارات اتصل على رقم ونش الانقاذ خدمة 24 ساعة اتصل بنا الان ليصلك اقرب ونش انقاذ سيارات بخصم 50%.
