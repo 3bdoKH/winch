@@ -2,7 +2,7 @@ import React from 'react';
 
 const YellowCtaBox = () => (
   <div style={{
-    background: 'var(--color-accent)',
+    background: 'var(--color-highlight)',
     color: 'var(--color-bg)',
     borderRadius: '1.2rem',
     padding: '2.5rem 1.5rem 2rem 1.5rem',

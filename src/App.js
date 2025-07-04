@@ -65,8 +65,17 @@ function App() {
         <Route path="/service/:serviceId" element={<ServiceDetail />} />
       </Routes>
       {/* Footer */}
-      <footer className="footer">
-        تصميم وتنفيذ ايميرالد - جميع الحقوق محفوظة © 2025
+      <footer className="footer custom-footer">
+        <div className="footer-content">
+          <div className="footer-links">
+            <a href="#" className="footer-link">الرئيسية</a>
+            <span className="footer-separator">ـ</span>
+            <a href="#" className="footer-link">اتصل بنا</a>
+          </div>
+          <div className="footer-copyright">
+            تصميم وتنفيذ ايميرالد - جميع الحقوق محفوظة © 2025 
+          </div>
+        </div>
       </footer>
 
       {/* Mobile Bottom Navigation */}

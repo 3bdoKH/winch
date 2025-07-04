@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Brain, HardHat, MessageSquare, Factory, ChevronRight, ChevronLeft, Quote, Wrench, Lightbulb, Package, BatteryCharging, Users } from 'lucide-react';
+import { Brain, HardHat, MessageSquare, Factory, ChevronRight, ChevronLeft, Quote, Wrench, Lightbulb, Package, BatteryCharging, Users, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './HomeGallery.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import extraImg1 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
 import extraImg2 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
 import extraImg3 from '../images/fuel.jpeg';
@@ -17,7 +19,6 @@ import img6 from '../images/download (1).jpeg';
 import img7 from '../images/download (2).jpeg';
 import img8 from '../images/battary.jpeg';
 import img9 from '../images/fuel.jpeg';
-import img10 from '../images/logo.png';
 
 const extraServices = [
   {
@@ -57,10 +58,7 @@ const Home = () => {
     <>
       <style>
       {`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-100%); }
-        }
+        
         .marquee-container {
             background: #f5f5f5;
             padding: 2rem 0;
@@ -70,8 +68,9 @@ const Home = () => {
 
         .marquee-track {
             display: flex;
-            animation: marquee1 5s linear infinite;
+            animation: marquee1 20s linear infinite;
             gap: 2rem;
+            transform: translateX(-100%)
         }
 
         .marquee-item {
@@ -90,13 +89,31 @@ const Home = () => {
         }
 
         @keyframes marquee1 {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-100% - 2rem)); } /* Adjust for gap */
+            0% { transform: translateX(-100%); }
+            50% { transform: translateX(150%); }
+            100% {transform: translateX(-100%); }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .marquee-item { min-width: 150px; height: 100px; }
+        }
+
+        /* Counter Section Styles for Responsiveness */
+        @media (max-width: 768px) {
+          .counter-section {
+            flex-direction: column !important;
+            align-items: stretch !important;
+          }
+          .counter-section .counter-item {
+            border-left: none !important;
+            border-bottom: 1px solid #f7e600 !important;
+            padding: 1.2rem 0 !important;
+            margin: 0 !important;
+          }
+          .counter-section .counter-item:last-child {
+            border-bottom: none !important;
+          }
         }
       `}
       </style>
@@ -112,18 +129,24 @@ const Home = () => {
         whiteSpace: 'nowrap',
         position: 'relative',
       }}>
-        <div style={{
-          display: 'inline-block',
-          paddingLeft: '100%',
-          animation: 'marquee 24s linear infinite',
-        }}>
-          ونش محمد بحر لإنقاذ السيارات 01044844492 – ونش انقاذ سيارات – اسرع ونش انقاذ – اقرب ونش انقاذ – انقاذ سيارات – ارخص ونش انقاذ – تليفون ونش انقاذ – رقم ونش انقاذ – ونش انقاذ بالقرب مني
-        </div>
+        <marquee width='100%' direction='right'>
+        خدمة 24 ساعة اتصل بنا الان ليصلك اقرب ونش انقاذ سيارات بخصم 50%. ونش محمد بحر لإنقاذ السيارات 01044844492
+        </marquee>
       </div>
 
       {/* Gallery Section */}
       <div className="section_top">
-        
+        <div className="content">
+          <span>
+            انقاذ سيارات
+          </span>
+          <h2>
+            ونش انقاذ
+          </h2>
+          <p>
+             ونش انقاذ سيارات بخصم 50%.
+          </p>
+        </div>
       </div>
 
       
@@ -140,7 +163,7 @@ const Home = () => {
       {/* Features Section (from screenshot) */}
       <section style={{display: 'flex', flexWrap: 'wrap', background: 'var(--color-bg)', color: 'var(--color-text)', padding: '0', margin: '0 0 2rem 0', minHeight: '350px'}}>
         {/* Yellow CTA box */}
-        <div style={{background: 'var(--color-accent)', color: 'var(--color-bg)', flex: '1 1 320px', minWidth: '320px', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
+        <div style={{background: 'var(--color-highlight)', color: 'var(--color-bg)', flex: '1 1 320px', minWidth: '320px', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
           <div style={{fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '1rem'}}>ونش انقاذ محمد بحر</div>
           <div style={{fontWeight: 'bold', fontSize: '2rem', lineHeight: '1.3', marginBottom: '1.5rem'}}>اطلب ونش انقاذ سيارات دلوقتي بكل سهولة.</div>
           <div style={{fontSize: '1.1rem', marginBottom: '1.5rem'}}>
@@ -176,7 +199,67 @@ const Home = () => {
         </div>
       </section>
 
+{/* Rating Bar */}
+<div style={{
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '0.4rem',
+  fontSize: '1.35rem',
+  fontWeight: 'bold',
+  margin: '1.5rem 0 0.5rem 0',
+  direction: 'rtl',
+}}>
+  <span style={{color: '#FFA500', fontSize: '2rem', marginLeft: '0.3rem'}}>
+    {/* 5 filled stars */}
+    <span style={{marginLeft: '0.1rem'}}>&#9733;</span>
+    <span style={{marginLeft: '0.1rem'}}>&#9733;</span>
+    <span style={{marginLeft: '0.1rem'}}>&#9733;</span>
+    <span style={{marginLeft: '0.1rem'}}>&#9733;</span>
+    <span style={{marginLeft: '0.1rem'}}>&#9733;</span>
+  </span>
+  <span style={{color: '#222', fontWeight: 'bold', fontSize: '1.15rem', marginTop:'8px'}}>
+    5/5 - (1986 صوت)
+  </span>
+</div>
 
+{/* Counter Section */}
+<section className="counter-section" style={{
+  background: '#ffed3b',
+  width: '100%',
+  padding: '2.5rem 0 1.5rem 0',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'stretch',
+  gap: 0,
+  border: 'none',
+  borderBottom: '1px solid #f7e600',
+  margin: 0,
+  direction: 'rtl',
+  flexWrap: 'wrap',
+}}>
+  {/* Each counter */}
+  <div className="counter-item" style={{flex: 1, textAlign: 'center', borderLeft: '1px solid #f7e600', padding: '0 0.5rem'}}>
+    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>+32</div>
+    <div style={{fontWeight: 'bold', color: '#222', fontSize: '1rem'}}>سنوات من الخبرة</div>
+  </div>
+  <div className="counter-item" style={{flex: 1, textAlign: 'center', borderLeft: '1px solid #f7e600', padding: '0 0.5rem'}}>
+    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>98%</div>
+    <div style={{fontWeight: 'bold', color: '#222', fontSize: '1rem'}}>عملاء سعداء</div>
+  </div>
+  <div className="counter-item" style={{flex: 1, textAlign: 'center', borderLeft: '1px solid #f7e600', padding: '0 0.5rem'}}>
+    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>13,720</div>
+    <div style={{fontWeight: 'bold', color: '#222', fontSize: '1rem'}}>سيارة تم إنقاذها</div>
+  </div>
+  <div className="counter-item" style={{flex: 1, textAlign: 'center', borderLeft: '1px solid #f7e600', padding: '0 0.5rem'}}>
+    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>10</div>
+    <div style={{fontWeight: 'bold', color: '#222', fontSize: '1rem'}}>عدد اوناش الانقاذ</div>
+  </div>
+  <div className="counter-item" style={{flex: 1, textAlign: 'center', padding: '0 0.5rem'}}>
+    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>49</div>
+    <div style={{fontWeight: 'bold', color: '#222', fontSize: '1rem'}}>فريق العمل</div>
+  </div>
+</section>
 
     <div class="marquee-container">
         <div class="marquee-track">
@@ -417,7 +500,7 @@ const Home = () => {
               </ul>
               
               <div style={{
-                background: 'var(--color-accent)',
+                background: 'var(--color-highlight)',
                 color: 'var(--color-bg)',
                 padding: '1.5rem',
                 borderRadius: '1rem',
@@ -446,7 +529,7 @@ const Home = () => {
         {/* Keywords Section */}
         <section style={{
           background: 'var(--color-bg)',
-          color: 'var(--color-highlight)',
+          color: 'var(--color-accent)',
           textAlign: 'center',
           padding: '2rem 1rem 1.5rem 1rem',
           fontWeight: 'bold',
@@ -457,47 +540,104 @@ const Home = () => {
         }}>
           ونش انقاذ – ونش انقاذ سيارات – ونش سيارة – اسرع ونش انقاذ – اقرب ونش انقاذ – انقاذ سيارات – ارخص ونش انقاذ – انقاذ السيارات – ونش عربيات – تليفون ونش انقاذ – رقم ونش انقاذ – ونش انقاذ بالقرب مني
         </section>
-        <section style={{
-        background: '#003844',
-        color: '#ffebc6',
-        textAlign: 'center',
-        padding: '2.5rem 1rem 2rem 1rem',
-        marginTop: '2.5rem',
-        borderTop: '1px solid #006c67',
-      }}>
-        <div style={{
-          fontWeight: 'bold',
-          fontSize: '1.5rem',
-          color: '#f194b4',
-          marginBottom: '0.7rem',
-          letterSpacing: '1px',
-          position: 'relative',
-          display: 'inline-block',
-        }}>
-          اتصل بنا الان
-          <span style={{
-            display: 'block',
-            height: '5px',
-            background: '#f194b4',
-            borderRadius: '2px',
-            marginTop: '0.3rem',
-            width: '70%',
-            marginRight: 'auto',
-            marginLeft: 'auto',
-          }}></span>
-        </div>
-        <div style={{
-          color: '#ffebc6',
-          fontSize: '1.08rem',
-          marginTop: '1.2rem',
-          lineHeight: '2',
-          maxWidth: '500px',
-          marginRight: 'auto',
-          marginLeft: 'auto',
-        }}>
-          ونش انقاذ محمد بحر هو اسرع و ارخص ونش انقاذ سيارات اتصل على رقم ونش الانقاذ خدمة 24 ساعة اتصل بنا الان ليصلك اقرب ونش انقاذ سيارات بخصم 50%.
-        </div>
-      </section>
+        <section
+            style={{
+              position: 'relative',
+              minHeight: '390px',
+              width: '100%',
+              margin: '0',
+              padding: '0',
+              zIndex: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            className='back-footer'
+          >
+            {/* Overlay */}
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                background: 'rgba(0,0,0,0.81)',
+                zIndex: 2,
+              }}
+            ></div>
+            {/* Content */}
+            <div
+              style={{
+                position: 'relative',
+                zIndex: 3,
+                width: '100%',
+                maxWidth: '1400px',
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'space-between',
+                alignItems: 'flex-start',
+                padding: '3rem 2rem',
+                color: '#fff',
+                gap: '2rem',
+              }}
+            >
+              {/* Contact Info - Left */}
+              <div style={{flex: '1 1 340px', minWidth: '300px', textAlign: 'right', background: 'rgba(0,0,0,0.55)', borderRadius: '1rem', padding: '2rem 2rem', boxShadow: '0 2px 16px #00000033', marginRight: 'auto'}}>
+                <div style={{fontWeight: 'bold', fontSize: '1.3rem', color: '#ffe600', marginBottom: '1.2rem', borderBottom: '3px solid #ffe600', display: 'inline-block', paddingBottom: '0.2rem'}}>اتصل بنا الان</div>
+                <div style={{fontSize: '1.05rem', margin: '1.2rem 0 1.5rem 0', color: '#fff'}}>
+                  ونش انقاذ محمد بحر هو اسرع و ارخص ونش انقاذ سيارات اتصل على رقم ونش الانقاذ خدمة 24 ساعة اتصل بنا الان ليصلك اقرب ونش انقاذ سيارات بخصم 50%.
+                </div>
+                <div style={{fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '0.7rem', color: '#fff'}}>
+                الهضبه الوسطى ، ال ٧٠ فدان ، خلف كومباوند نكست عماره رقم ١٠٥
+                </div>
+                <div style={{fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '0.7rem', color: '#fff'}}>
+                كورنيش عدلي مليجي، عماره ٢٢٦ ، الدور الارضي بجوار كافيه ليالي
+                </div>
+                <div style={{display: 'flex', flexDirection: 'column', gap: '0.7rem', marginBottom: '1.2rem'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '0.7rem'}}>
+                    <span style={{background: '#ffe600', borderRadius: '50%', padding: '0.5rem'}}><Phone color='#000'size={20} /></span>
+                    <span style={{direction: 'ltr', fontFamily: 'monospace', fontSize:'20px'}}>01044844492</span>
+                  </div>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '0.7rem'}}>
+                    <span style={{background: '#ffe600',fontSize:'20px' , color:'#000', borderRadius: '50%', padding: '0.5rem'}}><FontAwesomeIcon color='#000' size='1xl' icon={faWhatsapp} /></span>
+                    <span style={{direction: 'ltr', fontFamily: 'monospace', fontSize:'20px'}}>01044844492</span>
+                  </div>
+                  
+                </div>
+              </div>
+              {/* Quick Links - Right */}
+              <div style={{flex: '1 1 260px', minWidth: '220px', textAlign: 'right'}}>
+                <div style={{fontWeight: 'bold', fontSize: '1.2rem', color: '#ffe600', marginBottom: '1.2rem', borderBottom: '3px solid #ffe600', display: 'inline-block', paddingBottom: '0.2rem'}}>روابط مفيدة</div>
+                <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.5rem 2.5rem', marginTop: '1.5rem'}}>
+                  <div style={{minWidth: '150px',  gap:'15px', display:'flex', flexDirection:'column'}}>
+                    <div>ونش انقاذ سيارات</div>
+                    <div>ونش انقاذ</div>
+                    <div>ارخص ونش انقاذ</div>
+                    <div>تليفون ونش انقاذ</div>
+                    <div>ونش انقاذ سريع</div>
+                    <div>ونش انقاذ القاهرة</div>
+                    <div>ونش انقاذ على المحاور</div>
+                    <div>ونش انقاذ محيطى</div>
+                    <div>ونش انقاذ مدينة نصر</div>
+                  </div>
+                  <div style={{minWidth: '150px', gap:'15px', display:'flex', flexDirection:'column'}}>
+                    <div>اقرب ونش انقاذ</div>
+                    <div>رقم ونش انقاذ</div>
+                    <div>ونش انقاذ 24 ساعة</div>
+                    <div>ونش عربيات</div>
+                    <div>ونش سحب</div>
+                    <div>ونش انقاذ المعطم</div>
+                    <div>ونش انقاذ التجمع</div>
+                    <div>ونش انقاذ 6 اكتوبر</div>
+                    <div>ونش انقاذ الرحاب</div>
+                    <div>ونش انقاذ الشيخ زايد</div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </section>
       </>
     );
   };
