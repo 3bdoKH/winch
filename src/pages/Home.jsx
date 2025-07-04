@@ -20,6 +20,8 @@ import img7 from '../images/download (2).jpeg';
 import img8 from '../images/battary.jpeg';
 import img9 from '../images/fuel.jpeg';
 
+import AnimatedCounter from './AnimatedCounter'; // adjust the path as needed
+
 const extraServices = [
   {
     id: 'rescue',
@@ -287,23 +289,33 @@ const Home = () => {
 }}>
   {/* Each counter */}
   <div className="counter-item" style={{flex: 1, textAlign: 'center', borderLeft: '1px solid #f7e600', padding: '0 0.5rem'}}>
-    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>+32</div>
+    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>
+      <AnimatedCounter target={32} prefix="+" />
+    </div>
     <div style={{fontWeight: 'bold', color: '#222', fontSize: '1rem'}}>سنوات من الخبرة</div>
   </div>
   <div className="counter-item" style={{flex: 1, textAlign: 'center', borderLeft: '1px solid #f7e600', padding: '0 0.5rem'}}>
-    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>98%</div>
+    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>
+      <AnimatedCounter target={98} suffix="%" />
+    </div>
     <div style={{fontWeight: 'bold', color: '#222', fontSize: '1rem'}}>عملاء سعداء</div>
   </div>
   <div className="counter-item" style={{flex: 1, textAlign: 'center', borderLeft: '1px solid #f7e600', padding: '0 0.5rem'}}>
-    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>13,720</div>
+    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>
+      <AnimatedCounter target={13720} />
+    </div>
     <div style={{fontWeight: 'bold', color: '#222', fontSize: '1rem'}}>سيارة تم إنقاذها</div>
   </div>
   <div className="counter-item" style={{flex: 1, textAlign: 'center', borderLeft: '1px solid #f7e600', padding: '0 0.5rem'}}>
-    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>10</div>
+    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>
+      <AnimatedCounter target={10} />
+    </div>
     <div style={{fontWeight: 'bold', color: '#222', fontSize: '1rem'}}>عدد اوناش الانقاذ</div>
   </div>
   <div className="counter-item" style={{flex: 1, textAlign: 'center', padding: '0 0.5rem'}}>
-    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>49</div>
+    <div style={{fontSize: '3rem', color: '#003366', fontWeight: 700, fontFamily: 'Tajawal, sans-serif', marginBottom: '0.5rem'}}>
+      <AnimatedCounter target={49} />
+    </div>
     <div style={{fontWeight: 'bold', color: '#222', fontSize: '1rem'}}>فريق العمل</div>
   </div>
 </section>
