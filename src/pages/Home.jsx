@@ -9,7 +9,7 @@ import extraImg2 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.
 import extraImg3 from '../images/fuel.jpeg';
 import extraImg4 from '../images/battary.jpeg';
 import extraImg5 from '../images/images (3).jpeg';
-
+import logologo from '../images/logologo.png'
 import img1 from '../images/images.jpeg';
 import img2 from '../images/images (1).jpeg';
 import img3 from '../images/images (2).jpeg';
@@ -162,7 +162,7 @@ const Home = () => {
         }
 
         .gallery-content-box {
-            background: linear-gradient(135deg, #fffbe6 60%, #fff 100%);
+            background: #1873CD;
             border-radius: 1.5rem;
             box-shadow: 0 4px 24px #ffe06655, 0 2px 16px #0001;
             border: 2.5px solid #ffe066;
@@ -185,7 +185,7 @@ const Home = () => {
             filter: drop-shadow(0 2px 6px #ffe06688);
         }
         .gallery-content-box p {
-            color: #003366;
+            color: #ffe066;
             font-size: 1.25rem;
             font-weight: 600;
             margin: 0;
@@ -233,10 +233,7 @@ const Home = () => {
       {/* Gallery Section */}
       <div className="section_top"></div>
       <div className="gallery-content-box">
-        <div className="gallery-icon" aria-hidden="true">
-          {/* Star icon SVG */}
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffb100" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-        </div>
+        <img src={logologo} alt="" height={75}/>
         <p>ونش انقاذ سيارات بخصم 50%.</p>
       </div>
 
@@ -488,9 +485,9 @@ const Home = () => {
         maxWidth: '1100px',
         margin: '2.5rem auto',
         padding: '1.5rem 1rem',
-        background: '#fff',
         borderRadius: '1rem',
         boxShadow: '0 2px 12px #0001',
+        background:'linear-gradient(90deg, #0a2c61 0%, #1976d2 100%)',
       }}>
         <div style={{fontWeight: 'bold', fontSize: '1.5rem', color: '#0a3977', marginBottom: '1.2rem', textAlign: 'center'}}>مناطق التغطية</div>
         <div style={{
@@ -506,7 +503,7 @@ const Home = () => {
               key={idx}
               to={`/areas/${encodeURIComponent(area)}`}
               style={{
-                color: '#0a3977',
+                color:'#ffe066',
                 textDecoration: 'none',
                 fontWeight: 500,
                 fontSize: '1.08rem',
@@ -666,7 +663,7 @@ const Home = () => {
         </div>
         {/* White inner card for quote */}
         <div style={{
-          background: '#ffebc6',
+          background: 'linear-gradient(90deg, #0a2c61 0%, #1976d2 100%)',
           borderRadius: '1rem',
           boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
           padding: '1.5rem 1.2rem',
