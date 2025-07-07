@@ -49,26 +49,7 @@ const Services = () => {
     <section className="section" id="services">
       
       <div className="section-title">خدماتنا</div>
-      <div className="services-list">
-        <div className="service-card">
-          <img src={serviceImg1} alt="خدمة 24 ساعة" style={{width:'100%', borderRadius:'0.5rem', marginBottom:'1rem'}} />
-          <div style={{color: 'var(--color-highlight)'}}>
-            ونش إنقاذ 24 ساعة
-          </div>
-        </div>
-        <div className="service-card">
-          <img src={serviceImg2} alt="أرخص ونش" style={{width:'100%', borderRadius:'0.5rem', marginBottom:'1rem'}} />
-          <div style={{color: 'var(--color-highlight)'}}>
-            أرخص ونش إنقاذ سيارات
-          </div>
-        </div>
-        <div className="service-card">
-          <img src={serviceImg3} alt="فريق محترف" style={{width:'100%', borderRadius:'0.5rem', marginBottom:'1rem'}} />
-          <div style={{color: 'var(--color-highlight)'}}>
-            فريق عمل محترف
-          </div>
-        </div>
-      </div>
+      
 
       {/* Extra Services Grid */}
       <div style={{
@@ -89,6 +70,7 @@ const Services = () => {
           </Link>
         ))}
       </div>
+      
       <YellowCtaBox />
     </section>
   );

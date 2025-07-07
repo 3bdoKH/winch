@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Brain, HardHat, MessageSquare, Factory, ChevronRight, ChevronLeft, Quote, Wrench, Lightbulb, Package, BatteryCharging, Users, Phone } from 'lucide-react';
+import { Brain, HardHat, MessageSquare, Factory, ChevronRight, ChevronLeft, Quote, Wrench, Lightbulb, Package, BatteryCharging, Users, Phone, Link2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './HomeGallery.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -21,6 +21,47 @@ import img8 from '../images/battary.jpeg';
 import img9 from '../images/fuel.jpeg';
 
 import AnimatedCounter from './AnimatedCounter'; // adjust the path as needed
+import { areas } from './Areas'; // Import areas array from Areas.jsx
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import toyota from "../images/cars/toyota.jpeg";
+import Volkswagen from "../images/cars/Volkswagen.jpeg";
+import volvo from "../images/cars/volvo.jpeg";
+import audi from "../images/cars/audi.jpeg";
+import bmw from "../images/cars/bmw.jpeg";
+import byd from "../images/cars/byd.jpeg";
+import Chevrolet from "../images/cars/Chevrolet.jpeg";
+import Hyundai from "../images/cars/Hyundai.jpeg";
+import jeep from "../images/cars/jeep.jpeg";
+import kia from "../images/cars/kia.jpeg";
+import mazda from "../images/cars/mazda.jpeg";
+import mercedes from "../images/cars/mercedes.jpeg";
+import minicooper from "../images/cars/minicooper.jpeg";
+import Nissan from "../images/cars/Nissan.jpeg";
+import Peugeot from "../images/cars/Peugeot.jpeg";
+import skoda from "../images/cars/skoda.jpeg";
+import subaru from "../images/cars/subaru.jpeg";
+
+const partners = [
+  { src: toyota, alt: "Toyota" },
+  { src: Volkswagen, alt: "Volkswagen" },
+  { src: volvo, alt: "Volvo" },
+  { src: audi, alt: "Audi" },
+  { src: bmw, alt: "BMW" },
+  { src: byd, alt: "BYD" },
+  { src: Chevrolet, alt: "Chevrolet" },
+  { src: Hyundai, alt: "Hyundai" },
+  { src: jeep, alt: "Jeep" },
+  { src: kia, alt: "Kia" },
+  { src: mazda, alt: "Mazda" },
+  { src: mercedes, alt: "Mercedes" },
+  { src: minicooper, alt: "Mini Cooper" },
+  { src: Nissan, alt: "Nissan" },
+  { src: Peugeot, alt: "Peugeot" },
+  { src: skoda, alt: "Skoda" },
+  { src: subaru, alt: "Subaru" },
+];
 
 const extraServices = [
   {
@@ -174,17 +215,18 @@ const Home = () => {
       {/* Marquee above the gallery section */}
       <div style={{
         width: '100%',
-        background: 'var(--color-accent)',
-        color: '#fff',
+        background: 'linear-gradient(90deg, #0a2c61 0%, #1976d2 100%)',
+        color: '#ffe600',
         fontWeight: 'bold',
         fontSize: '1.25rem',
         padding: '0.5rem 0',
         overflow: 'hidden',
         whiteSpace: 'nowrap',
         position: 'relative',
+        boxShadow: '0 2px 12px #00336622',
       }}>
-        <marquee width='100%' direction='right'>
-        خدمة 24 ساعة اتصل بنا الان ليصلك اقرب ونش انقاذ سيارات بخصم 50%. ونش محمد بحر لإنقاذ السيارات 01044844492
+        <marquee width='100%' direction='right' style={{fontFamily: 'Cairo, Tahoma, Arial, sans-serif'}}>
+          خدمة 24 ساعة اتصل بنا الان ليصلك اقرب ونش انقاذ سيارات بخصم 50%. ونش محمد بحر لإنقاذ السيارات 01044844492
         </marquee>
       </div>
 
@@ -244,6 +286,127 @@ const Home = () => {
             <Factory size={48} color="#ffc107" style={{marginBottom: '1rem'}} />
             <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem', color:'var(--color-text)'}}>الخبرة</div>
             <div style={{fontSize: '1.05rem', color:'var(--color-text)'}}>يتمتع فريق العمل لدينا بخبرة واسعة إلى جانب معرفة السائقين بالطرق والاختصارات التي تضمن سرعة الوصول.</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid Section (from image) */}
+      <section style={{
+        position: 'relative',
+        maxWidth: '1100px',
+        margin: '2.5rem auto',
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'stretch',
+        gap: '2rem',
+        borderRadius: '1.5rem',
+        boxShadow: '0 4px 24px #0004',
+        padding: '2.5rem 1.5rem',
+        zIndex: 2,
+        overflow: 'hidden',
+        background: `linear-gradient(120deg, #0a223a 60%, #1a2a3a 100%)`,
+      }}>
+        {/* Optional background image overlay */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: 'url(/images/winch-bg.jpg) center/cover no-repeat', // Use your tow truck image if available
+          opacity: 0.18,
+          zIndex: 1,
+          pointerEvents: 'none',
+          filter: 'blur(1px) grayscale(0.2)',
+        }}></div>
+        {/* Content wrapper for z-index */}
+        <div style={{position: 'relative', zIndex: 2, width: '100%', display: 'flex', flexWrap: 'wrap', gap: '2rem'}}>
+          {/* Right column */}
+          <div style={{flex: '1 1 320px', display: 'flex', flexDirection: 'column', gap: '2.2rem'}}>
+            {/* الانتشار */}
+            <div style={{display: 'flex', alignItems: 'center', gap: '1.2rem'}}>
+              <span style={{background: '#ffe600', borderRadius: '50%', width: 54, height: 54, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px #0002'}}>
+                <Wrench size={32} color="#222" />
+              </span>
+              <div>
+                <div style={{fontWeight: 'bold', color: '#ffe600', fontSize: '1.25rem'}}>الانتشار</div>
+                <div style={{color: '#fff', fontSize: '1.05rem'}}>اوناشنا منتشرة في جميع أنحاء الجمهورية طوال 24 ساعة.</div>
+              </div>
+            </div>
+            {/* الدعم */}
+            <div style={{display: 'flex', alignItems: 'center', gap: '1.2rem'}}>
+              <span style={{background: '#ffe600', borderRadius: '50%', width: 54, height: 54, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px #0002'}}>
+                <Wrench size={32} color="#222" />
+              </span>
+              <div>
+                <div style={{fontWeight: 'bold', color: '#ffe600', fontSize: '1.25rem'}}>الدعم</div>
+                <div style={{color: '#fff', fontSize: '1.05rem'}}>نقدم دعم واستشارات فنية مجانية.</div>
+              </div>
+            </div>
+            {/* خدمة العملاء */}
+            <div style={{display: 'flex', alignItems: 'center', gap: '1.2rem'}}>
+              <span style={{background: '#ffe600', borderRadius: '50%', width: 54, height: 54, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px #0002'}}>
+                <Wrench size={32} color="#222" />
+              </span>
+              <div>
+                <div style={{fontWeight: 'bold', color: '#ffe600', fontSize: '1.25rem'}}>خدمة العملاء</div>
+                <div style={{color: '#fff', fontSize: '1.05rem'}}>نقدم خدماتنا على مدار الساعة طوال أيام الأسبوع لمدة 24 ساعة.</div>
+              </div>
+            </div>
+            {/* الجودة والسعر */}
+            <div style={{display: 'flex', alignItems: 'center', gap: '1.2rem'}}>
+              <span style={{background: '#ffe600', borderRadius: '50%', width: 54, height: 54, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px #0002'}}>
+                <Wrench size={32} color="#222" />
+              </span>
+              <div>
+                <div style={{fontWeight: 'bold', color: '#ffe600', fontSize: '1.25rem'}}>الجودة والسعر</div>
+                <div style={{color: '#fff', fontSize: '1.05rem'}}>نقدم أعلى جودة ممكنة باستخدام أحدث التقنيات وبأقل الأسعار.</div>
+              </div>
+            </div>
+          </div>
+          {/* Left column */}
+          <div style={{flex: '1 1 320px', display: 'flex', flexDirection: 'column', gap: '2.2rem'}}>
+            {/* السرعة */}
+            <div style={{display: 'flex', alignItems: 'center', gap: '1.2rem'}}>
+              <span style={{background: '#ffe600', borderRadius: '50%', width: 54, height: 54, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px #0002'}}>
+                <Wrench size={32} color="#222" />
+              </span>
+              <div>
+                <div style={{fontWeight: 'bold', color: '#ffe600', fontSize: '1.25rem'}}>السرعة</div>
+                <div style={{color: '#fff', fontSize: '1.05rem'}}>سرعة وصول ونش الانقاذ خلال 10 دقائق بحد أقصى.</div>
+              </div>
+            </div>
+            {/* الامان */}
+            <div style={{display: 'flex', alignItems: 'center', gap: '1.2rem'}}>
+              <span style={{background: '#ffe600', borderRadius: '50%', width: 54, height: 54, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px #0002'}}>
+                <Wrench size={32} color="#222" />
+              </span>
+              <div>
+                <div style={{fontWeight: 'bold', color: '#ffe600', fontSize: '1.25rem'}}>الامان</div>
+                <div style={{color: '#fff', fontSize: '1.05rem'}}>نقوم بتتبع جميع الاوناش من خلال GPS.</div>
+              </div>
+            </div>
+            {/* الخبرة */}
+            <div style={{display: 'flex', alignItems: 'center', gap: '1.2rem'}}>
+              <span style={{background: '#ffe600', borderRadius: '50%', width: 54, height: 54, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px #0002'}}>
+                <Wrench size={32} color="#222" />
+              </span>
+              <div>
+                <div style={{fontWeight: 'bold', color: '#ffe600', fontSize: '1.25rem'}}>الخبرة</div>
+                <div style={{color: '#fff', fontSize: '1.05rem'}}>لدينا سائقين محترفين وعلى دراية كاملة بالطرق واستخدام المعدات.</div>
+              </div>
+            </div>
+            {/* التنوع */}
+            <div style={{display: 'flex', alignItems: 'center', gap: '1.2rem'}}>
+              <span style={{background: '#ffe600', borderRadius: '50%', width: 54, height: 54, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px #0002'}}>
+                <Wrench size={32} color="#222" />
+              </span>
+              <div>
+                <div style={{fontWeight: 'bold', color: '#ffe600', fontSize: '1.25rem'}}>التنوع</div>
+                <div style={{color: '#fff', fontSize: '1.05rem'}}>نقوم باستبدال الاطارات و التزود بالوقود والماء و وصلة بطارية وفتح الابواب.</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -320,7 +483,49 @@ const Home = () => {
   </div>
 </section>
 
-    <div class="marquee-container">
+      {/* Areas Simple List Section */}
+      <section style={{
+        maxWidth: '1100px',
+        margin: '2.5rem auto',
+        padding: '1.5rem 1rem',
+        background: '#fff',
+        borderRadius: '1rem',
+        boxShadow: '0 2px 12px #0001',
+      }}>
+        <div style={{fontWeight: 'bold', fontSize: '1.5rem', color: '#0a3977', marginBottom: '1.2rem', textAlign: 'center'}}>مناطق التغطية</div>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+          gap: '0.7rem 1.2rem',
+          justifyContent: 'center',
+          alignItems: 'center',
+          direction: 'rtl',
+        }}>
+          {areas.map((area, idx) => (
+            <Link
+              key={idx}
+              to={`/areas/${encodeURIComponent(area)}`}
+              style={{
+                color: '#0a3977',
+                textDecoration: 'none',
+                fontWeight: 500,
+                fontSize: '1.08rem',
+                padding: '0.5rem 0.2rem',
+                borderRadius: '0.4rem',
+                transition: 'background 0.15s',
+                textAlign: 'center',
+                display: 'block',
+              }}
+              onMouseOver={e => e.currentTarget.style.background = '#f7f7fa'}
+              onMouseOut={e => e.currentTarget.style.background = 'transparent'}
+            >
+              {area}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+    {/* <div class="marquee-container">
         <div class="marquee-track">
             <div class="marquee-item">
                 <img src={img1} alt="Image 1" />
@@ -377,7 +582,52 @@ const Home = () => {
                 <img src={img9} alt="Image 9" />
             </div>
         </div>
-    </div>
+    </div> */}
+    {/* Partners Section */}
+    <section style={{
+        maxWidth: '1100px',
+        margin: '3rem auto',
+        padding: '2rem 1rem',
+        background: '#fff',
+        borderRadius: '1rem',
+        boxShadow: '0 2px 12px #0001',
+        textAlign: 'center',
+      }}>
+        <div style={{fontWeight: 'bold', fontSize: '1.5rem', color: '#0a3977', marginBottom: '2rem'}}>شركاء النجاح</div>
+        <Slider
+          dots={false}
+          infinite={true}
+          speed={500}
+          slidesToShow={6}
+          slidesToScroll={2}
+          autoplay={true}
+          autoplaySpeed={1800}
+          responsive={[
+            { breakpoint: 1024, settings: { slidesToShow: 4 } },
+            { breakpoint: 600, settings: { slidesToShow: 2 } },
+          ]}
+        >
+          {partners.map((partner, idx) => (
+            <div key={idx} style={{padding: '0 10px'}}>
+              <img
+                src={partner.src}
+                alt={partner.alt}
+                style={{
+                  width: '100%',
+                  maxWidth: '120px',
+                  height: '80px',
+                  objectFit: 'contain',
+                  margin: '0 auto',
+                  filter: 'drop-shadow(0 2px 8px #0002)',
+                  background: '#f7f7fa',
+                  borderRadius: '0.7rem',
+                  padding: '0.5rem',
+                }}
+              />
+            </div>
+          ))}
+        </Slider>
+      </section>
 
       {/* Otobiat Features Quote Section */}
       <section style={{
@@ -437,18 +687,54 @@ const Home = () => {
       {/* Extra Services Section */}
       <section className="extra-services" style={{maxWidth: '1100px', margin: '2rem auto', padding: '1.5rem 0'}}>
         <div className="section-title">خدمات إضافية</div>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', marginTop: '2rem'}}>
-          {[extraImg1, extraImg2, extraImg3, extraImg4, extraImg5].map((img, idx) => (
-            <Link to={`/service/${extraServices[idx].id}`} key={extraServices[idx].id} style={{textDecoration: 'none'}}> 
-              <div style={{background:'var(--color-muted)', color:'var(--color-text)', borderRadius:'1rem', padding:'2rem 1rem', boxShadow:'0 0 40px #00384466 ', textAlign:'center', transition:'transform 0.2s', fontWeight:500, minHeight:'200px'}} className="service-card-hover">
-                {extraServices[idx].icon}
-                <div style={{fontWeight:'bold', fontSize:'1.2rem', marginBottom:'0.7rem'}}>{extraServices[idx].title}</div>
-                <div style={{fontSize:'1rem'}}>{extraServices[idx].desc}</div>
-                <img src={img} alt={extraServices[idx].title} style={{width: '100%', borderRadius: '0.7rem', margin: '1rem auto 1rem auto', display: 'block', boxShadow: '0 2px 8px rgba(0,0,0,0.10)'}} />
-              </div>
-            </Link>
-          ))}
-        </div>
+        <div style={{
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '2rem',
+  marginTop: '2rem',
+  justifyContent: 'center',
+}}>
+  {[extraImg1, extraImg2, extraImg3, extraImg4, extraImg5].map((img, idx) => (
+    <Link
+      to={`/service/${extraServices[idx].id}`}
+      key={extraServices[idx].id}
+      style={{ textDecoration: 'none', flex: '1 1 220px', maxWidth: '350px', minWidth: '220px', display: 'flex' }}
+    >
+      <div
+        style={{
+          background: 'var(--color-muted)',
+          color: 'var(--color-text)',
+          borderRadius: '1rem',
+          padding: '2rem 1rem',
+          boxShadow: '0 0 40px #00384466 ',
+          textAlign: 'center',
+          transition: 'transform 0.2s',
+          fontWeight: 500,
+          minHeight: '200px',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+        className="service-card-hover"
+      >
+        {extraServices[idx].icon}
+        <div style={{ fontWeight: 'bold', fontSize: '1.2rem', marginBottom: '0.7rem' }}>{extraServices[idx].title}</div>
+        <div style={{ fontSize: '1rem' }}>{extraServices[idx].desc}</div>
+        <img
+          src={img}
+          alt={extraServices[idx].title}
+          style={{
+            width: '100%',
+            borderRadius: '0.7rem',
+            margin: '1rem auto 1rem auto',
+            display: 'block',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
+          }}
+        />
+      </div>
+    </Link>
+  ))}
+</div>
       </section>
 
       {/* Testimonials Section */}
@@ -587,116 +873,101 @@ const Home = () => {
 
         {/* Keywords Section */}
         <section style={{
-          background: 'var(--color-bg)',
-          color: 'var(--color-accent)',
-          textAlign: 'center',
-          padding: '2rem 1rem 1.5rem 1rem',
-          fontWeight: 'bold',
-          fontSize: '1.35rem',
-          lineHeight: '2.2',
-          letterSpacing: '0.5px',
-          direction: 'rtl',
-        }}>
-          ونش انقاذ – ونش انقاذ سيارات – ونش سيارة – اسرع ونش انقاذ – اقرب ونش انقاذ – انقاذ سيارات – ارخص ونش انقاذ – انقاذ السيارات – ونش عربيات – تليفون ونش انقاذ – رقم ونش انقاذ – ونش انقاذ بالقرب مني
-        </section>
+  background: 'linear-gradient(90deg, #0a2c61 0%, #1976d2 100%)',
+  color: '#ffe600',
+  textAlign: 'center',
+  padding: '2rem 1rem 1.5rem 1rem',
+  fontWeight: 'bold',
+  fontSize: '1.35rem',
+  lineHeight: '2.2',
+  letterSpacing: '0.5px',
+  direction: 'rtl',
+  boxShadow: '0 2px 12px #00336622',
+  borderRadius: '0.7rem',
+  margin: '1.5rem 0',
+  overflowX: 'auto',
+}}>
+  ونش انقاذ – ونش انقاذ سيارات – ونش سيارة – اسرع ونش انقاذ – اقرب ونش انقاذ – انقاذ سيارات – ارخص ونش انقاذ – انقاذ السيارات – ونش عربيات – تليفون ونش انقاذ – رقم ونش انقاذ – ونش انقاذ بالقرب مني
+</section>
         <section
-            style={{
-              position: 'relative',
-              minHeight: '390px',
-              width: '100%',
-              margin: '0',
-              padding: '0',
-              zIndex: 1,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            className='back-footer'
-          >
-            {/* Overlay */}
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                background: 'rgba(0,0,0,0.81)',
-                zIndex: 2,
-              }}
-            ></div>
-            {/* Content */}
-            <div
-              style={{
-                position: 'relative',
-                zIndex: 3,
-                width: '100%',
-                maxWidth: '1400px',
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-                alignItems: 'flex-start',
-                padding: '3rem 2rem',
-                color: '#fff',
-                gap: '2rem',
-              }}
-            >
-              {/* Contact Info - Left */}
-              <div style={{flex: '1 1 340px', textAlign: 'right', background: 'rgba(0,0,0,0.55)', borderRadius: '1rem', padding: '2rem 2rem', boxShadow: '0 2px 16px #00000033', marginRight: 'auto'}}>
-                <div style={{fontWeight: 'bold', fontSize: '1.3rem', color: '#ffe600', marginBottom: '1.2rem', borderBottom: '3px solid #ffe600', display: 'inline-block', paddingBottom: '0.2rem'}}>اتصل بنا الان</div>
-                <div style={{fontSize: '1.05rem', margin: '1.2rem 0 1.5rem 0', color: '#fff'}}>
-                  ونش انقاذ محمد بحر هو اسرع و ارخص ونش انقاذ سيارات اتصل على رقم ونش الانقاذ خدمة 24 ساعة اتصل بنا الان ليصلك اقرب ونش انقاذ سيارات بخصم 50%.
-                </div>
-                <div style={{fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '0.7rem', color: '#fff'}}>
-                الهضبه الوسطى ، ال ٧٠ فدان ، خلف كومباوند نكست عماره رقم ١٠٥
-                </div>
-                <div style={{fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '0.7rem', color: '#fff'}}>
-                كورنيش عدلي مليجي، عماره ٢٢٦ ، الدور الارضي بجوار كافيه ليالي
-                </div>
-                <div style={{display: 'flex', flexDirection: 'column', gap: '0.7rem', marginBottom: '1.2rem'}}>
-                  <div style={{display: 'flex', alignItems: 'center', gap: '0.7rem'}}>
-                    <span style={{background: '#ffe600', borderRadius: '50%', padding: '0.5rem'}}><Phone color='#000'size={20} /></span>
-                    <span style={{direction: 'ltr', fontFamily: 'monospace', fontSize:'20px'}}>01044844492</span>
-                  </div>
-                  <div style={{display: 'flex', alignItems: 'center', gap: '0.7rem'}}>
-                    <span style={{background: '#ffe600',fontSize:'20px' , color:'#000', borderRadius: '50%', padding: '0.5rem'}}><FontAwesomeIcon color='#000' size='1xl' icon={faWhatsapp} /></span>
-                    <span style={{direction: 'ltr', fontFamily: 'monospace', fontSize:'20px'}}>01044844492</span>
-                  </div>
-                  
-                </div>
-              </div>
-              {/* Quick Links - Right */}
-              <div style={{flex: '1 1 260px', minWidth: '220px', textAlign: 'right'}}>
-                <div style={{fontWeight: 'bold', fontSize: '1.2rem', color: '#ffe600', marginBottom: '1.2rem', borderBottom: '3px solid #ffe600', display: 'inline-block', paddingBottom: '0.2rem'}}>روابط مفيدة</div>
-                <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.5rem 2.5rem', marginTop: '1.5rem'}}>
-                  <div style={{minWidth: '150px',  gap:'15px', display:'flex', flexDirection:'column'}}>
-                    <div>ونش انقاذ سيارات</div>
-                    <div>ونش انقاذ</div>
-                    <div>ارخص ونش انقاذ</div>
-                    <div>تليفون ونش انقاذ</div>
-                    <div>ونش انقاذ سريع</div>
-                    <div>ونش انقاذ القاهرة</div>
-                    <div>ونش انقاذ على المحاور</div>
-                    <div>ونش انقاذ محيطى</div>
-                    <div>ونش انقاذ مدينة نصر</div>
-                  </div>
-                  <div style={{minWidth: '150px', gap:'15px', display:'flex', flexDirection:'column'}}>
-                    <div>اقرب ونش انقاذ</div>
-                    <div>رقم ونش انقاذ</div>
-                    <div>ونش انقاذ 24 ساعة</div>
-                    <div>ونش عربيات</div>
-                    <div>ونش سحب</div>
-                    <div>ونش انقاذ المعطم</div>
-                    <div>ونش انقاذ التجمع</div>
-                    <div>ونش انقاذ 6 اكتوبر</div>
-                    <div>ونش انقاذ الرحاب</div>
-                    <div>ونش انقاذ الشيخ زايد</div>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </section>
+  style={{
+    position: 'relative',
+    minHeight: '390px',
+    width: '100%',
+    margin: '0',
+    padding: '0',
+    zIndex: 1,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: 'linear-gradient(90deg, #0a2c61 0%, #1976d2 100%)',
+  }}
+  className='back-footer'
+>
+  {/* Overlay */}
+  <div
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      background: 'rgba(0,0,0,0.81)',
+      zIndex: 2,
+    }}
+  ></div>
+  {/* Content */}
+  <div
+    style={{
+      position: 'relative',
+      zIndex: 3,
+      width: '100%',
+      maxWidth: '1400px',
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
+      alignItems: 'flex-start',
+      padding: '3rem 2rem',
+      color: '#fff',
+      gap: '2rem',
+    }}
+  >
+    {/* Contact Info - Left */}
+    <div style={{flex: '1 1 340px', textAlign: 'right', background: 'rgba(0,0,0,0.55)', borderRadius: '1rem', padding: '2rem 2rem', boxShadow: '0 2px 16px #00000033', marginRight: 'auto'}}>
+      <div style={{fontWeight: 'bold', fontSize: '1.3rem', color: '#ffe600', marginBottom: '1.2rem', borderBottom: '3px solid #ffe600', display: 'inline-block', paddingBottom: '0.2rem'}}>اتصل بنا الان</div>
+      <div style={{fontSize: '1.05rem', margin: '1.2rem 0 1.5rem 0', color: '#fff'}}>
+        ونش انقاذ محمد بحر هو اسرع و ارخص ونش انقاذ سيارات اتصل على رقم ونش الانقاذ خدمة 24 ساعة اتصل بنا الان ليصلك اقرب ونش انقاذ سيارات بخصم 50%.
+      </div>
+      <div style={{display: 'flex', flexDirection: 'column', gap: '0.7rem', marginBottom: '1.2rem'}}>
+        <div style={{display: 'flex', alignItems: 'center', gap: '0.7rem'}}>
+          <span style={{background: '#ffe600', borderRadius: '50%', padding: '0.5rem'}}><Phone color='#000'size={20} /></span>
+          <span style={{direction: 'ltr', fontFamily: 'monospace', fontSize:'20px'}}>01044844492</span>
+        </div>
+        <div style={{display: 'flex', alignItems: 'center', gap: '0.7rem'}}>
+          <span style={{background: '#ffe600',fontSize:'20px' , color:'#000', borderRadius: '50%', padding: '0.5rem'}}><FontAwesomeIcon color='#000' size='1xl' icon={faWhatsapp} /></span>
+          <span style={{direction: 'ltr', fontFamily: 'monospace', fontSize:'20px'}}>01044844492</span>
+        </div>
+      </div>
+    </div>
+    {/* Quick Links - Right */}
+    <div style={{flex: '1 1 260px', minWidth: '220px', textAlign: 'right'}}>
+      <div style={{fontWeight: 'bold', fontSize: '1.2rem', color: '#ffe600', marginBottom: '1.2rem', borderBottom: '3px solid #ffe600', display: 'inline-block', paddingBottom: '0.2rem'}}>روابط مفيدة</div>
+      <div style={{display: 'flex', gap: '0.5rem 2.5rem', marginTop: '1.5rem'}}>
+        <div style={{display:'flex', flexDirection:'column', width:'100%', gap:'10px'}}>
+          {areas.slice(0, Math.ceil(areas.length/2)).map((area, idx) => (
+            <Link key={idx} to={`/areas/${encodeURIComponent(area)}`} style={{color: 'inherit', textDecoration: 'none',display:'flex', alignItems:'center',gap:'5px'}}><Link2 size={15}/>{area}</Link>
+          ))}
+        </div>
+        <div style={{display:'flex', flexDirection:'column', width:'100%', gap:'10px'}}>
+          {areas.slice(Math.ceil(areas.length/2)).map((area, idx) => (
+            <Link key={idx} to={`/areas/${encodeURIComponent(area)}`} style={{color: 'inherit', textDecoration: 'none', display:'flex', alignItems:'center', gap:'5px'}}><Link2 size={15}/>{area}</Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      
       </>
     );
   };

@@ -56,7 +56,7 @@ body {
 }
 
 .header {
-  background: var(--color-bg);
+  background: var(--color-accent);
   color: var(--color-accent);
   padding: 1rem 0;
   text-align: center;
@@ -65,9 +65,13 @@ body {
   font-weight: bold;
   display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
 }
-
+@media (width < 700px){
+  .header {
+    justify-content: space-between;
+  }
+}
 .nav {
   display: flex;
   justify-content: center;
@@ -249,16 +253,18 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
   cursor: pointer;
   background: none;
   border: none;
   margin: 0 1rem;
   position: absolute;
   z-index: 1002;
-  top: 20px;
+  top: 12px;
   left: 5px;
+  color: white;
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 2px;
 }
 .hamburger span {
   display: block;

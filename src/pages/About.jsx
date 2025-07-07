@@ -5,11 +5,11 @@ import YellowCtaBox from '../components/YellowCtaBox';
 const About = () => {
   return (
     <>
-      <div style={{maxWidth: '700px', margin: '2rem auto', padding: '2rem 1.5rem', background: '#006c67', borderRadius: '1.5rem', boxShadow: '0 4px 24px rgba(0,0,0,0.08)', border: '1px solid #006c67'}}>
+      <div style={{maxWidth: '700px', margin: '2rem auto', padding: '2rem 1.5rem', background: '#0077FF', borderRadius: '1.5rem', boxShadow: '0 4px 24px rgba(0,0,0,0.08)', border: '1px solid #006c67'}}>
         <div className="section-title" style={{color: '#ffb100', marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem'}}>
           <Info color="#ffb100" size={32} /> عن الشركة
         </div>
-        <div className="section-content" style={{marginBottom: '2rem', lineHeight: '2', fontSize: '1.1rem', color: '#f194b4'}}>
+        <div className="section-content" style={{marginBottom: '2rem', lineHeight: '2', fontSize: '1.1rem', color: '#ffc107'}}>
           <p>
             <b>ونش انقاذ محمد بحر</b> –   لإنقاذ ورفع السيارات تعمل في السوق المصري منذ عام <b>2001</b> بمجال انقاذ ورفع السيارات علي الطرق السريعة بكافة أنحاء الجمهورية. لبناء جسور من الثقة المتبادلة بين الشركة وعملائها، ولدينا احدث اوناش ومجهزة باحدث الات رفع السيارات ولدينا فريق عمل محترف جدا، ما يميزنا عن غيرنا هو تقديم خدمة انقاذ سيارات بأعلى جودة وأحدث الاجهزة بأقل سعر و باحترافية عالية.
           </p>

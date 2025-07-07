@@ -13,6 +13,7 @@ import Services from './pages/Services';
 import Areas from './pages/Areas';
 import Contact from './pages/Contact';
 import ServiceDetail from './pages/ServiceDetail';
+import AreaDetail from './pages/AreaDetail';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,18 +27,107 @@ function App() {
   return (
     <>
       {/* Header & Navigation */}
-      <header className="header">
-          <img src={logo} alt="ونش إنقاذ محمد بحر" style={{ maxHeight: 48, marginLeft: 12, borderRadius: '0.5rem'}} />
-        <Link to="/" className='header-title' style={{ color: '#d66853', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.7rem', justifyContent: 'center' }}>
-          ونش إنقاذ محمد بحر
-        </Link>
+      <header className="header" style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: '1rem',
+        background: 'linear-gradient(90deg, #0a2c61 0%, #1976d2 100%)',
+        padding: '0.5rem 1.5rem',
+      }}>
+        <h1
+          style={{
+            fontFamily: 'Cairo, Tahoma, Arial, sans-serif',
+            fontWeight: 900,
+            fontSize: 'clamp(1.2rem, 4vw, 2.2rem)',
+            color: '#ffc107',
+            borderRadius: '0.7rem',
+            padding: '0.3em 0.8em',
+            margin: '0 12px 0 0',
+            letterSpacing: '1.5px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            lineHeight: 1.1,
+            textShadow: 'rgb(0 0 0) 0px 2px 8px',
+            direction: 'rtl',
+            minWidth: '120px',
+            maxWidth: '100vw',
+            width: 'fit-content',
+            transition: 'all 0.2s',
+          }}
+        >
+          Mohamed Bahr
+        </h1>
+        <div style={{display: 'flex', gap: '1rem', marginLeft:'10px'}}>
+          <button
+            className="header-icon-btn"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label="القائمة"
+            style={{
+              width: 56,
+              height: 56,
+              background: '#fff',
+              border: 'none',
+              borderRadius: '0.3rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 2px 8px #00336622',
+              cursor: 'pointer',
+              margin: 0,
+              padding: 0,
+              transition: 'box-shadow 0.2s',
+            }}
+          >
+            <span style={{display: 'block', width: 32, height: 32, position: 'relative'}}>
+              <span style={{position: 'absolute', top: 8, left: 0, right: 0, height: 3, background: '#0a2c61', borderRadius: 2, transition: '0.2s', transform: menuOpen ? 'rotate(45deg) translateY(10px)' : 'none'}}></span>
+              <span style={{position: 'absolute', top: 15, left: 0, right: 0, height: 3, background: '#0a2c61', borderRadius: 2, opacity: menuOpen ? 0 : 1, transition: '0.2s'}}></span>
+              <span style={{position: 'absolute', top: 22, left: 0, right: 0, height: 3, background: '#0a2c61', borderRadius: 2, transition: '0.2s', transform: menuOpen ? 'rotate(-45deg) translateY(-10px)' : 'none'}}></span>
+            </span>
+          </button>
+          <a
+            href="tel:01044844492"
+            className="header-icon-btn"
+            aria-label="اتصال سريع"
+            style={{
+              width: 56,
+              height: 56,
+              background: '#fff',
+              border: 'none',
+              borderRadius: '0.3rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 2px 8px #00336622',
+              cursor: 'pointer',
+              margin: 0,
+              padding: 0,
+              transition: 'box-shadow 0.2s',
+              textDecoration: 'none',
+            }}
+          >
+            <Phone size={32} color="#0a2c61" strokeWidth={2.2} />
+          </a>
+        </div>
+        <style>{`
+          @media (max-width: 500px) {
+            .header h1 {
+              font-size: 1.1rem !important;
+              padding: 0.2em 0.5em !important;
+              min-width: 80px !important;
+            }
+            .header-icon-btn {
+              width: 40px !important;
+              height: 40px !important;
+            }
+            .header {
+              padding: 0.5rem 0.5rem !important;
+            }
+          }
+        `}</style>
       </header>
       {/* Hamburger for mobile */}
-      <button className="hamburger" onClick={() => setMenuOpen((open) => !open)} aria-label="القائمة">
-        <span style={{ transform: menuOpen ? 'rotate(45deg) translateY(8px)' : 'none' }}></span>
-        <span style={{ opacity: menuOpen ? 0 : 1 }}></span>
-        <span style={{ transform: menuOpen ? 'rotate(-45deg) translateY(-8px)' : 'none' }}></span>
-      </button>
       {/* Desktop nav */}
       <nav className="nav">
         <Link to="/">الرئيسية</Link>
@@ -61,6 +151,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/areas" element={<Areas />} />
+        <Route path="/areas/:areaName" element={<AreaDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/service/:serviceId" element={<ServiceDetail />} />
       </Routes>
