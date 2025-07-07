@@ -587,9 +587,8 @@ const Home = () => {
     <section style={{
         maxWidth: '1100px',
         margin: '3rem auto',
-        padding: '2rem 1rem',
-        background: '#fff',
-        borderRadius: '1rem',
+        padding: '2rem',
+        background: '#ffc107',
         boxShadow: '0 2px 12px #0001',
         textAlign: 'center',
       }}>
@@ -597,7 +596,7 @@ const Home = () => {
         <Slider
           dots={false}
           infinite={true}
-          speed={500}
+          speed={700}
           slidesToShow={6}
           slidesToScroll={2}
           autoplay={true}
@@ -619,8 +618,8 @@ const Home = () => {
                   objectFit: 'contain',
                   margin: '0 auto',
                   filter: 'drop-shadow(0 2px 8px #0002)',
-                  background: '#f7f7fa',
-                  borderRadius: '0.7rem',
+                  background: 'white',
+                  borderRadius: '0.5rem',
                   padding: '0.5rem',
                 }}
               />

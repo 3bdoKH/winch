@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import YellowCtaBox from '../components/YellowCtaBox';
 import './HomeGallery.css'; 
-import winchImg from '../images/images.png'; // Use a suitable tow truck image
+import winchImg from '../images/images.png'; 
 import logo from '../images/logo.png';
 
 export const areas = [
@@ -15,8 +15,8 @@ export const areas = [
   'ونش زايد', 'ونش اكتوبر', 'ونش المحور', 'ونش المهندسين', 'ونش حدائق الاهرام', 'ونش فيصل', 'ونش المريوطيه', 'ونش الجيزه', 'ونش مشعل', 'ونش حدائق اكتوبر',
   'ونش الهرم', 'ونش طريق الفيوم', 'ونش طريق الواحات', 'ونش ٦ اكتوبر', 'ونش العجوزه', 'ونش الزمالك', 'ونش وسط البلد', 'ونش الوراق', 'ونش عابدين',
   'ونش شبرا الخيمه', 'ونش شبرا', 'ونش كورنيش النيل', 'ونش روض الفرج', 'ونش نيو جيزه', 'ونش امبابه', 'ونش كرداسه',
-  // New areas
-  'صحراوي شرقي', 'صحراوي غربي', 'طريق الكريمات', 'مركز ناصر', 'سمسطا', 'بني سويف', 'الفشن', 'ببا', 'مركز بوش', 'مركز العدوا'
+  // New areas with 'ونش' prefix
+  'ونش صحراوي شرقي', 'ونش صحراوي غربي', 'ونش طريق الكريمات', 'ونش مركز ناصر', 'ونش سمسطا', 'ونش بني سويف', 'ونش الفشن', 'ونش ببا', 'ونش مركز بوش', 'ونش مركز العدوا'
 ];
 
 const Areas = () => {

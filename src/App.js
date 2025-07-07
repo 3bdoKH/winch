@@ -14,7 +14,7 @@ import Areas from './pages/Areas';
 import Contact from './pages/Contact';
 import ServiceDetail from './pages/ServiceDetail';
 import AreaDetail from './pages/AreaDetail';
-
+import truck from './images/truck.png'
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
@@ -33,17 +33,16 @@ function App() {
         justifyContent: 'space-between',
         gap: '1rem',
         background: 'linear-gradient(90deg, #0a2c61 0%, #1976d2 100%)',
-        padding: '0.5rem 1.5rem',
       }}>
+        
         <h1
           style={{
             fontFamily: 'Cairo, Tahoma, Arial, sans-serif',
             fontWeight: 900,
-            fontSize: 'clamp(1.2rem, 4vw, 2.2rem)',
+            fontSize: '1.2rem',
             color: '#ffc107',
-            borderRadius: '0.7rem',
             padding: '0.3em 0.8em',
-            margin: '0 12px 0 0',
+            margin: '0 33px 0 0',
             letterSpacing: '1.5px',
             display: 'flex',
             alignItems: 'center',
@@ -55,18 +54,21 @@ function App() {
             maxWidth: '100vw',
             width: 'fit-content',
             transition: 'all 0.2s',
+            borderBottom:'3px solid black',
+            position:'relative'
           }}
         >
           Mohamed Bahr
         </h1>
+        <img src={truck} alt="truck" className='truck' />
         <div style={{display: 'flex', gap: '1rem', marginLeft:'10px'}}>
           <button
             className="header-icon-btn"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label="القائمة"
             style={{
-              width: 56,
-              height: 56,
+              width: 40,
+              height: 40,
               background: '#fff',
               border: 'none',
               borderRadius: '0.3rem',
@@ -91,8 +93,8 @@ function App() {
             className="header-icon-btn"
             aria-label="اتصال سريع"
             style={{
-              width: 56,
-              height: 56,
+              width: 40,
+              height: 40,
               background: '#fff',
               border: 'none',
               borderRadius: '0.3rem',
