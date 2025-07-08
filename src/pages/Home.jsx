@@ -42,6 +42,21 @@ import Nissan from "../images/cars/Nissan.jpeg";
 import Peugeot from "../images/cars/Peugeot.jpeg";
 import skoda from "../images/cars/skoda.jpeg";
 import subaru from "../images/cars/subaru.jpeg";
+import whatsapp1 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
+import whatsapp2 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
+import whatsapp3 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_0b194e2d.jpg';
+import whatsapp4 from '../images/WhatsApp Image 2025-07-02 at 15.02.32_bc1bb19d.jpg';
+import whatsapp5 from '../images/WhatsApp Image 2025-07-02 at 15.02.32_7427781a.jpg';
+import whatsapp6 from '../images/WhatsApp Image 2025-07-02 at 15.02.32_00a9c303.jpg';
+import whatsapp7 from '../images/WhatsApp Image 2025-07-02 at 15.02.32_a2d1fc1d.jpg';
+import whatsapp8 from '../images/WhatsApp Image 2025-07-02 at 15.02.31_d02e6e11.jpg';
+import whatsapp9 from '../images/WhatsApp Image 2025-07-02 at 15.02.31_0da1e2e8.jpg';
+import whatsapp10 from '../images/WhatsApp Image 2025-07-02 at 15.02.31_58370244.jpg';
+import whatsapp11 from '../images/WhatsApp Image 2025-07-02 at 15.02.31_d875b30c.jpg';
+
+const whatsappImages = [
+  whatsapp1, whatsapp2, whatsapp3, whatsapp4, whatsapp5, whatsapp6, whatsapp7, whatsapp8, whatsapp9, whatsapp10, whatsapp11
+];
 
 const partners = [
   { src: toyota, alt: "Toyota" },
@@ -276,7 +291,7 @@ const Home = () => {
           <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: 'var(--color-accent)', textAlign: 'center'}}>
             <MessageSquare size={48} color="#ffc107" style={{marginBottom: '1rem'}} />
             <div style={{fontWeight: 'bold', fontSize: '1.3rem', marginBottom: '0.5rem', color:'var(--color-text)'}}>الانتشار</div>
-            <div style={{fontSize: '1.05rem', color:'var(--color-text)'}}>تنتشر جميع سيارات الانقاذ لدينا في جميع أنحاء الجمهورية والصياحين العامة والطرق الرئيسية لذلك نحن الأقرب إليك.</div>
+            <div style={{fontSize: '1.05rem', color:'var(--color-text)'}}>تنتشر جميع سيارات الانقاذ لدينا في جميع أنحاء الجمهورية والميادين  العامة والطرق الرئيسية لذلك نحن الأقرب إليك.</div>
           </div>
           {/* Feature: الخبرة */}
           <div style={{flex: '1 1 220px', minWidth: '220px', background: 'transparent', color: 'var(--color-accent)', textAlign: 'center'}}>
@@ -480,6 +495,41 @@ const Home = () => {
   </div>
 </section>
 
+      {/* WhatsApp Images Section */}
+      <section style={{
+        maxWidth: '1100px',
+        margin: '2.5rem auto',
+        padding: '1.5rem 1rem',
+        background: '#fff',
+        borderRadius: '1rem',
+        boxShadow: '0 2px 12px #0001',
+      }}>
+        <div style={{fontWeight: 'bold', fontSize: '1.5rem', color: '#1976d2', marginBottom: '1.2rem', textAlign: 'center'}}>صور من أعمالنا  </div>
+        <div style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '1.2rem',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          {whatsappImages.map((img, idx) => (
+            <img
+              key={idx}
+              src={img}
+              alt={`صورة واتساب رقم ${idx+1}`}
+              style={{
+                width: '180px',
+                height: '120px',
+                objectFit: 'cover',
+                borderRadius: '0.7rem',
+                boxShadow: '0 2px 8px #0001',
+                background: '#f7f7fa',
+              }}
+            />
+          ))}
+        </div>
+      </section>
+
       {/* Areas Simple List Section */}
       <section style={{
         maxWidth: '1100px',
@@ -489,7 +539,7 @@ const Home = () => {
         boxShadow: '0 2px 12px #0001',
         background:'linear-gradient(90deg, #0a2c61 0%, #1976d2 100%)',
       }}>
-        <div style={{fontWeight: 'bold', fontSize: '1.5rem', color: '#0a3977', marginBottom: '1.2rem', textAlign: 'center'}}>مناطق التغطية</div>
+        <div style={{fontWeight: 'bold', fontSize: '2rem', color: 'var(--color-highlight)', marginBottom: '1.2rem', textAlign: 'center'}}>مناطق التغطية</div>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
@@ -506,7 +556,7 @@ const Home = () => {
                 color:'#ffe066',
                 textDecoration: 'none',
                 fontWeight: 500,
-                fontSize: '1.08rem',
+                fontSize: '1.2rem',
                 padding: '0.5rem 0.2rem',
                 borderRadius: '0.4rem',
                 transition: 'background 0.15s',
@@ -522,64 +572,7 @@ const Home = () => {
         </div>
       </section>
 
-    {/* <div class="marquee-container">
-        <div class="marquee-track">
-            <div class="marquee-item">
-                <img src={img1} alt="Image 1" />
-            </div>
-            <div class="marquee-item">
-                <img src={img2} alt="Image 2" />
-            </div>
-            <div class="marquee-item">
-                <img src={img3} alt="Image 3" />
-            </div>
-            <div class="marquee-item">
-                <img src={img4} alt="Image 4" />
-            </div>
-            <div class="marquee-item">
-                <img src={img5} alt="Image 5" />
-            </div>
-            <div class="marquee-item">
-                <img src={img6} alt="Image 6" />
-            </div>
-            <div class="marquee-item">
-                <img src={img7} alt="Image 7" />
-            </div>
-            <div class="marquee-item">
-                <img src={img8} alt="Image 8" />
-            </div>
-            <div class="marquee-item">
-                <img src={img9} alt="Image 9" />
-            </div>
-            <div class="marquee-item">
-                <img src={img1} alt="Image 1" />
-            </div>
-            <div class="marquee-item">
-                <img src={img2} alt="Image 2" />
-            </div>
-            <div class="marquee-item">
-                <img src={img3} alt="Image 3" />
-            </div>
-            <div class="marquee-item">
-                <img src={img4} alt="Image 4" />
-            </div>
-            <div class="marquee-item">
-                <img src={img5} alt="Image 5" />
-            </div>
-            <div class="marquee-item">
-                <img src={img6} alt="Image 6" />
-            </div>
-            <div class="marquee-item">
-                <img src={img7} alt="Image 7" />
-            </div>
-            <div class="marquee-item">
-                <img src={img8} alt="Image 8" />
-            </div>
-            <div class="marquee-item">
-                <img src={img9} alt="Image 9" />
-            </div>
-        </div>
-    </div> */}
+   
     {/* Partners Section */}
     <section style={{
         maxWidth: '1100px',
@@ -594,8 +587,8 @@ const Home = () => {
           dots={false}
           infinite={true}
           speed={700}
-          slidesToShow={6}
-          slidesToScroll={2}
+          slidesToShow={5}
+          slidesToScroll={1}
           autoplay={true}
           autoplaySpeed={1800}
           responsive={[
@@ -672,7 +665,7 @@ const Home = () => {
           borderRight: '6px solid #ffb100',
           fontSize: '1.18rem',
           fontWeight: 600,
-          color: '#003844',
+          color: 'var(--color-highlight)',
           lineHeight: '2',
           marginRight: '0.5rem',
         }}>
@@ -786,7 +779,7 @@ const Home = () => {
               textAlign: 'right'
             }}>
               <p style={{marginBottom: '1.5rem'}}>
-                نحن نقدم خدمة ونش انقاذ سيارات في جميع أنحاء مصر بأعلى جودة وأسرع وقت. فريقنا المدرب على أعلى مستوى جاهز لمساعدتك في أي وقت من اليوم.
+                نحن نقدم خدمة ونش انقاذ سيارات في جميع أنحاء جمهوريه مصر العربيه بأعلى جودة وأسرع وقت. فريقنا المدرب على أعلى مستوى جاهز لمساعدتك في أي وقت من اليوم.
               </p>
               
               <h3 style={{
@@ -837,7 +830,7 @@ const Home = () => {
                   margin: '0.5rem 0',
                   borderRadius: '0.5rem',
                   fontSize: '1rem'
-                }}>• فتح أبواب السيارات</li>
+                }}>• تغيير الاطارات</li>
               </ul>
               
               <div style={{
@@ -854,52 +847,42 @@ const Home = () => {
                 }}>
                   لماذا تختارنا؟
                 </h4>
-                <p style={{fontSize: '1rem', lineHeight: '1.6'}}>
-                  • أسعار منافسة وشفافة<br/>
-                  • خدمة 24 ساعة طوال أيام الأسبوع<br/>
-                  • فريق مدرب ومحترف<br/>
-                  • معدات حديثة وآمنة<br/>
-                  • وصول سريع خلال 10 دقائق
-                </p>
+                <ul style={{listStyle: 'disc', color: 'white', textAlign: 'right', margin: '1.5rem 2rem 0 0', fontWeight: 400, fontSize: '1.1rem', direction: 'rtl'}}>
+                  <li>أسعار منافسة وشفافة</li>
+                  <li>خدمة 24 ساعة طوال أيام الأسبوع</li>
+                  <li>فريق مدرب ومحترف</li>
+                  <li>معدات حديثة وآمنة</li>
+                  <li>وصول سريع خلال 10 دقائق</li>
+                  <li>خصم 50% على الخدمات</li>
+                  <li>خدمة ونش انقاذ ليلي ونهاري</li>
+                  <li>ونش انقاذ سريع للطوارئ</li>
+                  <li>ونش انقاذ سيارات نقل ثقيل</li>
+                  <li>ونش انقاذ سيارات ملاكي</li>
+                  <li>ونش انقاذ سيارات على الطرق السريعة</li>
+                  <li>ونش انقاذ سيارات في جميع المحافظات</li>
+                </ul>
               </div>
             </div>
           </div>
         </section>
 
 
-        {/* Keywords Section */}
-        <section style={{
-  background: 'linear-gradient(90deg, #0a2c61 0%, #1976d2 100%)',
-  color: '#ffe600',
-  textAlign: 'center',
-  padding: '2rem 1rem 1.5rem 1rem',
-  fontWeight: 'bold',
-  fontSize: '1.35rem',
-  lineHeight: '2.2',
-  letterSpacing: '0.5px',
-  direction: 'rtl',
-  boxShadow: '0 2px 12px #00336622',
-  borderRadius: '0.7rem',
-  margin: '1.5rem 0',
-  overflowX: 'auto',
-}}>
-  ونش انقاذ – ونش انقاذ سيارات – ونش سيارة – اسرع ونش انقاذ – اقرب ونش انقاذ – انقاذ سيارات – ارخص ونش انقاذ – انقاذ السيارات – ونش عربيات – تليفون ونش انقاذ – رقم ونش انقاذ – ونش انقاذ بالقرب مني
-</section>
+       
         <section
-  style={{
-    position: 'relative',
-    minHeight: '390px',
-    width: '100%',
-    margin: '0',
-    padding: '0',
-    zIndex: 1,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    background: 'linear-gradient(90deg, #0a2c61 0%, #1976d2 100%)',
-  }}
-  className='back-footer'
->
+        style={{
+          position: 'relative',
+          minHeight: '390px',
+          width: '100%',
+          margin: '0',
+          padding: '0',
+          zIndex: 1,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'linear-gradient(90deg, #0a2c61 0%, #1976d2 100%)',
+        }}
+        className='back-footer'
+      >
   {/* Overlay */}
   <div
     style={{
@@ -944,6 +927,29 @@ const Home = () => {
           <span style={{direction: 'ltr', fontFamily: 'monospace', fontSize:'20px'}}>01044844492</span>
         </div>
       </div>
+      {/* Keywords Section - inserted here */}
+      <section style={{
+        color: '#ffe600',
+        textAlign: 'center',
+        padding: '2rem 1rem 1.5rem 1rem',
+        fontWeight: 'bold',
+        fontSize: '1.35rem',
+        lineHeight: '2.2',
+        letterSpacing: '0.5px',
+        direction: 'rtl',
+        boxShadow: '0 2px 12px #00336622',
+        borderRadius: '0.7rem',
+        margin: '1.5rem 0',
+        overflowX: 'auto',
+      }}>
+        <div style={{marginBottom: '1.2rem', fontWeight: 500, fontSize: '1.1rem', color: '#ffe600'}}>
+          اختيار ونش إنقاذ سيارات موثوق به يضمن لك الأمان والسرعة في الوصول والمساعدة في أصعب الظروف. نحن نعمل على مدار الساعة لتقديم أفضل خدمة إنقاذ سيارات في مصر بأعلى جودة وأقل سعر.
+        </div>
+        <div>
+          ونش انقاذ – ونش انقاذ سيارات – ونش سيارة – اسرع ونش انقاذ – اقرب ونش انقاذ – انقاذ سيارات – ارخص ونش انقاذ – انقاذ السيارات – ونش عربيات – تليفون ونش انقاذ – رقم ونش انقاذ – ونش انقاذ بالقرب مني
+        </div>
+        
+      </section>
     </div>
     {/* Quick Links - Right */}
     <div style={{flex: '1 1 260px', minWidth: '220px', textAlign: 'right'}}>

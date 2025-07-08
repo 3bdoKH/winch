@@ -221,8 +221,8 @@ body {
 }
 
 .contact-section {
-  background: var(--color-muted);
-  color: var(--color-text);
+  background: var(--color-accent);
+  color: var(--color-highlight);
   padding: 2rem 1rem;
   text-align: center;
 }

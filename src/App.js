@@ -166,7 +166,7 @@ function App() {
             <a href="#" className="footer-link">اتصل بنا</a>
           </div>
           <div className="footer-copyright">
-            تصميم وتنفيذ ايميرالد - جميع الحقوق محفوظة © 2025 
+            تصميم وتنفيذ <a href='#' style={{color:'var(--color-highlight)', textDecoration:'none'}}>ايميرالد</a> - جميع الحقوق محفوظة © 2025 
           </div>
         </div>
       </footer>
