@@ -10,8 +10,11 @@ import {
   MessageCircleMore,
   Menu,
   X,
+  Wrench,
+  Lightbulb,
+  BatteryCharging,
+  Users,
 } from "lucide-react";
-import logo from "./images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
@@ -32,6 +35,7 @@ function App() {
   // Close menu on route change
   React.useEffect(() => {
     setMenuOpen(false);
+    setOpenDropdown(null);
   }, [location]);
 
   // Navigation links
@@ -43,6 +47,87 @@ function App() {
     { to: "/contact", label: "اتصل بنا", icon: <Phone size={20} /> },
   ];
 
+  const serviceQuickLinks = [
+    {
+      id: "rescue",
+      label: "إنقاذ السيارات",
+      icon: <Wrench size={18} color="#0a2c61" />,
+    },
+    {
+      id: "equipment",
+      label: "نقل المعدات",
+      icon: <Lightbulb size={18} color="#0a2c61" />,
+    },
+    {
+      id: "fuel",
+      label: "التزود بالوقود",
+      icon: <Package size={18} color="#0a2c61" />,
+    },
+    {
+      id: "battery",
+      label: "وصلة بطارية",
+      icon: <BatteryCharging size={18} color="#0a2c61" />,
+    },
+    {
+      id: "tires",
+      label: "تغيير الاطارات",
+      icon: <Users size={18} color="#0a2c61" />,
+    },
+  ];
+
+  const contactQuickLinks = [
+    {
+      type: "a",
+      href: "tel:01044844492",
+      label: "اتصل الآن",
+      icon: <Phone size={18} color="#0a2c61" />,
+    },
+    {
+      type: "a",
+      href: "https://wa.me/201044844492",
+      label: "واتساب",
+      icon: <FontAwesomeIcon icon={faWhatsapp} style={{ color: "#25D366" }} />,
+    },
+    {
+      type: "link",
+      to: "/contact",
+      label: "نموذج التواصل",
+      icon: <Mail size={18} color="#0a2c61" />,
+    },
+  ];
+
+  const governorates = [
+    "القاهرة",
+    "الجيزة",
+    "الإسكندرية",
+    "القليوبية",
+    "بورسعيد",
+    "السويس",
+    "الدقهلية",
+    "الشرقية",
+    "الغربية",
+    "المنوفية",
+    "البحيرة",
+    "كفر الشيخ",
+    "دمياط",
+    "الإسماعيلية",
+    "الفيوم",
+    "بني سويف",
+    "المنيا",
+    "أسيوط",
+    "سوهاج",
+    "قنا",
+    "الأقصر",
+    "أسوان",
+    "البحر الأحمر",
+    "الوادي الجديد",
+    "مطروح",
+    "شمال سيناء",
+    "جنوب سيناء",
+  ];
+
+  const [openDropdown, setOpenDropdown] = useState(null);
+
   return (
     <>
       <style>
@@ -51,10 +136,11 @@ function App() {
           .header {
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 6000;
             background: linear-gradient(90deg, #0a2c61 0%, #1976d2 100%);
             box-shadow: 0 2px 12px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
+            overflow: visible;
           }
 
           .header-container {
@@ -97,6 +183,9 @@ function App() {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            position: relative;
+            z-index: 6500;
+            overflow: visible;
           }
 
           .nav-link {
@@ -140,6 +229,80 @@ function App() {
 
           .nav-link:hover::before {
             width: 80%;
+          }
+
+          /* Dropdown Menu */
+          .dropdown {
+            position: relative;
+            z-index: 1500;
+          }
+
+          .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 0px);
+            right: 0;
+            min-width: 240px;
+            background: #fff;
+            color: #0a2c61;
+            border-radius: 12px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+            padding: 0.5rem;
+            display: none;
+            z-index: 2000;
+            border: 1px solid rgba(10,44,97,0.1);
+            direction: rtl;
+          }
+
+          .dropdown.is-open .dropdown-menu {
+            display: block;
+            animation: dropdownIn 160ms ease-out;
+          }
+
+          @keyframes dropdownIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+
+          .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            color: #0a2c61;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s ease, transform 0.2s ease;
+          }
+
+          .dropdown-item:hover {
+            background: rgba(25,118,210,0.08);
+            transform: translateX(-2px);
+          }
+
+          /* Areas dropdown as multi-column grid */
+          .dropdown-menu.areas-dropdown-grid {
+            grid-template-columns: repeat(3, minmax(140px, 1fr));
+            gap: 4px 8px;
+            min-width: 520px;
+            max-width: 720px;
+          }
+
+          .dropdown.is-open .dropdown-menu.areas-dropdown-grid {
+            display: grid;
+          }
+
+          .dropdown-menu.areas-dropdown-grid .dropdown-item {
+            padding: 0.5rem 0.6rem;
+            white-space: nowrap;
+          }
+
+          @media (max-width: 1100px) {
+            .dropdown-menu.areas-dropdown-grid {
+              grid-template-columns: repeat(2, minmax(140px, 1fr));
+              min-width: 380px;
+            }
           }
 
           /* Mobile Menu Button */
@@ -407,18 +570,164 @@ function App() {
 
           {/* Desktop Navigation */}
           <nav className="nav-desktop">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`nav-link ${
-                  location.pathname === link.to ? "active" : ""
-                }`}
-              >
-                {link.icon}
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              if (link.to === "/services") {
+                return (
+                  <div
+                    key={link.to}
+                    className={`dropdown ${
+                      openDropdown === "services" ? "is-open" : ""
+                    }`}
+                    onMouseEnter={() => {
+                      if (location.pathname !== "/services")
+                        setOpenDropdown("services");
+                    }}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                  >
+                    <Link
+                      to={link.to}
+                      className={`nav-link ${
+                        location.pathname === link.to ? "active" : ""
+                      }`}
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {link.icon}
+                      {link.label}
+                    </Link>
+                    <div
+                      className="dropdown-menu"
+                      role="menu"
+                      aria-label="روابط سريعة للخدمات"
+                    >
+                      {serviceQuickLinks.map((s) => (
+                        <Link
+                          key={s.id}
+                          to={`/service/${s.id}`}
+                          className="dropdown-item"
+                          role="menuitem"
+                        >
+                          {s.icon}
+                          <span>{s.label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+              if (link.to === "/areas") {
+                return (
+                  <div
+                    key={link.to}
+                    className={`dropdown ${
+                      openDropdown === "areas" ? "is-open" : ""
+                    }`}
+                    onMouseEnter={() => setOpenDropdown("areas")}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                  >
+                    <Link
+                      to={link.to}
+                      className={`nav-link ${
+                        location.pathname === link.to ? "active" : ""
+                      }`}
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {link.icon}
+
+                      {link.label}
+                    </Link>
+                    <div
+                      className="dropdown-menu areas-dropdown-grid"
+                      role="menu"
+                      aria-label="محافظات مصر"
+                    >
+                      {governorates.map((g) => (
+                        <Link
+                          key={g}
+                          to={`/areas/${encodeURIComponent(g)}`}
+                          className="dropdown-item"
+                          role="menuitem"
+                          onClick={() => setOpenDropdown(null)}
+                        >
+                          <MapPin size={18} color="#0a2c61" />
+                          ونش انقاذ
+                          <span>{g}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+              if (link.to === "/contact") {
+                return (
+                  <div
+                    key={link.to}
+                    className={`dropdown ${
+                      openDropdown === "contact" ? "is-open" : ""
+                    }`}
+                    onMouseEnter={() => {
+                      if (location.pathname !== "/contact")
+                        setOpenDropdown("contact");
+                    }}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                  >
+                    <Link
+                      to={link.to}
+                      className={`nav-link ${
+                        location.pathname === link.to ? "active" : ""
+                      }`}
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {link.icon}
+                      {link.label}
+                    </Link>
+                    <div
+                      className="dropdown-menu"
+                      role="menu"
+                      aria-label="تواصل معنا"
+                    >
+                      {contactQuickLinks.map((item, idx) =>
+                        item.type === "a" ? (
+                          <a
+                            key={idx}
+                            href={item.href}
+                            className="dropdown-item"
+                            role="menuitem"
+                            onClick={() => setOpenDropdown(null)}
+                          >
+                            {item.icon}
+                            <span>{item.label}</span>
+                          </a>
+                        ) : (
+                          <Link
+                            key={idx}
+                            to={item.to}
+                            className="dropdown-item"
+                            role="menuitem"
+                            onClick={() => setOpenDropdown(null)}
+                          >
+                            {item.icon}
+                            <span>{item.label}</span>
+                          </Link>
+                        )
+                      )}
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`nav-link ${
+                    location.pathname === link.to ? "active" : ""
+                  }`}
+                  onClick={() => setOpenDropdown(null)}
+                >
+                  {link.icon}
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Header Actions */}
