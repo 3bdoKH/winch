@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import bgImg from '../images/images.png';
-import { Phone, Mail, MapPin, Clock, MessageCircle, AlertTriangle, CheckCircle, Send, WhatsApp } from 'lucide-react';
+import { Phone, Mail, AlertTriangle, CheckCircle, Send } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import './Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,11 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+
+  // Scroll to top when component mounts
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

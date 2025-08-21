@@ -1,0 +1,148 @@
+/* Extracted from YellowCtaBox.jsx inline styles and embedded style blocks */
+
+/* Yellow CTA Box Container */
+.yellow-cta-box {
+    background: #ffed3b;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 2rem 0;
+    border: 2px solid #ffc107;
+    position: relative;
+    overflow: hidden;
+}
+
+.yellow-cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 237, 59, 0.9) 0%, rgba(255, 193, 7, 0.9) 100%);
+    z-index: 1;
+}
+
+.yellow-cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.yellow-cta-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0a2c61;
+    margin-bottom: 1rem;
+    direction: rtl;
+}
+
+.yellow-cta-description {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    direction: rtl;
+    line-height: 1.6;
+}
+
+.yellow-cta-phone {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0a2c61;
+    direction: ltr;
+    font-family: monospace;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.yellow-cta-button {
+    background: #0a2c61;
+    color: #fff;
+    border: none;
+    border-radius: 0.8rem;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(10, 44, 97, 0.3);
+}
+
+.yellow-cta-button:hover {
+    background: #1976d2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(10, 44, 97, 0.4);
+}
+
+.yellow-cta-button:active {
+    transform: translateY(0);
+}
+
+.yellow-cta-icon {
+    font-size: 1.2rem;
+}
+
+.yellow-cta-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+    direction: rtl;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .yellow-cta-box {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .yellow-cta-title {
+        font-size: 1.3rem;
+    }
+
+    .yellow-cta-description {
+        font-size: 1rem;
+    }
+
+    .yellow-cta-phone {
+        font-size: 1.5rem;
+    }
+
+    .yellow-cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .yellow-cta-box {
+        padding: 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .yellow-cta-title {
+        font-size: 1.2rem;
+    }
+
+    .yellow-cta-description {
+        font-size: 0.95rem;
+    }
+
+    .yellow-cta-phone {
+        font-size: 1.3rem;
+    }
+
+    .yellow-cta-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .yellow-cta-note {
+        font-size: 0.8rem;
+    }
+}

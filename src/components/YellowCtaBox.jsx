@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, MessageCircle, MapPin, Clock, Star, Shield } from 'lucide-react';
+import './YellowCtaBox.css';
 
 const YellowCtaBox = () => {
   const phoneNumber = '01044844492';

@@ -1,16 +1,11 @@
 import React from 'react';
 import {
-  Wrench, Lightbulb, Package, BatteryCharging, Users,
-  Car, Truck, Fuel, Zap, Shield, Clock, MapPin, Phone,
+  Wrench, Lightbulb, Package, BatteryCharging, Users, Shield, Clock, MapPin, Phone,
   ArrowRight, Star, Award
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import YellowCtaBox from '../components/YellowCtaBox';
-
-// Import service images
-import serviceImg1 from '../images/download.jpeg';
-import serviceImg2 from '../images/images (1).jpeg';
-import serviceImg3 from '../images/images (2).jpeg';
+import './Services.css';
 import extraImg1 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
 import extraImg2 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
 import extraImg3 from '../images/fuel.jpeg';
@@ -19,6 +14,11 @@ import extraImg5 from '../images/images (3).jpeg';
 
 const Services = () => {
   const phoneNumber = '01044844492';
+
+  // Scroll to top when component mounts
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const extraServices = [
     {

@@ -1,13 +1,17 @@
 import React from 'react';
 import {
-  Info, Star, MessageCircle, Clock, MapPin, Phone,
+  Info, Star, MessageCircle, Clock, MapPin,
   Award, Users, Shield, Zap, Heart, Target
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import YellowCtaBox from '../components/YellowCtaBox';
+import './About.css';
 
 const About = () => {
   const phoneNumber = '01044844492';
+
+  // Scroll to top when component mounts
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

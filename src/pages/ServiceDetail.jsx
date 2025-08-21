@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import './ServiceDetail.css';
 import img1 from '../images/images.jpeg';
 import img2 from '../images/images (1).jpeg';
 import img3 from '../images/fuel.jpeg';
@@ -97,6 +98,11 @@ const services = {
 const ServiceDetail = () => {
   const { serviceId } = useParams();
   const service = services[serviceId];
+
+  // Scroll to top when component mounts
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [serviceId]);
   const phone = '01044844492';
 
   if (!service) {

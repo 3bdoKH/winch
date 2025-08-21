@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Phone, MapPin, Clock, Star, Shield, Zap, ArrowLeft, AlertTriangle } from 'lucide-react';
+import { Phone, ArrowLeft, AlertTriangle, Menu, X } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import './AreaDetail.css';
 
 // Import WhatsApp images
 import wa1 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
@@ -16,6 +17,54 @@ const AreaDetail = () => {
   const displayName = decodeURIComponent(areaName).replace(/[-_]/g, ' ');
   const phone = '01044844492';
   const brand = 'ونش انقاذ محمد بحر';
+  const [activeSection, setActiveSection] = useState('header');
+  const [isNavigatorOpen, setIsNavigatorOpen] = useState(false);
+
+  // Navigation sections
+  const sections = [
+    { id: 'header', title: 'الرئيسية', icon: '🏠' },
+    { id: 'contact', title: 'طرق التواصل', icon: '📞' },
+    { id: 'gallery', title: 'معرض الصور', icon: '📸' },
+    { id: 'services', title: 'خدماتنا', icon: '🚗' },
+    { id: 'why-choose', title: 'لماذا تختارنا', icon: '⭐' },
+    { id: 'fastest', title: 'أسرع ونش', icon: '⚡' },
+    { id: 'pricing', title: 'الأسعار', icon: '💰' },
+    { id: 'keywords', title: 'كلمات البحث', icon: '🔍' },
+    { id: 'emergency', title: 'الطوارئ', icon: '🚨' }
+  ];
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [areaName]);
+
+  // Handle scroll to section
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+      setIsNavigatorOpen(false);
+    }
+  };
+
+  // Handle scroll spy
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sections[i].id);
+        if (element && element.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <section className="area-detail-section" style={{
@@ -23,10 +72,33 @@ const AreaDetail = () => {
       background: '#f7f7f7',
       fontFamily: 'Tajawal, Arial, sans-serif',
     }}>
+      {/* Side Navigator */}
+      <div className={`side-navigator ${isNavigatorOpen ? 'open' : ''}`}>
+        <div className="navigator-toggle" onClick={() => setIsNavigatorOpen(!isNavigatorOpen)}>
+          {isNavigatorOpen ? <X size={20} /> : <Menu size={20} />}
+        </div>
+
+        <div className="navigator-content">
+          <h3 className="navigator-title">تنقل سريع</h3>
+          <nav className="navigator-nav">
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                className={`navigator-item ${activeSection === section.id ? 'active' : ''}`}
+                onClick={() => scrollToSection(section.id)}
+              >
+                <span className="navigator-icon">{section.icon}</span>
+                <span className="navigator-text">{section.title}</span>
+              </button>
+            ))}
+          </nav>
+        </div>
+      </div>
+
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
 
         {/* Header Section */}
-        <div style={{
+        <div id="header" style={{
           background: 'linear-gradient(135deg, #0a2c61 0%, #1976d2 100%)',
           color: 'white',
           borderRadius: '1.5rem',
@@ -88,7 +160,7 @@ const AreaDetail = () => {
         </div>
 
         {/* Contact Methods */}
-        <div style={{
+        <div id="contact" style={{
           background: 'white',
           borderRadius: '1.5rem',
           padding: '2rem',
@@ -233,7 +305,7 @@ const AreaDetail = () => {
         </div>
 
         {/* WhatsApp Images Gallery */}
-        <div style={{
+        <div id="gallery" style={{
           background: 'white',
           borderRadius: '1.5rem',
           padding: '2rem',
@@ -287,7 +359,7 @@ const AreaDetail = () => {
         </div>
 
         {/* Main Content */}
-        <div style={{
+        <div id="services" style={{
           background: 'white',
           borderRadius: '1.5rem',
           padding: '2rem',
@@ -389,7 +461,7 @@ const AreaDetail = () => {
             ونش انقاذ محمد بحر لدينا دائما ونش انقاذ سيارات في {displayName} لسحب و إنقاذ سيارتك وأخذك الي اقرب مركز صيانة أو وكيل معتمد ، أتصل بنا الان ولا تتردد ونش أنقاذ محمد بحر أرخص ونش انقاذ في {displayName} , نحن نعمل على مدار الساعة ، اتصل الان {phone} يصلك ونش انقاذ سيارات سريع و مجهز بأحدث المعدات وأحدث وسائل الأمان والراحة.
           </p>
 
-          <h3 style={{
+          <h3 id="why-choose" style={{
             color: '#0a2c61',
             marginBottom: '1rem',
             fontSize: '1.5rem',
@@ -454,7 +526,7 @@ const AreaDetail = () => {
             ما يميزنا عن غيرنا انفرادنا بتقديم خدماتنا باحترافية عالية ونعمل منذ عام 1995 على الطرق السريعة بكافة انحاء جمهورية مصر العربية لبناء جسور من الثقة المتبادلة بين الشركة وعملائها و انقاذ و رفع السيارات المعطلة وسحب سيارات الحوادث.
           </p>
 
-          <h3 style={{
+          <h3 id="fastest" style={{
             color: '#0a2c61',
             marginBottom: '1rem',
             fontSize: '1.5rem',
@@ -624,7 +696,7 @@ const AreaDetail = () => {
             يمكن لفريق ونش انقاذ محمد بحر تقديم خدمات أنقاذ سيارات سريعة وبأسعار معقولة في {displayName} وجميع المحافظات فقط اتصل نحن نستجيب ونرسل لك على الفور أقرب ونش انقاذ سيارات متوفر في {displayName} بالقرب من مكان تعطل سيارتك نجعلها سهلة باتصالك بنا علي {phone} نحن نستعين بفريق من السائقين الخبرة لرفع و إنقاذ سيارتك ولا نعتمد على ونش الانقاذ فقط ولكننا نمتلك أيضا رافعات لانقاذ السيارات المعطلة ولدينا نظام رفع هيدروليكي متكامل للتعامل مع حالات العربات الثقيلة وعربات النقل والنصف نقل العالقة في الحفر.
           </p>
 
-          <h3 style={{
+          <h3 id="pricing" style={{
             color: '#0a2c61',
             marginBottom: '1rem',
             fontSize: '1.5rem',
@@ -774,7 +846,7 @@ const AreaDetail = () => {
         </div>
 
         {/* Keywords Section */}
-        <div style={{
+        <div id="keywords" style={{
           background: 'white',
           borderRadius: '1.5rem',
           padding: '2rem',
@@ -799,7 +871,7 @@ const AreaDetail = () => {
             gap: '0.5rem',
             justifyContent: 'center'
           }}>
-            {['ارخص ونش انقاذ سيارات', 'اسرع ونش انقاذ سيارات', 'اقرب ونش انقاذ سيارات', 'رقم ونش انقاذ سيارات', 'ونش انقاذ', 'ونش', 'ونش انقاذ سيارات', 'ونش انقاذ سيارات في الجيزة', 'ونش انقاذ سيارات في القاهرة', 'ونش جر سيارات', 'ونش ريكفري', 'ونش عربيات', 'ونش نقل سيارات', 'تليفون ونش انقاذ سيارات'].map((kw, idx) => (
+            {['ارخص ونش انقاذ سيارات', 'اسرع ونش انقاذ سيارات', 'اقرب ونش انقاذ سيارات', 'رقم ونش انقاذ سيارات', 'ونش انقاذ', 'ونش', 'ونش انقاذ سيارات', 'ونش انقاذ سيارات في الجيزة', 'ونش انقاذ سيارات في القاهرة', 'ونش جر سيارات', 'ونش ريكفري', 'ونش عربيات', 'ونش نقل سيارات', 'تليفون ونش انقاذ سيارات', 'انقاذ سيارات', 'احسن ونش انقاذ سيارات', 'ونش انقاذ سيارات رخيص', 'ونش انقاذ سيارات سريع', 'ونش رفع سيارات', 'كساحه سيارات', 'كساحه سحب سيارات', 'ونش سحب سيارات', 'ونش هيدروليك'].map((kw, idx) => (
               <span key={idx} style={{
                 background: '#2d2d33',
                 color: '#fff',
@@ -828,7 +900,7 @@ const AreaDetail = () => {
         </div>
 
         {/* Emergency Contact */}
-        <div style={{
+        <div id="emergency" style={{
           background: 'linear-gradient(135deg, #dc3545 0%, #c82333 100%)',
           color: 'white',
           borderRadius: '1.5rem',
