@@ -157,6 +157,15 @@ const AreaDetail = () => {
           }}>
             خدمة إنقاذ سيارات سريعة وآمنة في {displayName} على مدار الساعة
           </p>
+          <p style={{
+            fontSize: '1.2rem',
+            opacity: 0.9,
+            maxWidth: '600px',
+            margin: '0 auto',
+            direction: 'rtl'
+          }}>
+            خصم 50% على جميع خدماتنا
+          </p>
         </div>
 
         {/* Contact Methods */}

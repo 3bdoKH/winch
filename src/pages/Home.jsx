@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import './Home.css';
-
 // Import pages and components
 import AnimatedCounter from './AnimatedCounter';
 import { areas } from './Areas';
@@ -21,10 +20,8 @@ import extraImg2 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.
 import extraImg3 from '../images/fuel.jpeg';
 import extraImg4 from '../images/battary.jpeg';
 import extraImg5 from '../images/images (3).jpeg';
-import logologo from '../images/logologo.png';
 import towImage from '../images/tow.png';
 import towImage2 from '../images/tow-2.png';
-import towImage3 from '../images/tow-3.png';
 
 // Import car brand images
 import toyota from "../images/cars/toyota.jpeg";
@@ -133,10 +130,10 @@ const Home = () => {
 
   // Constants
   const cardsPerPage = 5;
-  const totalPages = Math.ceil(areas.length / cardsPerPage);
+  const totalPages = Math.ceil(areas.slice(0, 100).length / cardsPerPage);
   const startIdx = areaPage * cardsPerPage;
   const endIdx = startIdx + cardsPerPage;
-  const visibleAreas = areas.slice(startIdx, endIdx);
+  const visibleAreas = areas.slice(0, 100).slice(startIdx, endIdx);
   const winchImg = require('../images/images.png');
 
   // Hero images array
@@ -148,9 +145,9 @@ const Home = () => {
     totalPages,
     visibleAreas,
     isAnimating,
-    totalAreasCount: areas.length,
+    totalAreasCount: areas.slice(0, 100).length,
     visibleAreasCount: visibleAreas.length
-  }), [areaPage, totalPages, visibleAreas, isAnimating, areas.length]);
+  }), [areaPage, totalPages, visibleAreas, isAnimating, areas.slice(0, 100).length]);
 
   // Optimized animation handler with useCallback
   const handlePageChange = useCallback((newPage) => {
@@ -575,17 +572,6 @@ const AreasPagination = ({
       <div className="page-info" id="pagination-info" role="status" aria-live="polite">
         الصفحة {currentPage + 1} من {totalPages} • {visibleAreasCount} منطقة معروضة من {totalAreasCount}
       </div>
-
-      {/* Keyboard shortcuts hint */}
-      <div className="keyboard-hints" style={{
-        fontSize: '0.8rem',
-        color: '#888',
-        textAlign: 'center',
-        marginTop: '0.5rem',
-        direction: 'rtl'
-      }}>
-        استخدم مفاتيح الأسهم للتنقل • Home للصفحة الأولى • End للصفحة الأخيرة
-      </div>
     </div>
   );
 };
@@ -898,7 +884,7 @@ const FooterContent = ({ phoneNumber, areas }) => (
         alignItems: 'center',
         direction: 'rtl',
       }}>
-        {areas.map((area, idx) => (
+        {areas.slice(0, 30).map((area, idx) => (
           <Link
             key={idx}
             to={`/areas/${encodeURIComponent(area)}`}
@@ -920,6 +906,7 @@ const FooterContent = ({ phoneNumber, areas }) => (
           </Link>
         ))}
       </div>
+      <Link to={`/areas`} className='more-areas-link'>المزيد</Link>
     </section>
 
     {/* Back Footer Section */}

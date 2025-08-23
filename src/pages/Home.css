@@ -554,11 +554,13 @@
     transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
     opacity: 1;
     transform: scale(1);
+    height: 500px;
 }
 
-.hero-image img.transitioning {
-    opacity: 0;
-    transform: scale(0.95);
+@media (max-width: 768px) {
+    .hero-image img {
+        height: 270px;
+    }
 }
 
 .hero-image img.fade-in {
@@ -896,6 +898,28 @@
     background: white;
     border-radius: 0.5rem;
     padding: 0.5rem;
+}
+
+.more-areas-link {
+    width: 100%;
+    color: #ffe066;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    background: #0a2c61;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+
+    &:hover {
+        background: #0a2c61;
+        color: #ffe066;
+        transform: translateY(-2px);
+    }
 }
 
 /* Extra Services Section */
