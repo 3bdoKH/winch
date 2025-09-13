@@ -440,7 +440,7 @@ body {
 .floating-phone-btn {
   display: flex;
   position: fixed;
-  bottom: 70px;
+  bottom: 140px;
   right: 18px;
   z-index: 1200;
   background: var(--color-accent);
@@ -459,7 +459,7 @@ body {
 .floating-phone-btn-wa {
   display: flex;
   position: fixed;
-  bottom: 140px;
+  bottom: 70px;
   right: 18px;
   z-index: 1200;
   background: var(--color-accent);

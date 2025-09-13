@@ -405,7 +405,6 @@
 .navigator-item:hover {
     background: #f8f9fa;
     color: #0a2c61;
-    transform: translateX(-5px);
 }
 
 .side-navigator:not(.open) .navigator-item:hover {

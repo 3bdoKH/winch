@@ -510,7 +510,7 @@ function App() {
           .floating-phone-btn,
           .floating-phone-btn-wa {
             position: fixed;
-            bottom: 80px;
+            bottom: 150px;
             right: 20px;
             width: 60px;
             height: 60px;
@@ -533,7 +533,7 @@ function App() {
           }
 
           .floating-phone-btn-wa {
-            bottom: 150px;
+            bottom: 80px;
             background: #25D366;
             color: #fff;
           }
@@ -856,18 +856,18 @@ function App() {
 
       {/* Floating Action Buttons */}
       <a
-        href="https://wa.me/+2001044844492"
-        className="floating-phone-btn-wa"
-        aria-label="واتساب"
-      >
-        <FontAwesomeIcon icon={faWhatsapp} size="lg" />
-      </a>
-      <a
         href="tel:01044844492"
         className="floating-phone-btn"
         aria-label="اتصال سريع"
       >
         <Phone size={24} />
+      </a>
+      <a
+        href="https://wa.me/+2001044844492"
+        className="floating-phone-btn-wa"
+        aria-label="واتساب"
+      >
+        <FontAwesomeIcon icon={faWhatsapp} size="lg" />
       </a>
     </>
   );

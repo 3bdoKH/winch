@@ -788,7 +788,7 @@ const CounterItem = ({ target, prefix = "", suffix = "", label }) => (
 const ServiceCard = ({ service, image }) => (
   <Link
     to={`/service/${service.id}`}
-    style={{ textDecoration: 'none', flex: '1 1 220px', maxWidth: '350px', minWidth: '220px', display: 'flex' }}
+    style={{ textDecoration: 'none', flex: '1 1 220px', maxWidth: '350px', minWidth: '220px', display: 'flex', margin: "auto" }}
   >
     <div
       style={{
