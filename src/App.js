@@ -17,8 +17,6 @@ import {
 } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-
-// Import pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";

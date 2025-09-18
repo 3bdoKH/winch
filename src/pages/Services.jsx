@@ -375,6 +375,7 @@ const Services = () => {
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            margin: 10px;
           }
 
           .cta-button:hover {
@@ -578,6 +579,9 @@ const Services = () => {
           </p>
           <a href={`tel:${phoneNumber}`} className="cta-button">
             اتصل الآن: {phoneNumber}
+          </a>
+          <a href={`tel:01034222636`} className="cta-button">
+            الطوارئ و خدمة العملاء: 01034222636
           </a>
         </section>
       </div>

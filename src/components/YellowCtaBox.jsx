@@ -304,6 +304,10 @@ const YellowCtaBox = () => {
             <Phone size={20} />
             اتصل الآن: {phoneNumber}
           </a>
+          <a href={`tel:01034222636`} className="cta-button">
+            <Phone size={20} />
+            الطوارئ و خدمة العملاء: 01034222636
+          </a>
           <a href={`https://wa.me/+200${phoneNumber}`} className="cta-button secondary">
             <MessageCircle size={20} />
             واتساب

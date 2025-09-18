@@ -208,14 +208,6 @@ const AreaDetail = () => {
                 transition: 'all 0.3s ease',
                 border: '1px solid #e9ecef'
               }}
-              onMouseOver={(e) => {
-                e.target.style.background = '#e3f0ff';
-                e.target.style.transform = 'translateY(-2px)';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.background = '#f8f9fa';
-                e.target.style.transform = 'translateY(0)';
-              }}
             >
               <div style={{
                 display: 'flex',
@@ -254,6 +246,58 @@ const AreaDetail = () => {
                 </div>
               </div>
             </a>
+            <a
+              href={`tel:01034222636`}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1rem',
+                padding: '1rem',
+                borderRadius: '1rem',
+                background: '#f8f9fa',
+                textDecoration: 'none',
+                color: 'inherit',
+                transition: 'all 0.3s ease',
+                border: '1px solid #e9ecef'
+              }}
+            >
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '50px',
+                height: '50px',
+                borderRadius: '50%',
+                background: 'white',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+              }}>
+                <Phone size={24} color="#0077ff" />
+              </div>
+              <div style={{ flex: 1, direction: 'rtl' }}>
+                <div style={{
+                  fontWeight: 700,
+                  color: '#0a2c61',
+                  fontSize: '1.1rem',
+                  marginBottom: '0.2rem'
+                }}>
+                  الطوارئ و خدمة العملاء
+                </div>
+                <div style={{
+                  color: '#0077ff',
+                  fontWeight: 600,
+                  fontSize: '1rem'
+                }}>
+                  01034222636
+                </div>
+                <div style={{
+                  color: '#6c757d',
+                  fontSize: '0.9rem',
+                  marginTop: '0.2rem'
+                }}>
+                  اتصل بنا على مدار الساعة
+                </div>
+              </div>
+            </a>
 
             <a
               href={`https://wa.me/201044844492`}
@@ -268,14 +312,6 @@ const AreaDetail = () => {
                 color: 'inherit',
                 transition: 'all 0.3s ease',
                 border: '1px solid #e9ecef'
-              }}
-              onMouseOver={(e) => {
-                e.target.style.background = '#e3f0ff';
-                e.target.style.transform = 'translateY(-2px)';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.background = '#f8f9fa';
-                e.target.style.transform = 'translateY(0)';
               }}
             >
               <div style={{
@@ -1548,19 +1584,34 @@ const AreaDetail = () => {
               textDecoration: 'none',
               fontWeight: 700,
               fontSize: '1.2rem',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              margin: '10px',
             }}
-            onMouseOver={(e) => {
-              e.target.style.transform = 'scale(1.05)';
-              e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.transform = 'scale(1)';
-              e.target.style.boxShadow = 'none';
-            }}
+
           >
             <Phone size={24} />
             {phone}
+          </a>
+          <a
+            href={`tel:01034222636`}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              background: 'white',
+              color: '#dc3545',
+              padding: '1rem 2rem',
+              borderRadius: '0.5rem',
+              textDecoration: 'none',
+              fontWeight: 700,
+              fontSize: '1.2rem',
+              transition: 'all 0.3s ease',
+              margin: '10px',
+            }}
+
+          >
+            <Phone size={24} />
+            الطوارئ و خدمة العملاء: 01034222636
           </a>
         </div>
       </div>

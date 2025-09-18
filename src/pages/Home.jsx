@@ -229,8 +229,11 @@ const Home = () => {
               <button className="cta-button" onClick={() => window.location.href = `tel:${phoneNumber}`}>
                 اتصل الان
               </button>
-              <div className="hero-phone">
+              <div className="hero-phone" onClick={() => window.location.href = `tel:${phoneNumber}`}>
                 {phoneNumber}
+              </div>
+              <div className="hero-phone" onClick={() => window.location.href = `tel:01034222636`}>
+                الطوارئ و خدمة العملاء: 01034222636
               </div>
             </div>
           </div>
@@ -961,6 +964,10 @@ const FooterContent = ({ phoneNumber, areas }) => (
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
               <span style={{ background: '#ffe600', borderRadius: '50%', padding: '0.5rem' }}><Phone color='#000' size={20} /></span>
               <span style={{ direction: 'ltr', fontFamily: 'monospace', fontSize: '20px' }}>{phoneNumber}</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
+              <span style={{ background: '#ffe600', borderRadius: '50%', padding: '0.5rem' }}><Phone color='#000' size={20} /></span>
+              <span style={{ direction: 'ltr', fontFamily: 'monospace', fontSize: '20px' }}>الطوارئ و خدمة العملاء: 01034222636</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
               <span style={{ background: '#ffe600', fontSize: '20px', color: '#000', borderRadius: '50%', padding: '0.5rem' }}><FontAwesomeIcon color='#000' size='1xl' icon={faWhatsapp} /></span>

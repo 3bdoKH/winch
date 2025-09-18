@@ -53,6 +53,13 @@ const Contact = () => {
       description: "اتصل بنا على مدار الساعة"
     },
     {
+      icon: <Phone size={24} color="#0077ff" />,
+      title: "الطوارئ و خدمة العملاء",
+      value: "01034222636",
+      link: "tel:01034222636",
+      description: "اتصل بنا على مدار الساعة"
+    },
+    {
       icon: <FontAwesomeIcon icon={faWhatsapp} size="lg" style={{ color: "#25D366" }} />,
       title: "واتساب",
       value: "01044844492",
@@ -193,14 +200,6 @@ const Contact = () => {
                     color: 'inherit',
                     transition: 'all 0.3s ease',
                     border: '1px solid #e9ecef'
-                  }}
-                  onMouseOver={(e) => {
-                    e.target.style.background = '#e3f0ff';
-                    e.target.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.target.style.background = '#f8f9fa';
-                    e.target.style.transform = 'translateY(0)';
                   }}
                 >
                   <div style={{
@@ -446,14 +445,7 @@ const Contact = () => {
                   justifyContent: 'center',
                   gap: '0.5rem'
                 }}
-                onMouseOver={(e) => {
-                  e.target.style.background = 'linear-gradient(90deg, #1976d2 60%, #0a2c61 100%)';
-                  e.target.style.transform = 'translateY(-2px)';
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.background = 'linear-gradient(90deg, #0a2c61 60%, #1976d2 100%)';
-                  e.target.style.transform = 'translateY(0)';
-                }}
+
               >
                 {isSubmitting ? (
                   <>
@@ -575,19 +567,33 @@ const Contact = () => {
               textDecoration: 'none',
               fontWeight: 700,
               fontSize: '1.2rem',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseOver={(e) => {
-              e.target.style.transform = 'scale(1.05)';
-              e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.transform = 'scale(1)';
-              e.target.style.boxShadow = 'none';
+              transition: 'all 0.3s ease',
+              margin: '10px',
             }}
           >
             <Phone size={24} />
             01044844492
+          </a>
+
+          <a
+            href="tel:01034222636"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              background: 'white',
+              color: '#dc3545',
+              padding: '1rem 2rem',
+              borderRadius: '0.5rem',
+              textDecoration: 'none',
+              fontWeight: 700,
+              fontSize: '1.2rem',
+              transition: 'all 0.3s ease',
+              margin: '10px',
+            }}
+          >
+            <Phone size={24} />
+            الطوارئ و خدمة العملاء: 01034222636
           </a>
         </div>
       </div>
