@@ -14,6 +14,7 @@ import {
   Lightbulb,
   BatteryCharging,
   Users,
+  FileText,
 } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -24,6 +25,8 @@ import Areas from "./pages/Areas";
 import Contact from "./pages/Contact";
 import ServiceDetail from "./pages/ServiceDetail";
 import AreaDetail from "./pages/AreaDetail";
+import Articles from "./pages/Articles";
+import ArticleDetails from "./pages/ArticleDetails";
 import truck from "./images/truck.png";
 
 function App() {
@@ -42,6 +45,7 @@ function App() {
     { to: "/about", label: "عن الشركة", icon: <MessageCircleMore size={20} /> },
     { to: "/services", label: "خدماتنا", icon: <Package size={20} /> },
     { to: "/areas", label: "مناطق الخدمة", icon: <MapPin size={20} /> },
+    { to: "/articles", label: "المقالات", icon: <FileText size={20} /> },
     { to: "/contact", label: "اتصل بنا", icon: <Phone size={20} /> },
   ];
 
@@ -777,6 +781,8 @@ function App() {
           <Route path="/areas/:areaName" element={<AreaDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/service/:serviceId" element={<ServiceDetail />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/:slug" element={<ArticleDetails />} />
         </Routes>
       </main>
 
@@ -819,10 +825,18 @@ function App() {
           <Mail size={24} />
           <span>اتصل بنا</span>
         </Link>
-        <a href="tel:01044844492" className="mobile-bottom-nav__item">
-          <Phone size={24} />
-          <span>اتصال</span>
-        </a>
+        <Link
+          to="/articles"
+          className={`mobile-bottom-nav__item ${
+            location.pathname === "/articles" ||
+            location.pathname.startsWith("/articles/")
+              ? "active"
+              : ""
+          }`}
+        >
+          <FileText size={24} />
+          <span>المقالات</span>
+        </Link>
         <Link
           to="/areas"
           className={`mobile-bottom-nav__item ${
