@@ -706,11 +706,11 @@ const AreaCard = ({ area, isSmall, winchImg }) => {
             </div>
           )}
 
-          <div className={`area-card-content ${isSmall ? 'area-card-content-small' : 'area-card-content-large'}`} style={{
+          <div className={`area-card-content-home ${isSmall ? 'area-card-content-small' : 'area-card-content-large'}`} style={{
             position: 'absolute',
             bottom: 0,
             left: 0,
-            width: '100%',
+            width: '90%',
             zIndex: 3,
             color: '#fff',
             display: 'flex',
@@ -865,7 +865,7 @@ const FooterContent = ({ phoneNumber, areas }) => (
         <span style={{ marginLeft: '0.1rem' }}>&#9733;</span>
       </span>
       <span style={{ color: '#222', fontWeight: 'bold', fontSize: '1.15rem', marginTop: '8px' }}>
-        5/5 - (1986 صوت)
+        5.0/5 - (1601 صوت)
       </span>
     </div>
 
@@ -1017,7 +1017,7 @@ const FooterContent = ({ phoneNumber, areas }) => (
     </section>
 
     {/* Custom Footer Section */}
-    <div style={{ background: '#232328', color: '#fff', padding: '3rem 0 2rem 0', }}>
+    <div style={{ background: '#232328', color: '#fff', padding: '3rem 0 5rem 0', }}>
       <div style={{
         display: 'flex',
         flexWrap: 'wrap',
