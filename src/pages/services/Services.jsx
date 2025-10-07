@@ -4,13 +4,13 @@ import {
   ArrowRight, Star, Award
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import YellowCtaBox from '../components/YellowCtaBox';
+import YellowCtaBox from '../../components/YellowCtaBox';
 import './Services.css';
-import extraImg1 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
-import extraImg2 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
-import extraImg3 from '../images/fuel.jpeg';
-import extraImg4 from '../images/battary.jpeg';
-import extraImg5 from '../images/images (3).jpeg';
+import extraImg1 from '../../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
+import extraImg2 from '../../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
+import extraImg3 from '../../images/fuel.jpeg';
+import extraImg4 from '../../images/battary.jpeg';
+import extraImg5 from '../../images/images (3).jpeg';
 
 const Services = () => {
   const phoneNumber = '01044844492';

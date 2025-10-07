@@ -7,57 +7,45 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import './Home.css';
-
-// Import pages and components
-import AnimatedCounter from './AnimatedCounter';
-import { areas } from './Areas';
+import AnimatedCounter from '../../components/AnimatedCounter';
+import { areas } from '../../data/areas.js'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-// Import images
-import extraImg1 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
-import extraImg2 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
-import extraImg3 from '../images/fuel.jpeg';
-import extraImg4 from '../images/battary.jpeg';
-import extraImg5 from '../images/images (3).jpeg';
-import logologo from '../images/logologo.png';
-import towImage from '../images/tow.png';
-import towImage2 from '../images/tow-2.png';
-import towImage3 from '../images/tow-3.png';
-
-// Import car brand images
-import toyota from "../images/cars/toyota.jpeg";
-import Volkswagen from "../images/cars/Volkswagen.jpeg";
-import volvo from "../images/cars/volvo.jpeg";
-import audi from "../images/cars/audi.jpeg";
-import bmw from "../images/cars/bmw.jpeg";
-import byd from "../images/cars/byd.jpeg";
-import Chevrolet from "../images/cars/Chevrolet.jpeg";
-import Hyundai from "../images/cars/Hyundai.jpeg";
-import jeep from "../images/cars/jeep.jpeg";
-import kia from "../images/cars/kia.jpeg";
-import mazda from "../images/cars/mazda.jpeg";
-import mercedes from "../images/cars/mercedes.jpeg";
-import minicooper from "../images/cars/minicooper.jpeg";
-import Nissan from "../images/cars/Nissan.jpeg";
-import Peugeot from "../images/cars/Peugeot.jpeg";
-import skoda from "../images/cars/skoda.jpeg";
-import subaru from "../images/cars/subaru.jpeg";
-
-// Import WhatsApp images
-import whatsapp1 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
-import whatsapp2 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
-import whatsapp3 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_0b194e2d.jpg';
-import whatsapp4 from '../images/WhatsApp Image 2025-07-02 at 15.02.32_bc1bb19d.jpg';
-import whatsapp6 from '../images/WhatsApp Image 2025-07-02 at 15.02.32_00a9c303.jpg';
-import whatsapp7 from '../images/WhatsApp Image 2025-07-02 at 15.02.32_a2d1fc1d.jpg';
-import whatsapp8 from '../images/WhatsApp Image 2025-07-02 at 15.02.31_d02e6e11.jpg';
-import whatsapp9 from '../images/WhatsApp Image 2025-07-02 at 15.02.31_0da1e2e8.jpg';
-import whatsapp10 from '../images/WhatsApp Image 2025-07-02 at 15.02.31_58370244.jpg';
-import whatsapp11 from '../images/WhatsApp Image 2025-07-02 at 15.02.31_d875b30c.jpg';
-
-// Data constants
+import extraImg1 from '../../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
+import extraImg2 from '../../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
+import extraImg3 from '../../images/fuel.jpeg';
+import extraImg4 from '../../images/battary.jpeg';
+import extraImg5 from '../../images/images (3).jpeg';
+import towImage from '../../images/tow.png';
+import towImage2 from '../../images/tow-2.png';
+import toyota from "../../images/cars/toyota.jpeg";
+import Volkswagen from "../../images/cars/Volkswagen.jpeg";
+import volvo from "../../images/cars/volvo.jpeg";
+import audi from "../../images/cars/audi.jpeg";
+import bmw from "../../images/cars/bmw.jpeg";
+import byd from "../../images/cars/byd.jpeg";
+import Chevrolet from "../../images/cars/Chevrolet.jpeg";
+import Hyundai from "../../images/cars/Hyundai.jpeg";
+import jeep from "../../images/cars/jeep.jpeg";
+import kia from "../../images/cars/kia.jpeg";
+import mazda from "../../images/cars/mazda.jpeg";
+import mercedes from "../../images/cars/mercedes.jpeg";
+import minicooper from "../../images/cars/minicooper.jpeg";
+import Nissan from "../../images/cars/Nissan.jpeg";
+import Peugeot from "../../images/cars/Peugeot.jpeg";
+import skoda from "../../images/cars/skoda.jpeg";
+import subaru from "../../images/cars/subaru.jpeg";
+import whatsapp1 from '../../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
+import whatsapp2 from '../../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
+import whatsapp3 from '../../images/WhatsApp Image 2025-07-02 at 15.02.33_0b194e2d.jpg';
+import whatsapp4 from '../../images/WhatsApp Image 2025-07-02 at 15.02.32_bc1bb19d.jpg';
+import whatsapp6 from '../../images/WhatsApp Image 2025-07-02 at 15.02.32_00a9c303.jpg';
+import whatsapp7 from '../../images/WhatsApp Image 2025-07-02 at 15.02.32_a2d1fc1d.jpg';
+import whatsapp8 from '../../images/WhatsApp Image 2025-07-02 at 15.02.31_d02e6e11.jpg';
+import whatsapp9 from '../../images/WhatsApp Image 2025-07-02 at 15.02.31_0da1e2e8.jpg';
+import whatsapp10 from '../../images/WhatsApp Image 2025-07-02 at 15.02.31_58370244.jpg';
+import whatsapp11 from '../../images/WhatsApp Image 2025-07-02 at 15.02.31_d875b30c.jpg';
 const whatsappImages = [
   whatsapp1, whatsapp2, whatsapp3, whatsapp4, whatsapp6,
   whatsapp7, whatsapp8, whatsapp9, whatsapp10, whatsapp11
@@ -116,38 +104,35 @@ const extraServices = [
   },
 ];
 
-// Main Home Component
 const Home = () => {
-  // State management
   const [areaPage, setAreaPage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Hero image carousel state
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageTransitioning, setIsImageTransitioning] = useState(false);
 
-  // Constants
   const cardsPerPage = 5;
-  const totalPages = Math.ceil(areas.length / cardsPerPage);
+  const totalPages = Math.ceil(areas.slice(0, 100).length / cardsPerPage);
   const startIdx = areaPage * cardsPerPage;
   const endIdx = startIdx + cardsPerPage;
-  const visibleAreas = areas.slice(startIdx, endIdx);
-  const winchImg = require('../images/images.png');
+  const visibleAreas = areas.slice(0, 100).slice(startIdx, endIdx);
+  const winchImg = require('../../images/images.png');
 
-  // Hero images array
   const heroImages = [towImage, towImage2];
 
-  // Memoized values for better performance
   const paginationData = useMemo(() => ({
     currentPage: areaPage,
     totalPages,
     visibleAreas,
     isAnimating,
-    totalAreasCount: areas.length,
+    totalAreasCount: areas.slice(0, 100).length,
     visibleAreasCount: visibleAreas.length
-  }), [areaPage, totalPages, visibleAreas, isAnimating, areas.length]);
+  }), [areaPage, totalPages, visibleAreas, isAnimating, areas.slice(0, 100).length]);
 
-  // Optimized animation handler with useCallback
   const handlePageChange = useCallback((newPage) => {
     if (newPage < 0 || newPage >= totalPages || isAnimating) return;
 
@@ -158,7 +143,6 @@ const Home = () => {
     }, 300);
   }, [totalPages, isAnimating]);
 
-  // Keyboard navigation handler
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
@@ -189,27 +173,19 @@ const Home = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [areaPage, totalPages, handlePageChange]);
 
-  // Hero image carousel timer
   useEffect(() => {
     const interval = setInterval(() => {
       setIsImageTransitioning(true);
       setTimeout(() => {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
         setIsImageTransitioning(false);
-      }, 300); // Half of the transition duration
-    }, 5000); // Change every 5 seconds
-
+      }, 300);
+    }, 5000);
     return () => clearInterval(interval);
   }, [heroImages.length]);
-
-  // Phone number for easy access
   const phoneNumber = '01044844492';
-
   return (
     <>
-
-
-      {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-diagonal"></div>
         <div className="hero-content">
@@ -227,8 +203,11 @@ const Home = () => {
               <button className="cta-button" onClick={() => window.location.href = `tel:${phoneNumber}`}>
                 اتصل الان
               </button>
-              <div className="hero-phone">
+              <div className="hero-phone" onClick={() => window.location.href = `tel:${phoneNumber}`}>
                 {phoneNumber}
+              </div>
+              <div className="hero-phone" onClick={() => window.location.href = `tel:01034222636`}>
+                الطوارئ و خدمة العملاء: 01034222636
               </div>
             </div>
           </div>
@@ -238,7 +217,6 @@ const Home = () => {
               alt={`Tow Truck ${currentImageIndex + 1}`}
               className={`${isImageTransitioning ? 'transitioning' : 'fade-in'}`}
             />
-            {/* Image indicators */}
             <div className="hero-image-indicators">
               {heroImages.map((_, index) => (
                 <div
@@ -258,7 +236,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Improved Areas Cards Pagination Section */}
       <section className="areas-section">
         <div className="section-container">
           <h2 className="section-title">بعض مناطق التغطية</h2>
@@ -277,7 +254,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Service Information Section */}
       <section className="service-info-section">
         <div className="section-container">
           <div className="service-badge">ونش انقاذ سيارات</div>
@@ -296,11 +272,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Features Section */}
       <section className="features-section">
         <div className="features-container">
-          {/* Yellow CTA box */}
           <div className="features-cta">
             <div className="cta-title">ونش انقاذ محمد بحر</div>
             <h3 className="cta-heading">اطلب ونش انقاذ سيارات دلوقتي بكل سهولة.</h3>
@@ -308,7 +281,6 @@ const Home = () => {
               ونش انقاذ محمد بحر أسرع وأرخص ونش انقاذ في مصر كل ما عليك فقط هو الاتصال بنا وتحديد موقعك وسيتم ربطك بأقرب ونش إنقاذ ليقوم بمساعدتك في انقاذ و نقل السيارة إلى أي جهة.
             </p>
           </div>
-          {/* Blue features grid */}
           <div className="features-grid">
             <FeatureCard
               icon={<Brain size={48} color="#ffc107" />}
@@ -334,16 +306,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Quote Section */}
       <section className="quote-section">
         <div className="quote-container">
           <div className="quote-content">
-            {/* Large quotation mark icon */}
             <div className="quote-icon">
               <Quote size={90} color="#0077ff" />
             </div>
 
-            {/* Title with underline */}
             <div className="quote-title">
               مميزات ونش انقاذ سيارات
               <span className="highlight-name">
@@ -352,7 +321,6 @@ const Home = () => {
               </span>
             </div>
 
-            {/* Quote text box */}
             <div className="quote-text-box">
               إذا كنت تبحث عن خدمة إنقاذ سيارات بأرخص سعر فعليك إختيار خدمة ونش إنقاذ سيارات من خلال الاتصال بنا وسوف نرسل إليك أقرب ونش إنقاذ سيارات علي الفور في أي وقت علي مدار اليوم فنحن نوفر خدماتنا 24 ساعة علي مدار اليوم.
             </div>
@@ -360,7 +328,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Overview Section */}
       <section className="services-overview-section">
         <div className="section-container">
           <h2 className="services-main-title">ونش انقاذ سيارات في مصر</h2>
@@ -395,7 +362,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Counter Section */}
       <section className="counter-section">
         <CounterItem target={32} prefix="+" label="سنوات من الخبرة" />
         <CounterItem target={98} suffix="%" label="عملاء سعداء" />
@@ -404,7 +370,6 @@ const Home = () => {
         <CounterItem target={49} label="فريق العمل" />
       </section>
 
-      {/* Gallery Section */}
       <section className="gallery-section">
         <div className="section-container">
           <h2 className="section-title">صور من أعمالنا</h2>
@@ -421,7 +386,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Partners Section */}
       <section className="partners-section">
         <div className="section-container">
           <h2 className="section-title">شركاء النجاح</h2>
@@ -451,7 +415,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Extra Services Section */}
       <section className="extra-services-section">
         <div className="section-container">
           <h2 className="section-title">خدمات إضافية</h2>
@@ -467,7 +430,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
       <section className="testimonials-section">
         <div className="section-container">
           <h2 className="section-title">آراء العملاء</h2>
@@ -483,19 +445,12 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-
-      {/* Footer Content */}
       <FooterContent phoneNumber={phoneNumber} areas={areas} />
-
-
     </>
   );
 };
 
-// Reusable Components
 
-// Enhanced Areas Pagination Component
 const AreasPagination = ({
   currentPage,
   totalPages,
@@ -511,7 +466,6 @@ const AreasPagination = ({
     }
   };
 
-  // Memoize the page indicators to prevent unnecessary re-renders
   const pageIndicators = useMemo(() => {
     if (totalPages <= 1) return null;
 
@@ -559,33 +513,19 @@ const AreasPagination = ({
         </button>
       </div>
 
-      {/* Page Indicators */}
       {pageIndicators && (
         <div className="page-indicators" role="tablist" aria-label="صفحات المناطق">
           {pageIndicators}
         </div>
       )}
 
-      {/* Page Info */}
       <div className="page-info" id="pagination-info" role="status" aria-live="polite">
         الصفحة {currentPage + 1} من {totalPages} • {visibleAreasCount} منطقة معروضة من {totalAreasCount}
-      </div>
-
-      {/* Keyboard shortcuts hint */}
-      <div className="keyboard-hints" style={{
-        fontSize: '0.8rem',
-        color: '#888',
-        textAlign: 'center',
-        marginTop: '0.5rem',
-        direction: 'rtl'
-      }}>
-        استخدم مفاتيح الأسهم للتنقل • Home للصفحة الأولى • End للصفحة الأخيرة
       </div>
     </div>
   );
 };
 
-// Enhanced Areas Grid Component
 const AreasGrid = ({ visibleAreas, areaPage, isAnimating, winchImg }) => {
   if (isAnimating) {
     return (
@@ -598,7 +538,6 @@ const AreasGrid = ({ visibleAreas, areaPage, isAnimating, winchImg }) => {
 
   return (
     <div className={`areas-fade ${isAnimating ? 'out' : 'in'} areas-section-grid`}>
-      {/* Left: 2x2 grid of 4 small cards */}
       <div className="areas-small-cards">
         {visibleAreas.slice(0, 4).map((area, idx) => (
           <AreaCard
@@ -609,7 +548,6 @@ const AreasGrid = ({ visibleAreas, areaPage, isAnimating, winchImg }) => {
           />
         ))}
       </div>
-      {/* Right: 1 large card */}
       <div className="areas-big-card">
         {visibleAreas[4] && (
           <AreaCard
@@ -625,7 +563,6 @@ const AreasGrid = ({ visibleAreas, areaPage, isAnimating, winchImg }) => {
 };
 
 const AreaCard = ({ area, isSmall, winchImg }) => {
-  // Use React state to track window size instead of window.innerWidth
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -712,11 +649,11 @@ const AreaCard = ({ area, isSmall, winchImg }) => {
             </div>
           )}
 
-          <div className={`area-card-content ${isSmall ? 'area-card-content-small' : 'area-card-content-large'}`} style={{
+          <div className={`area-card-content-home ${isSmall ? 'area-card-content-small' : 'area-card-content-large'}`} style={{
             position: 'absolute',
             bottom: 0,
             left: 0,
-            width: '100%',
+            width: '90%',
             zIndex: 3,
             color: '#fff',
             display: 'flex',
@@ -797,7 +734,7 @@ const CounterItem = ({ target, prefix = "", suffix = "", label }) => (
 const ServiceCard = ({ service, image }) => (
   <Link
     to={`/service/${service.id}`}
-    style={{ textDecoration: 'none', flex: '1 1 220px', maxWidth: '350px', minWidth: '220px', display: 'flex' }}
+    style={{ textDecoration: 'none', flex: '1 1 220px', maxWidth: '350px', minWidth: '220px', display: 'flex', margin: "auto" }}
   >
     <div
       style={{
@@ -852,7 +789,6 @@ const ServiceFeaturesList = () => (
 
 const FooterContent = ({ phoneNumber, areas }) => (
   <>
-    {/* Rating Bar */}
     <div style={{
       display: 'flex',
       alignItems: 'center',
@@ -871,11 +807,10 @@ const FooterContent = ({ phoneNumber, areas }) => (
         <span style={{ marginLeft: '0.1rem' }}>&#9733;</span>
       </span>
       <span style={{ color: '#222', fontWeight: 'bold', fontSize: '1.15rem', marginTop: '8px' }}>
-        5/5 - (1986 صوت)
+        5.0/5 - (1601 صوت)
       </span>
     </div>
 
-    {/* Areas Simple List Section */}
     <section style={{
       maxWidth: '1100px',
       margin: '2.5rem auto',
@@ -893,7 +828,7 @@ const FooterContent = ({ phoneNumber, areas }) => (
         alignItems: 'center',
         direction: 'rtl',
       }}>
-        {areas.map((area, idx) => (
+        {areas.slice(0, 30).map((area, idx) => (
           <Link
             key={idx}
             to={`/areas/${encodeURIComponent(area)}`}
@@ -915,9 +850,9 @@ const FooterContent = ({ phoneNumber, areas }) => (
           </Link>
         ))}
       </div>
+      <Link to={`/areas`} className='more-areas-link'>المزيد</Link>
     </section>
 
-    {/* Back Footer Section */}
     <section
       style={{
         position: 'relative',
@@ -959,7 +894,6 @@ const FooterContent = ({ phoneNumber, areas }) => (
           gap: '2rem',
         }}
       >
-        {/* Contact Info - Left */}
         <div style={{ flex: '1 1 340px', textAlign: 'right', background: 'rgba(0,0,0,0.55)', borderRadius: '1rem', padding: '2rem 2rem', boxShadow: '0 2px 16px #00000033', marginRight: 'auto' }}>
           <div style={{ fontWeight: 'bold', fontSize: '1.3rem', color: '#ffe600', marginBottom: '1.2rem', borderBottom: '3px solid #ffe600', display: 'inline-block', paddingBottom: '0.2rem' }}>اتصل بنا الان</div>
           <div style={{ fontSize: '1.05rem', margin: '1.2rem 0 1.5rem 0', color: '#fff' }}>
@@ -971,11 +905,14 @@ const FooterContent = ({ phoneNumber, areas }) => (
               <span style={{ direction: 'ltr', fontFamily: 'monospace', fontSize: '20px' }}>{phoneNumber}</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
+              <span style={{ background: '#ffe600', borderRadius: '50%', padding: '0.5rem' }}><Phone color='#000' size={20} /></span>
+              <span style={{ direction: 'ltr', fontFamily: 'monospace', fontSize: '20px' }}>الطوارئ و خدمة العملاء: 01034222636</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
               <span style={{ background: '#ffe600', fontSize: '20px', color: '#000', borderRadius: '50%', padding: '0.5rem' }}><FontAwesomeIcon color='#000' size='1xl' icon={faWhatsapp} /></span>
               <span style={{ direction: 'ltr', fontFamily: 'monospace', fontSize: '20px' }}>{phoneNumber}</span>
             </div>
           </div>
-          {/* Keywords Section */}
           <section style={{
             color: '#ffe600',
             textAlign: 'center',
@@ -994,11 +931,10 @@ const FooterContent = ({ phoneNumber, areas }) => (
               اختيار ونش إنقاذ سيارات موثوق به يضمن لك الأمان والسرعة في الوصول والمساعدة في أصعب الظروف. نحن نعمل على مدار الساعة لتقديم أفضل خدمة إنقاذ سيارات في مصر بأعلى جودة وأقل سعر.
             </div>
             <div>
-              ونش انقاذ – ونش انقاذ سيارات – ونش سيارة – اسرع ونش انقاذ – اقرب ونش انقاذ – انقاذ سيارات – ارخص ونش انقاذ – انقاذ السيارات – ونش عربيات – تليفون ونش انقاذ – رقم ونش انقاذ – ونش انقاذ بالقرب مني
+              ونش انقاذ – ونش انقاذ سيارات – ونش سيارة – اسرع ونش انقاذ – اقرب ونش انقاذ – انقاذ سيارات – ارخص ونش انقاذ – انقاذ السيارات – ونش عربيات – تليفون ونش انقاذ – رقم ونش انقاذ – ونش انقاذ بالقرب مني – انقاذ سيارات – احسن ونش انقاذ سيارات – ونش انقاذ سيارات رخيص – ونش انقاذ سيارات سريع – ونش رفع سيارات – كساحه سيارات – كساحه سحب سيارات – ونش سحب سيارات – ونش هيدروليك
             </div>
           </section>
         </div>
-        {/* Quick Links - Right */}
         <div style={{ flex: '1 1 260px', minWidth: '220px', textAlign: 'right' }}>
           <div style={{ fontWeight: 'bold', fontSize: '1.2rem', color: '#ffe600', marginBottom: '1.2rem', borderBottom: '3px solid #ffe600', display: 'inline-block', paddingBottom: '0.2rem' }}>روابط مفيدة</div>
           <div style={{ display: 'flex', gap: '0.5rem 2.5rem', marginTop: '1.5rem' }}>
@@ -1017,8 +953,7 @@ const FooterContent = ({ phoneNumber, areas }) => (
       </div>
     </section>
 
-    {/* Custom Footer Section */}
-    <div style={{ background: '#232328', color: '#fff', padding: '3rem 0 2rem 0', }}>
+    <div style={{ background: '#232328', color: '#fff', padding: '3rem 0 5rem 0', }}>
       <div style={{
         display: 'flex',
         flexWrap: 'wrap',
@@ -1028,7 +963,6 @@ const FooterContent = ({ phoneNumber, areas }) => (
         margin: '0 auto',
         alignItems: 'flex-start',
       }}>
-        {/* Services */}
         <div style={{ minWidth: 220, flex: 1 }}>
           <div style={{ fontWeight: 'bold', fontSize: '1.25rem', marginBottom: '1rem', borderBottom: '2px solid #fff2', paddingBottom: 8, textAlign: 'right' }}>خدماتنا</div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, textAlign: 'right' }}>
@@ -1037,11 +971,10 @@ const FooterContent = ({ phoneNumber, areas }) => (
             ))}
           </ul>
         </div>
-        {/* Keywords */}
         <div style={{ minWidth: 320, flex: 2 }}>
           <div style={{ fontWeight: 'bold', fontSize: '1.25rem', marginBottom: '1rem', borderBottom: '2px solid #fff2', paddingBottom: 8, textAlign: 'center' }}>كلمات بحث</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
-            {['ارخص ونش انقاذ سيارات', 'اسرع ونش انقاذ سيارات', 'اقرب ونش انقاذ سيارات', 'رقم ونش انقاذ سيارات', 'ونش انقاذ', 'ونش', 'ونش انقاذ سيارات', 'ونش انقاذ سيارات في الجيزة', 'ونش انقاذ سيارات في القاهرة', 'ونش انقاذ سيارات في القطامية', 'ونش حر سيارات', 'ونش ريكفري', 'ونش عربيات', 'ونش نقل سيارات', 'تليفون ونش انقاذ سيارات'].map((kw, idx) => (
+            {['ارخص ونش انقاذ سيارات', 'اسرع ونش انقاذ سيارات', 'اقرب ونش انقاذ سيارات', 'رقم ونش انقاذ سيارات', 'ونش انقاذ', 'ونش', 'ونش انقاذ سيارات', 'ونش انقاذ سيارات في الجيزة', 'ونش انقاذ سيارات في القاهرة', 'ونش انقاذ سيارات في القطامية', 'ونش حر سيارات', 'ونش ريكفري', 'ونش عربيات', 'ونش نقل سيارات', 'تليفون ونش انقاذ سيارات', 'انقاذ سيارات', 'احسن ونش انقاذ سيارات', 'ونش انقاذ سيارات رخيص', 'ونش انقاذ سيارات سريع', 'ونش رفع سيارات', 'كساحه سيارات', 'كساحه سحب سيارات', 'ونش سحب سيارات', 'ونش هيدروليك'].map((kw, idx) => (
               <span key={idx} style={{
                 background: '#2d2d33',
                 color: '#fff',

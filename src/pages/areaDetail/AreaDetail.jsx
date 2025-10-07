@@ -6,11 +6,11 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import './AreaDetail.css';
 
 // Import WhatsApp images
-import wa1 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
-import wa2 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
-import wa3 from '../images/WhatsApp Image 2025-07-02 at 15.02.33_0b194e2d.jpg';
-import wa4 from '../images/WhatsApp Image 2025-07-02 at 15.02.32_bc1bb19d.jpg';
-import wa5 from '../images/WhatsApp Image 2025-07-02 at 15.02.32_00a9c303.jpg';
+import wa1 from '../../images/WhatsApp Image 2025-07-02 at 15.02.33_fe153007.jpg';
+import wa2 from '../../images/WhatsApp Image 2025-07-02 at 15.02.33_732c1eeb.jpg';
+import wa3 from '../../images/WhatsApp Image 2025-07-02 at 15.02.33_0b194e2d.jpg';
+import wa4 from '../../images/WhatsApp Image 2025-07-02 at 15.02.32_bc1bb19d.jpg';
+import wa5 from '../../images/WhatsApp Image 2025-07-02 at 15.02.32_00a9c303.jpg';
 
 const AreaDetail = () => {
   const { areaName } = useParams();

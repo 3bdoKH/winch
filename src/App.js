@@ -18,15 +18,15 @@ import {
 } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Areas from "./pages/Areas";
-import Contact from "./pages/Contact";
-import ServiceDetail from "./pages/ServiceDetail";
-import AreaDetail from "./pages/AreaDetail";
-import Articles from "./pages/Articles";
-import ArticleDetails from "./pages/ArticleDetails";
+import Home from "./pages/home/Home";
+import About from "./pages/about/About";
+import Services from "./pages/services/Services";
+import Areas from "./pages/areas/Areas";
+import Contact from "./pages/contact/Contact";
+import ServiceDetail from "./pages/serviceDetail/ServiceDetail";
+import AreaDetail from "./pages/areaDetail/AreaDetail";
+import Articles from "./pages/articles/Articles";
+import ArticleDetails from "./pages/articleDetails/ArticleDetails";
 import truck from "./images/truck.png";
 
 function App() {
@@ -807,7 +807,7 @@ function App() {
                 textDecoration: "none",
               }}
             >
-              EMERELD
+              Adam's Agency
             </a>{" "}
             - جميع الحقوق محفوظة © 2025
           </div>

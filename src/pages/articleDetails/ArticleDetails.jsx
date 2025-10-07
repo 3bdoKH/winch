@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { ChevronRight, ChevronLeft, User, Calendar, ArrowRight, ArrowLeft } from "lucide-react";
 import "./ArticleDetails.css";
-import articlesData from "../data/articles.json";
+import articlesData from "../../data/articles.json";
 
 function ArticleDetails() {
   const { slug } = useParams();
@@ -16,7 +16,7 @@ function ArticleDetails() {
   useEffect(() => {
     // Find the current article
     const currentArticleIndex = articlesData.articles.findIndex(a => a.slug === slug);
-    
+
     if (currentArticleIndex === -1) {
       // Article not found
       navigate('/articles');
@@ -43,12 +43,12 @@ function ArticleDetails() {
     // This simple implementation looks for articles with at least one matching tag
     if (currentArticle.tags && currentArticle.tags.length > 0) {
       const related = articlesData.articles
-        .filter(a => 
-          a.id !== currentArticle.id && 
+        .filter(a =>
+          a.id !== currentArticle.id &&
           a.tags.some(tag => currentArticle.tags.includes(tag))
         )
         .slice(0, 3); // Limit to 3 related articles
-      
+
       setRelatedArticles(related);
     }
 
@@ -64,7 +64,7 @@ function ArticleDetails() {
   // Function to render article content with proper formatting
   const renderContent = (content) => {
     if (!content) return null;
-    
+
     // Split the content by newlines and render paragraphs
     return content.split('\n\n').map((paragraph, idx) => {
       // Check if the paragraph is a header
@@ -72,12 +72,12 @@ function ArticleDetails() {
         return <h2 key={idx}>{paragraph.replace('## ', '')}</h2>;
       } else if (paragraph.startsWith('### ')) {
         return <h3 key={idx}>{paragraph.replace('### ', '')}</h3>;
-      } 
+      }
       // Check if paragraph is a list
       else if (paragraph.includes('\n- ')) {
         const listItems = paragraph.split('\n- ');
         const listTitle = listItems.shift();
-        
+
         return (
           <React.Fragment key={idx}>
             {listTitle && <p>{listTitle}</p>}
@@ -89,7 +89,7 @@ function ArticleDetails() {
       } else if (paragraph.includes('\n1. ')) {
         const listItems = paragraph.split(/\n\d+\. /);
         const listTitle = listItems.shift();
-        
+
         return (
           <React.Fragment key={idx}>
             {listTitle && <p>{listTitle}</p>}
@@ -137,7 +137,7 @@ function ArticleDetails() {
 
       <div className="article-details-header">
         <h1 className="article-details-title">{article.title}</h1>
-        
+
         <div className="article-details-meta">
           <div className="article-details-date">
             <Calendar size={16} /> {formatDate(article.date)}
@@ -146,7 +146,7 @@ function ArticleDetails() {
             <User size={16} /> {article.author}
           </div>
         </div>
-        
+
         <div className="article-details-tags">
           {article.tags.map((tag, idx) => (
             <span key={idx} className="article-details-tag">{tag}</span>
@@ -155,8 +155,8 @@ function ArticleDetails() {
       </div>
 
       <div className="article-details-image">
-        <img 
-          src={article.image || "/images/articles/default.jpg"} 
+        <img
+          src={article.image || "/images/articles/default.jpg"}
           alt={article.title}
           onError={(e) => {
             e.target.onerror = null;
@@ -200,8 +200,8 @@ function ArticleDetails() {
             {relatedArticles.map((relatedArticle) => (
               <div key={relatedArticle.id} className="article-card">
                 <div className="article-card-image">
-                  <img 
-                    src={relatedArticle.image || "/images/articles/default.jpg"} 
+                  <img
+                    src={relatedArticle.image || "/images/articles/default.jpg"}
                     alt={relatedArticle.title}
                     onError={(e) => {
                       e.target.onerror = null;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
 import "./Articles.css";
-import articlesData from "../data/articles.json";
+import articlesData from "../../data/articles.json";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -30,8 +30,8 @@ function Articles() {
         {articles.map((article) => (
           <div key={article.id} className="article-card">
             <div className="article-card-image">
-              <img 
-                src={article.image || "/images/articles/default.jpg"} 
+              <img
+                src={article.image || "/images/articles/default.jpg"}
                 alt={article.title}
                 onError={(e) => {
                   e.target.onerror = null;

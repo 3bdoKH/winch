@@ -7,12 +7,12 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import './ServiceDetail.css';
-import img1 from '../images/images.jpeg';
-import img2 from '../images/images (1).jpeg';
-import img3 from '../images/fuel.jpeg';
-import img4 from '../images/download.jpeg';
-import img5 from '../images/battary.jpeg';
-import img6 from '../images/download (2).jpeg';
+import img1 from '../../images/images.jpeg';
+import img2 from '../../images/images (1).jpeg';
+import img3 from '../../images/fuel.jpeg';
+import img4 from '../../images/download.jpeg';
+import img5 from '../../images/battary.jpeg';
+import img6 from '../../images/download (2).jpeg';
 
 const services = {
   rescue: {

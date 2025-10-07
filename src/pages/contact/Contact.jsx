@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import bgImg from '../images/images.png';
+import bgImg from '../../images/images.png';
 import { Phone, Mail, AlertTriangle, CheckCircle, Send } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
