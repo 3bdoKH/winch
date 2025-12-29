@@ -27,6 +27,7 @@ import ServiceDetail from "./pages/serviceDetail/ServiceDetail";
 import AreaDetail from "./pages/areaDetail/AreaDetail";
 import Articles from "./pages/articles/Articles";
 import ArticleDetails from "./pages/articleDetails/ArticleDetails";
+import KeywordArticles from "./pages/keywordArticles/KeywordArticles";
 import truck from "./images/truck.png";
 
 function App() {
@@ -577,9 +578,8 @@ function App() {
                 return (
                   <div
                     key={link.to}
-                    className={`dropdown ${
-                      openDropdown === "services" ? "is-open" : ""
-                    }`}
+                    className={`dropdown ${openDropdown === "services" ? "is-open" : ""
+                      }`}
                     onMouseEnter={() => {
                       if (location.pathname !== "/services")
                         setOpenDropdown("services");
@@ -588,9 +588,8 @@ function App() {
                   >
                     <Link
                       to={link.to}
-                      className={`nav-link ${
-                        location.pathname === link.to ? "active" : ""
-                      }`}
+                      className={`nav-link ${location.pathname === link.to ? "active" : ""
+                        }`}
                       onClick={() => setOpenDropdown(null)}
                     >
                       {link.icon}
@@ -620,17 +619,15 @@ function App() {
                 return (
                   <div
                     key={link.to}
-                    className={`dropdown ${
-                      openDropdown === "areas" ? "is-open" : ""
-                    }`}
+                    className={`dropdown ${openDropdown === "areas" ? "is-open" : ""
+                      }`}
                     onMouseEnter={() => setOpenDropdown("areas")}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
                     <Link
                       to={link.to}
-                      className={`nav-link ${
-                        location.pathname === link.to ? "active" : ""
-                      }`}
+                      className={`nav-link ${location.pathname === link.to ? "active" : ""
+                        }`}
                       onClick={() => setOpenDropdown(null)}
                     >
                       {link.icon}
@@ -663,9 +660,8 @@ function App() {
                 return (
                   <div
                     key={link.to}
-                    className={`dropdown ${
-                      openDropdown === "contact" ? "is-open" : ""
-                    }`}
+                    className={`dropdown ${openDropdown === "contact" ? "is-open" : ""
+                      }`}
                     onMouseEnter={() => {
                       if (location.pathname !== "/contact")
                         setOpenDropdown("contact");
@@ -674,9 +670,8 @@ function App() {
                   >
                     <Link
                       to={link.to}
-                      className={`nav-link ${
-                        location.pathname === link.to ? "active" : ""
-                      }`}
+                      className={`nav-link ${location.pathname === link.to ? "active" : ""
+                        }`}
                       onClick={() => setOpenDropdown(null)}
                     >
                       {link.icon}
@@ -720,9 +715,8 @@ function App() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`nav-link ${
-                    location.pathname === link.to ? "active" : ""
-                  }`}
+                  className={`nav-link ${location.pathname === link.to ? "active" : ""
+                    }`}
                   onClick={() => setOpenDropdown(null)}
                 >
                   {link.icon}
@@ -758,9 +752,8 @@ function App() {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`nav-link ${
-                  location.pathname === link.to ? "active" : ""
-                }`}
+                className={`nav-link ${location.pathname === link.to ? "active" : ""
+                  }`}
                 onClick={() => setMenuOpen(false)}
               >
                 {link.icon}
@@ -783,6 +776,7 @@ function App() {
           <Route path="/service/:serviceId" element={<ServiceDetail />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:slug" element={<ArticleDetails />} />
+          <Route path="/keyword/:keyword" element={<KeywordArticles />} />
         </Routes>
       </main>
 
@@ -818,48 +812,43 @@ function App() {
       <nav className="mobile-bottom-nav">
         <Link
           to="/contact"
-          className={`mobile-bottom-nav__item ${
-            location.pathname === "/contact" ? "active" : ""
-          }`}
+          className={`mobile-bottom-nav__item ${location.pathname === "/contact" ? "active" : ""
+            }`}
         >
           <Mail size={24} />
           <span>اتصل بنا</span>
         </Link>
         <Link
           to="/articles"
-          className={`mobile-bottom-nav__item ${
-            location.pathname === "/articles" ||
+          className={`mobile-bottom-nav__item ${location.pathname === "/articles" ||
             location.pathname.startsWith("/articles/")
-              ? "active"
-              : ""
-          }`}
+            ? "active"
+            : ""
+            }`}
         >
           <FileText size={24} />
           <span>المقالات</span>
         </Link>
         <Link
           to="/areas"
-          className={`mobile-bottom-nav__item ${
-            location.pathname === "/areas" ? "active" : ""
-          }`}
+          className={`mobile-bottom-nav__item ${location.pathname === "/areas" ? "active" : ""
+            }`}
         >
           <MapPin size={24} />
           <span>دليل الانقاذ</span>
         </Link>
         <Link
           to="/services"
-          className={`mobile-bottom-nav__item ${
-            location.pathname === "/services" ? "active" : ""
-          }`}
+          className={`mobile-bottom-nav__item ${location.pathname === "/services" ? "active" : ""
+            }`}
         >
           <Package size={24} />
           <span>خدماتنا</span>
         </Link>
         <Link
           to="/"
-          className={`mobile-bottom-nav__item ${
-            location.pathname === "/" ? "active" : ""
-          }`}
+          className={`mobile-bottom-nav__item ${location.pathname === "/" ? "active" : ""
+            }`}
         >
           <HomeIcon size={24} />
           <span>الرئيسية</span>

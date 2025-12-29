@@ -1,0 +1,360 @@
+.keyword-article-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+    padding: 2rem 1rem;
+    direction: rtl;
+}
+
+.keyword-article-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.breadcrumb-link {
+    color: #1976d2;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.2s;
+}
+
+.breadcrumb-link:hover {
+    color: #0a2c61;
+}
+
+.breadcrumb-separator {
+    color: #999;
+}
+
+.breadcrumb-current {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Article Header */
+.article-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.article-tag-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+}
+
+.article-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0a2c61;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.article-meta-description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Article Content */
+.article-content {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #333;
+}
+
+.content-h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0a2c61;
+    margin: 2.5rem 0 1.5rem 0;
+    padding-bottom: 0.8rem;
+    border-bottom: 3px solid #ffc107;
+}
+
+.content-h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1976d2;
+    margin: 2rem 0 1rem 0;
+    padding-right: 1rem;
+    border-right: 4px solid #ffc107;
+}
+
+.content-h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0a2c61;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.content-h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin: 1.2rem 0 0.8rem 0;
+}
+
+.content-p {
+    margin: 1rem 0;
+    color: #444;
+}
+
+.content-p strong {
+    color: #0a2c61;
+    font-weight: 700;
+}
+
+.content-li {
+    margin: 0.7rem 0;
+    padding-right: 1.5rem;
+    color: #444;
+    list-style-type: disc;
+}
+
+.content-blockquote {
+    background: #f8f9fa;
+    border-right: 4px solid #ffc107;
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #555;
+    border-radius: 8px;
+}
+
+/* Tables */
+.article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.article-content table tr:first-child {
+    background: linear-gradient(135deg, #0a2c61 0%, #1976d2 100%);
+    color: #fff;
+    font-weight: 600;
+}
+
+.article-content table td {
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.article-content table tr:hover {
+    background: #f8f9fa;
+}
+
+/* Call to Action */
+.article-cta {
+    margin: 3rem 0;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, #0a2c61 0%, #1976d2 100%);
+    color: #fff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(10, 44, 97, 0.2);
+}
+
+.cta-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #ffc107;
+}
+
+.cta-box p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button.primary {
+    background: #ffc107;
+    color: #0a2c61;
+}
+
+.cta-button.primary:hover {
+    background: #ffb300;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 193, 7, 0.4);
+}
+
+.cta-button.secondary {
+    background: #25D366;
+    color: #fff;
+}
+
+.cta-button.secondary:hover {
+    background: #20ba5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+/* Footer */
+.article-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #f0f0f0;
+    text-align: center;
+}
+
+.back-home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.back-home-link:hover {
+    background: #f0f7ff;
+    color: #0a2c61;
+}
+
+/* Loading and Not Found */
+.loading,
+.not-found {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+}
+
+.not-found h2 {
+    color: #0a2c61;
+    margin-bottom: 1.5rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.back-link:hover {
+    background: #f0f7ff;
+    color: #0a2c61;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .keyword-article-container {
+        padding: 1.5rem;
+    }
+
+    .article-title {
+        font-size: 2rem;
+    }
+
+    .article-meta-description {
+        font-size: 1.05rem;
+    }
+
+    .content-h1 {
+        font-size: 1.8rem;
+    }
+
+    .content-h2 {
+        font-size: 1.5rem;
+    }
+
+    .content-h3 {
+        font-size: 1.3rem;
+    }
+
+    .article-content {
+        font-size: 1.05rem;
+    }
+
+    .cta-box {
+        padding: 2rem 1.5rem;
+    }
+
+    .cta-box h3 {
+        font-size: 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .keyword-article-page {
+        padding: 1rem 0.5rem;
+    }
+
+    .keyword-article-container {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .article-title {
+        font-size: 1.6rem;
+    }
+
+    .breadcrumb {
+        font-size: 0.85rem;
+    }
+}

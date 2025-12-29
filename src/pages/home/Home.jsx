@@ -853,6 +853,66 @@ const FooterContent = ({ phoneNumber, areas }) => (
       <Link to={`/areas`} className='more-areas-link'>المزيد</Link>
     </section>
 
+    <div style={{ background: '#232328', color: '#fff', padding: '3rem 0 5rem 0', }}>
+      <div style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        gap: '4rem',
+        maxWidth: '1100px',
+        margin: '0 auto',
+        alignItems: 'flex-start',
+      }}>
+        <div style={{ minWidth: 220, flex: 1 }}>
+          <div style={{ fontWeight: 'bold', fontSize: '1.25rem', marginBottom: '1rem', borderBottom: '2px solid #fff2', paddingBottom: 8, textAlign: 'right' }}>خدماتنا</div>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, textAlign: 'right' }}>
+            {['ونش انقاذ', 'ونش انقاذ سيارات', 'رقم ونش انقاذ', 'ارخص ونش انقاذ', 'اقرب ونش انقاذ', 'اسرع ونش انقاذ', 'ونش سيارات'].map((service, idx, arr) => (
+              <li key={idx} style={{ marginBottom: 12, fontSize: '1.1rem', borderBottom: idx !== arr.length - 1 ? '1px solid #fff1' : 'none', paddingBottom: 6 }}>{service}</li>
+            ))}
+          </ul>
+        </div>
+        <div style={{ minWidth: 320, flex: 2 }}>
+          <div style={{ fontWeight: 'bold', fontSize: '1.25rem', marginBottom: '1rem', borderBottom: '2px solid #fff2', paddingBottom: 8, textAlign: 'center' }}>كلمات بحث</div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+            {['ارخص ونش انقاذ سيارات', 'اسرع ونش انقاذ سيارات', 'اقرب ونش انقاذ سيارات', 'رقم ونش انقاذ سيارات', 'ونش انقاذ', 'ونش', 'ونش انقاذ سيارات', 'ونش انقاذ سيارات في الجيزة', 'ونش انقاذ سيارات في القاهرة', 'ونش انقاذ سيارات في القطامية', 'ونش حر سيارات', 'ونش ريكفري', 'ونش عربيات', 'ونش نقل سيارات', 'تليفون ونش انقاذ سيارات', 'انقاذ سيارات', 'احسن ونش انقاذ سيارات', 'ونش انقاذ سيارات رخيص', 'ونش انقاذ سيارات سريع', 'ونش رفع سيارات', 'كساحه سيارات', 'كساحه سحب سيارات', 'ونش سحب سيارات', 'ونش هيدروليك'].map((kw, idx) => (
+              <Link
+                key={idx}
+                to={`/keyword/${encodeURIComponent(kw)}`}
+                style={{
+                  background: '#2d2d33',
+                  color: '#fff',
+                  border: '1px solid #444',
+                  borderRadius: '8px',
+                  padding: '0.4rem 1.1rem',
+                  fontSize: '1rem',
+                  marginBottom: '0.5rem',
+                  display: 'inline-block',
+                  boxShadow: '0 2px 8px #0002',
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease',
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = '#ffc107';
+                  e.currentTarget.style.color = '#0a2c61';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(255, 193, 7, 0.3)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = '#2d2d33';
+                  e.currentTarget.style.color = '#fff';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 2px 8px #0002';
+                }}
+              >
+                {kw}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
     <section
       style={{
         position: 'relative',
@@ -953,45 +1013,7 @@ const FooterContent = ({ phoneNumber, areas }) => (
       </div>
     </section>
 
-    <div style={{ background: '#232328', color: '#fff', padding: '3rem 0 5rem 0', }}>
-      <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        gap: '4rem',
-        maxWidth: '1100px',
-        margin: '0 auto',
-        alignItems: 'flex-start',
-      }}>
-        <div style={{ minWidth: 220, flex: 1 }}>
-          <div style={{ fontWeight: 'bold', fontSize: '1.25rem', marginBottom: '1rem', borderBottom: '2px solid #fff2', paddingBottom: 8, textAlign: 'right' }}>خدماتنا</div>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, textAlign: 'right' }}>
-            {['ونش انقاذ', 'ونش انقاذ سيارات', 'رقم ونش انقاذ', 'ارخص ونش انقاذ', 'اقرب ونش انقاذ', 'اسرع ونش انقاذ', 'ونش سيارات'].map((service, idx, arr) => (
-              <li key={idx} style={{ marginBottom: 12, fontSize: '1.1rem', borderBottom: idx !== arr.length - 1 ? '1px solid #fff1' : 'none', paddingBottom: 6 }}>{service}</li>
-            ))}
-          </ul>
-        </div>
-        <div style={{ minWidth: 320, flex: 2 }}>
-          <div style={{ fontWeight: 'bold', fontSize: '1.25rem', marginBottom: '1rem', borderBottom: '2px solid #fff2', paddingBottom: 8, textAlign: 'center' }}>كلمات بحث</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
-            {['ارخص ونش انقاذ سيارات', 'اسرع ونش انقاذ سيارات', 'اقرب ونش انقاذ سيارات', 'رقم ونش انقاذ سيارات', 'ونش انقاذ', 'ونش', 'ونش انقاذ سيارات', 'ونش انقاذ سيارات في الجيزة', 'ونش انقاذ سيارات في القاهرة', 'ونش انقاذ سيارات في القطامية', 'ونش حر سيارات', 'ونش ريكفري', 'ونش عربيات', 'ونش نقل سيارات', 'تليفون ونش انقاذ سيارات', 'انقاذ سيارات', 'احسن ونش انقاذ سيارات', 'ونش انقاذ سيارات رخيص', 'ونش انقاذ سيارات سريع', 'ونش رفع سيارات', 'كساحه سيارات', 'كساحه سحب سيارات', 'ونش سحب سيارات', 'ونش هيدروليك'].map((kw, idx) => (
-              <span key={idx} style={{
-                background: '#2d2d33',
-                color: '#fff',
-                border: '1px solid #444',
-                borderRadius: '8px',
-                padding: '0.4rem 1.1rem',
-                fontSize: '1rem',
-                marginBottom: '0.5rem',
-                display: 'inline-block',
-                boxShadow: '0 2px 8px #0002',
-                cursor: 'default',
-              }}>{kw}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+
   </>
 );
 
