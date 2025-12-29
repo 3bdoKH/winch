@@ -667,6 +667,7 @@ export const areas = [
   "جامعة مرسى مطروح",
   "كورنيش مرسى مطروح",
   "ميدان مرسى مطروح",
+  "الشرقيه",
 ];
 
 export const regionsByGovernorate = [
