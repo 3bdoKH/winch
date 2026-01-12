@@ -16,7 +16,7 @@ const AreaDetail = () => {
   const { areaName } = useParams();
   const displayName = decodeURIComponent(areaName).replace(/[-_]/g, ' ');
   const phone = '01044844492';
-  const brand = 'ونش انقاذ محمد بحر';
+  const brand = 'خصم 50% على ونش انقاذ محمد بحر';
   const [activeSection, setActiveSection] = useState('header');
   const [isNavigatorOpen, setIsNavigatorOpen] = useState(false);
 
@@ -639,7 +639,7 @@ const AreaDetail = () => {
             fontWeight: 800,
             textAlign: 'center'
           }}>
-            ونش انقاذ {brand} نحن الاقرب لك :
+            ونش انقاذ  نحن الاقرب لك :
           </h3>
 
           <ul style={{
