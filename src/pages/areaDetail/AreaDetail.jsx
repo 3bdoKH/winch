@@ -150,7 +150,7 @@ const AreaDetail = () => {
             marginBottom: '1rem',
             direction: 'rtl'
           }}>
-            {brand} في {displayName}
+            ونش انقاذ {displayName} | خصم 50%
           </h1>
 
           <p style={{
