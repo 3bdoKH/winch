@@ -38,10 +38,19 @@ const AreaDetail = () => {
     { id: 'emergency', title: 'الطوارئ', icon: '🚨' }
   ], []);
 
-  // Scroll to top when component mounts
+  // Scroll to top and update metadata when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [areaName]);
+    // Update document title
+    document.title = `ونش انقاذ ${displayName} | خصم 50% | أسرع ونش انقاذ سيارات في ${displayName}`;
+
+    // Update meta description
+    const description = `ونش انقاذ في ${displayName} نحن أرخص ونش أنقاذ في ${displayName} و أسرع ونش إنقاذ في ${displayName} اتصل بنا الآن للحصول على خدمة سريعة وموثوقة على مدار 24 ساعة.`;
+    const metaDescriptionTag = document.querySelector('meta[name="description"]');
+    if (metaDescriptionTag) {
+      metaDescriptionTag.setAttribute('content', description);
+    }
+  }, [areaName, displayName]);
 
   // Handle scroll to section
   const scrollToSection = (sectionId) => {

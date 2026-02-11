@@ -27,6 +27,13 @@ function KeywordArticles() {
 
         setArticle(foundArticle);
         setLoading(false);
+
+        // Update metadata
+        document.title = foundArticle.title;
+        const metaDescriptionTag = document.querySelector('meta[name="description"]');
+        if (metaDescriptionTag) {
+            metaDescriptionTag.setAttribute('content', foundArticle.metaDescription);
+        }
     }, [keyword, navigate]);
 
     // Function to render markdown-like content
