@@ -98,14 +98,23 @@ function ArticleDetails() {
             </ol>
           </React.Fragment>
         );
-      } else if (paragraph.includes('**')) {
-        // Handle bold text
-        return <p key={idx} dangerouslySetInnerHTML={{
-          __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        }} />;
+      } else if (paragraph.includes('**') || paragraph.includes('<a')) {
+        let formatted = paragraph
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+        return (
+          <p
+            key={idx}
+            dangerouslySetInnerHTML={{ __html: formatted }}
+          />
+        );
       } else {
-        // Regular paragraph
-        return <p key={idx}>{paragraph}</p>;
+        return (
+          <p
+            key={idx}
+            dangerouslySetInnerHTML={{ __html: paragraph }}
+          />
+        );
       }
     });
   };
