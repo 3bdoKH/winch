@@ -795,7 +795,7 @@ function App() {
           <div className="footer-copyright">
             تصميم وتنفيذ{" "}
             <a
-              href="http://emereld-marketing.online"
+              href="http://adams-agency.online"
               style={{
                 color: "var(--color-highlight)",
                 textDecoration: "none",
